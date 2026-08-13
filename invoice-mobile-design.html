@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles.css?v=37" />
-    <link rel="stylesheet" href="./src/invoice-case.css?v=4" />
+    <link rel="stylesheet" href="./src/invoice-case.css?v=5" />
   </head>
   <body class="is-loading invoice-page" data-page="case">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -81,14 +81,24 @@
 
       <section class="invoice-architecture invoice-section invoice-section--dark" id="architecture">
         <div class="invoice-section-head reveal"><span>04 · Architecture</span><div><h2>Four mental models were enough to hold the whole product.</h2><p class="invoice-head-note">I deliberately limited the primary navigation to four spaces. Every daily action belongs to one of them, so the bottom bar stays predictable while creation remains contextual.</p></div></div>
-        <div class="invoice-architecture-summary reveal">
-          <article><span>01</span><strong>Home</strong><p>Cash overview, alerts and direct actions</p></article>
-          <article><span>02</span><strong>Invoices</strong><p>Search, filter, create and track</p></article>
-          <article><span>03</span><strong>Clients</strong><p>Directory, profiles and related invoices</p></article>
-          <article><span>04</span><strong>Account</strong><p>Business, payment and notification settings</p></article>
+        <div class="invoice-architecture-live reveal" data-architecture>
+          <div class="invoice-architecture-toolbar">
+            <div><span data-en="Interactive product map" data-zh="交互式产品结构图" data-fr="Carte produit interactive">Interactive product map</span><p data-en="Content remains readable, selectable and localised." data-zh="内容保持可读、可选择，并支持多语言。" data-fr="Le contenu reste lisible, sélectionnable et localisé.">Content remains readable, selectable and localised.</p></div>
+            <div class="invoice-language-switch" role="group" aria-label="Architecture language"><button class="is-active" type="button" data-architecture-language="en" aria-pressed="true">EN</button><button type="button" data-architecture-language="zh" aria-pressed="false">中文</button><button type="button" data-architecture-language="fr" aria-pressed="false">FR</button></div>
+          </div>
+          <div class="invoice-architecture-root"><span>Facture</span><small data-en="Mobile product" data-zh="移动端产品" data-fr="Produit mobile">Mobile product</small></div>
+          <div class="invoice-architecture-tree">
+            <article><b>01</b><h3 data-en="Home" data-zh="首页" data-fr="Accueil">Home</h3><ul><li data-en="Cash overview" data-zh="收款概览" data-fr="Aperçu financier">Cash overview</li><li data-en="Recent invoices" data-zh="最近发票" data-fr="Factures récentes">Recent invoices</li><li data-en="Alerts & quick actions" data-zh="提醒与快捷操作" data-fr="Alertes et actions rapides">Alerts & quick actions</li></ul></article>
+            <article><b>02</b><h3 data-en="Invoices" data-zh="发票" data-fr="Factures">Invoices</h3><ul><li data-en="Search & filters" data-zh="搜索与筛选" data-fr="Recherche et filtres">Search & filters</li><li data-en="Create & edit" data-zh="创建与编辑" data-fr="Créer et modifier">Create & edit</li><li data-en="Status & payment" data-zh="状态与付款" data-fr="Statut et paiement">Status & payment</li></ul></article>
+            <article><b>03</b><h3 data-en="Clients" data-zh="客户" data-fr="Clients">Clients</h3><ul><li data-en="Client directory" data-zh="客户目录" data-fr="Répertoire clients">Client directory</li><li data-en="Profile & history" data-zh="资料与历史" data-fr="Profil et historique">Profile & history</li><li data-en="Contextual creation" data-zh="流程内创建" data-fr="Création contextuelle">Contextual creation</li></ul></article>
+            <article><b>04</b><h3 data-en="Account" data-zh="账户" data-fr="Compte">Account</h3><ul><li data-en="Business profile" data-zh="企业资料" data-fr="Profil entreprise">Business profile</li><li data-en="Payment details" data-zh="收款信息" data-fr="Coordonnées bancaires">Payment details</li><li data-en="Preferences" data-zh="偏好设置" data-fr="Préférences">Preferences</li></ul></article>
+          </div>
+          <div class="invoice-architecture-flow" aria-label="Core invoice flow">
+            <div class="invoice-flow-label"><span data-en="Core flow" data-zh="核心流程" data-fr="Parcours principal">Core flow</span><p data-en="Create and send an invoice" data-zh="创建并发送发票" data-fr="Créer et envoyer une facture">Create and send an invoice</p></div>
+            <ol><li data-en="Start" data-zh="开始" data-fr="Démarrer">Start</li><li data-en="Choose client" data-zh="选择客户" data-fr="Choisir un client">Choose client</li><li data-en="Add details" data-zh="填写信息" data-fr="Ajouter les informations">Add details</li><li data-en="Add service" data-zh="添加服务" data-fr="Ajouter une prestation">Add service</li><li data-en="Review" data-zh="核对" data-fr="Vérifier">Review</li><li data-en="Send" data-zh="发送" data-fr="Envoyer">Send</li></ol>
+          </div>
+          <div class="invoice-decision-strip"><span data-en="Rejected" data-zh="未采用" data-fr="Écarté">Rejected</span><p data-en="A separate Create destination would turn a verb into a place." data-zh="单独设置“创建”入口会把一个动作误变成一个目的地。" data-fr="Une destination Créer séparée transformerait une action en espace.">A separate Create destination would turn a verb into a place.</p><span data-en="Chosen" data-zh="采用方案" data-fr="Choisi">Chosen</span><p data-en="Stable object-based navigation with creation kept in context." data-zh="保持基于对象的稳定导航，并在当前情境中完成创建。" data-fr="Une navigation stable par objet, avec une création toujours contextuelle.">Stable object-based navigation with creation kept in context.</p></div>
         </div>
-        <div class="invoice-decision-strip reveal"><span>Rejected</span><p>A separate “Create” destination would duplicate actions and turn a verb into a place.</p><span>Chosen</span><p>Creation starts from the relevant object or a persistent action, while navigation stays object-based.</p></div>
-        <figure class="invoice-board reveal"><img src="./assets/invoice-design/01-ia-flow.png" alt="Information architecture and end-to-end invoice creation flow" loading="lazy" /><figcaption>The structure validates one decision: navigation is stable while creation stays contextual.</figcaption></figure>
       </section>
 
       <section class="invoice-flow invoice-section" id="flow">
@@ -127,20 +137,25 @@
 
       <section class="invoice-experience invoice-section invoice-section--dark" id="experience">
         <div class="invoice-section-head reveal"><span>08 · Final experience</span><div><h2>The interface gets out of the way, then becomes explicit at decision points.</h2><p class="invoice-head-note">I gave the dashboard the strongest overview, invoice creation the clearest sequence and confirmation moments the highest contrast. The screens are not equally important, so the presentation is not equal either.</p></div></div>
-        <div class="invoice-showcase reveal">
-          <figure class="invoice-showcase-primary"><img src="./assets/invoice-design/invoice-design-poster.jpg" alt="Facture dashboard presented as the primary product view" loading="lazy" /><figcaption><span>01 · Orientation</span><strong>Money, status and next actions in one calm scan.</strong></figcaption></figure>
-          <figure class="invoice-showcase-secondary"><img src="./assets/invoice-design/07-invoice-form.png" alt="Invoice creation form and line items" loading="lazy" /><figcaption><span>02 · Core workflow</span><strong>Creation stays structured without feeling administrative.</strong></figcaption></figure>
-          <aside class="invoice-showcase-quote"><span>Design decision</span><p>Keep the user inside one continuous task—even when the data they need does not exist yet.</p></aside>
+        <div class="invoice-studio-stage reveal">
+          <div class="invoice-studio-note"><span>01 · Product overview</span><h3>Three screens. Three different jobs.</h3><p>The devices remain close to their native resolution, so type and interface details stay sharp.</p></div>
+          <div class="invoice-device-line">
+            <figure class="invoice-device invoice-device--dashboard"><img src="./assets/invoice-design/12-dashboard.png" alt="Facture dashboard" loading="lazy" /><figcaption>Orient</figcaption></figure>
+            <figure class="invoice-device invoice-device--creation"><img src="./assets/invoice-design/07-invoice-form.png" alt="Invoice creation form" loading="lazy" /><figcaption>Create</figcaption></figure>
+            <figure class="invoice-device invoice-device--detail"><img src="./assets/invoice-design/09-invoice-detail.png" alt="Invoice detail" loading="lazy" /><figcaption>Act</figcaption></figure>
+          </div>
         </div>
-        <div class="invoice-detail-story reveal">
-          <div><span>03 · Feedback</span><h3>Success is a transition, not a dead end.</h3><p>After sending, confirmation resolves uncertainty and leads directly to the created invoice, where the next useful actions remain available.</p></div>
-          <figure class="is-success"><img src="./assets/invoice-design/08-success.png" alt="Invoice sent confirmation" loading="lazy" /></figure>
-          <figure class="is-detail"><img src="./assets/invoice-design/09-invoice-detail.png" alt="Created invoice detail and actions" loading="lazy" /></figure>
+        <div class="invoice-ui-details reveal">
+          <div class="invoice-ui-details-copy"><span>02 · Sharp by design</span><h3>Important moments are rebuilt as HTML, not enlarged pixels.</h3><p>Status, totals and feedback stay crisp at every screen size.</p></div>
+          <div class="invoice-ui-detail invoice-ui-detail--status"><span>Invoice status</span><div><strong>FAC-2026-019</strong><i>Pending</i></div><b>3 000 €</b><small>Due 12 September 2026</small></div>
+          <div class="invoice-ui-detail invoice-ui-detail--feedback"><span>System feedback</span><div class="invoice-feedback-line"><i></i><p><strong>Invoice sent successfully</strong><small>PDF created and shared with Atelier Nova</small></p></div><div class="invoice-feedback-line is-next"><i></i><p><strong>Open invoice detail</strong><small>Continue with the next useful action</small></p></div></div>
         </div>
-        <div class="invoice-supporting-moments reveal">
-          <figure><img src="./assets/invoice-design/06-create-client.png" alt="Create a missing client within the invoice flow" loading="lazy" /><figcaption><strong>Create in context</strong><span>A missing client becomes a short detour, not a reset.</span></figcaption></figure>
-          <figure><img src="./assets/invoice-design/10-invoice-list.png" alt="Invoice search and selected filter" loading="lazy" /><figcaption><strong>Make state visible</strong><span>Search and selected filters explain what the list is showing.</span></figcaption></figure>
-          <figure><img src="./assets/invoice-design/11-account.png" alt="Business account settings" loading="lazy" /><figcaption><strong>Keep settings secondary</strong><span>Business configuration supports the work without crowding it.</span></figcaption></figure>
+        <div class="invoice-studio-support reveal">
+          <div><span>03 · Supporting moments</span><h3>Only the states that explain the product.</h3></div>
+          <figure><img src="./assets/invoice-design/06-create-client.png" alt="Create a client with validation feedback" loading="lazy" /><figcaption><strong>Create in context</strong><span>Validation without losing the invoice</span></figcaption></figure>
+          <figure><img src="./assets/invoice-design/08-success.png" alt="Invoice sent confirmation" loading="lazy" /><figcaption><strong>Confirmation</strong><span>Feedback before transition</span></figcaption></figure>
+          <figure><img src="./assets/invoice-design/10-invoice-list.png" alt="Invoice list and filters" loading="lazy" /><figcaption><strong>Management</strong><span>Status stays scannable</span></figcaption></figure>
+          <figure><img src="./assets/invoice-design/11-account.png" alt="Business account settings" loading="lazy" /><figcaption><strong>Settings</strong><span>Configuration remains secondary</span></figcaption></figure>
         </div>
       </section>
 
@@ -160,5 +175,6 @@
       </section>
     </main>
     <script src="./src/main.js?v=25"></script>
+    <script src="./src/invoice-case.js?v=1"></script>
   </body>
 </html>
