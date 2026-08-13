@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles.css?v=37" />
-    <link rel="stylesheet" href="./src/invoice-case.css?v=3" />
+    <link rel="stylesheet" href="./src/invoice-case.css?v=4" />
   </head>
   <body class="is-loading invoice-page" data-page="case">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -53,13 +53,13 @@
       </section>
 
       <nav class="invoice-chapter-nav" aria-label="Case study chapters">
-        <a href="#context">02 Context</a><a href="#challenge">03 Challenge</a><a href="#architecture">04 IA</a><a href="#flow">05 Flow</a><a href="#wireframes">06 Wireframes</a><a href="#system">07 System</a><a href="#experience">08 Experience</a>
+        <a href="#context">02 Context</a><a href="#challenge">03 Challenge</a><a href="#architecture">04 IA</a><a href="#flow">05 Flow</a><a href="#wireframes">06 Wireframes</a><a href="#system">07 System</a><a href="#experience">08 Experience</a><a href="#reflection">Reflection</a>
       </nav>
 
       <section class="invoice-context invoice-section" id="context">
-        <div class="invoice-section-head reveal"><span>02</span><div><p class="eyebrow">Context</p><h2>A useful tool needed a more complete mobile product logic.</h2></div></div>
+        <div class="invoice-section-head reveal"><span>02 · Context</span><div><h2>The problem was not invoicing. It was losing momentum between tasks.</h2></div></div>
         <div class="invoice-context-grid reveal">
-          <p class="invoice-lead">This concept was informed by an analysis of an earlier invoice-management tool. The foundation was functional, but its repetitive interface and fragmented routes made everyday actions feel heavier than necessary.</p>
+          <div><p class="invoice-lead">The earlier tool could store invoices, but its fragmented routes made small actions feel like separate jobs. On mobile, every context switch adds effort.</p><p class="invoice-rationale"><strong>My framing</strong>I treated speed as continuity rather than fewer features: keep the user’s current object, choices and next action visible from start to finish.</p></div>
           <ul>
             <li><span>01</span>Repetitive screens with limited prioritisation</li>
             <li><span>02</span>Creation and management routes split across disconnected moments</li>
@@ -71,27 +71,28 @@
       </section>
 
       <section class="invoice-challenge invoice-section" id="challenge">
-        <div class="invoice-section-head reveal"><span>03</span><div><p class="eyebrow">Design challenge</p><h2>Three decisions shaped the product.</h2></div></div>
+        <div class="invoice-section-head reveal"><span>03 · Challenge</span><div><h2>Reduce friction without hiding the information that makes an invoice trustworthy.</h2></div></div>
         <div class="invoice-challenge-list reveal">
-          <article><b>01</b><h3>Make daily invoicing manageable on a phone.</h3><p>Keep essential totals and actions visible without compressing a desktop dashboard into 390 pixels.</p></article>
-          <article><b>02</b><h3>Connect complete CRUD journeys.</h3><p>Let a user create a missing client inside the invoice flow, then return with context preserved.</p></article>
-          <article><b>03</b><h3>Turn utility into a coherent experience.</h3><p>Use hierarchy, status language and reusable patterns to make every state feel part of the same system.</p></article>
+          <article><b>01</b><h3>Prioritise, rather than compress.</h3><p><strong>Decision</strong>I surfaced totals, status and the next useful action, instead of shrinking a desktop dashboard into 390 pixels. The result is a calmer first scan.</p></article>
+          <article><b>02</b><h3>Preserve context across CRUD.</h3><p><strong>Decision</strong>A missing client can be created inside the invoice flow and returns already selected. The detour solves the problem without becoming a second journey.</p></article>
+          <article><b>03</b><h3>Make system feedback do real work.</h3><p><strong>Decision</strong>Selected, loading, empty, validation and success states explain what changed and what happens next, reducing dependence on instructional copy.</p></article>
         </div>
       </section>
 
       <section class="invoice-architecture invoice-section invoice-section--dark" id="architecture">
-        <div class="invoice-section-head reveal"><span>04</span><div><p class="eyebrow">Information architecture</p><h2>Four spaces, each with a clear job.</h2></div></div>
+        <div class="invoice-section-head reveal"><span>04 · Architecture</span><div><h2>Four mental models were enough to hold the whole product.</h2><p class="invoice-head-note">I deliberately limited the primary navigation to four spaces. Every daily action belongs to one of them, so the bottom bar stays predictable while creation remains contextual.</p></div></div>
         <div class="invoice-architecture-summary reveal">
           <article><span>01</span><strong>Home</strong><p>Cash overview, alerts and direct actions</p></article>
           <article><span>02</span><strong>Invoices</strong><p>Search, filter, create and track</p></article>
           <article><span>03</span><strong>Clients</strong><p>Directory, profiles and related invoices</p></article>
           <article><span>04</span><strong>Account</strong><p>Business, payment and notification settings</p></article>
         </div>
-        <figure class="invoice-board reveal"><img src="./assets/invoice-design/01-ia-flow.png" alt="Information architecture and end-to-end invoice creation flow" loading="lazy" /><figcaption>The full structure connects navigation, object management and contextual creation.</figcaption></figure>
+        <div class="invoice-decision-strip reveal"><span>Rejected</span><p>A separate “Create” destination would duplicate actions and turn a verb into a place.</p><span>Chosen</span><p>Creation starts from the relevant object or a persistent action, while navigation stays object-based.</p></div>
+        <figure class="invoice-board reveal"><img src="./assets/invoice-design/01-ia-flow.png" alt="Information architecture and end-to-end invoice creation flow" loading="lazy" /><figcaption>The structure validates one decision: navigation is stable while creation stays contextual.</figcaption></figure>
       </section>
 
       <section class="invoice-flow invoice-section" id="flow">
-        <div class="invoice-section-head reveal"><span>05</span><div><p class="eyebrow">Key user flow</p><h2>Create a complete invoice without losing the thread.</h2></div></div>
+        <div class="invoice-section-head reveal"><span>05 · Key flow</span><div><h2>Invoice creation feels lightweight because the complexity arrives progressively.</h2><p class="invoice-head-note">I split the flow around user decisions—not database fields. Client, invoice information, line items and review each have a clear moment, while progress and preserved data maintain orientation.</p></div></div>
         <ol class="invoice-flow-track reveal">
           <li><span>01</span><strong>Start</strong><small>Dashboard</small></li>
           <li><span>02</span><strong>Choose</strong><small>Client</small></li>
@@ -101,17 +102,17 @@
           <li><span>06</span><strong>Review</strong><small>Summary</small></li>
           <li class="is-final"><span>07</span><strong>Send</strong><small>Success + detail</small></li>
         </ol>
-        <div class="invoice-flow-principles reveal"><p><strong>Context continuity</strong>The new client returns selected inside the invoice.</p><p><strong>Progressive disclosure</strong>Only the current decision is foregrounded.</p><p><strong>Visible feedback</strong>Loading, success and selected states explain every change.</p></div>
+        <div class="invoice-flow-principles reveal"><p><strong>Context continuity</strong>The new client returns selected inside the invoice.</p><p><strong>Progressive disclosure</strong>Only the current decision is foregrounded.</p><p><strong>Result</strong>The user can complete the core journey without restarting, backtracking or guessing whether data was saved.</p></div>
       </section>
 
       <section class="invoice-wireframes invoice-section" id="wireframes">
-        <div class="invoice-section-head reveal"><span>06</span><div><p class="eyebrow">Wireframes</p><h2>Structure first, but with enough information to test the journey.</h2></div></div>
-        <div class="invoice-wireframe-copy reveal"><p>The mid-fidelity pass defined content priority, reachable actions and screen-to-screen continuity before visual polish. It deliberately includes realistic invoice data and meaningful states.</p><strong>Dashboard → invoices → creation → detail → clients → account</strong></div>
+        <div class="invoice-section-head reveal"><span>06 · Wireframes</span><div><h2>I used fidelity to answer product questions, not to decorate placeholders.</h2></div></div>
+        <div class="invoice-wireframe-copy reveal"><p>The mid-fidelity pass included realistic totals, statuses and actions because empty boxes could not reveal hierarchy problems. It let me check whether each screen answered three questions: where am I, what matters now and what can I do next?</p><div class="invoice-wireframe-rule"><span>Kept</span><strong>One dominant action per step</strong><span>Removed</span><strong>Repeated controls and secondary data without immediate value</strong></div></div>
         <figure class="invoice-board invoice-board--wireframes reveal"><img src="./assets/invoice-design/02-wireframes.png" alt="Six information-rich mobile wireframes" loading="lazy" /><figcaption>Six core screens at mid fidelity, using the same 390 px product frame as the final interface.</figcaption></figure>
       </section>
 
       <section class="invoice-system invoice-section" id="system">
-        <div class="invoice-section-head reveal"><span>07</span><div><p class="eyebrow">Design system</p><h2>A compact system built for clarity, status and reuse.</h2></div></div>
+        <div class="invoice-section-head reveal"><span>07 · System</span><div><h2>The system makes status legible before it makes the interface distinctive.</h2><p class="invoice-head-note">I kept one deep-green accent for orientation and action. Colour never carries meaning alone: label, icon and hierarchy reinforce every invoice state.</p></div></div>
         <div class="invoice-system-intro reveal">
           <div><span>Type</span><strong>DM Sans</strong><p>Direct and compact at mobile sizes.</p></div>
           <div><span>Accent</span><strong>#1F5B3F</strong><p>One deep green for action and orientation.</p></div>
@@ -125,18 +126,32 @@
       </section>
 
       <section class="invoice-experience invoice-section invoice-section--dark" id="experience">
-        <div class="invoice-section-head reveal"><span>08</span><div><p class="eyebrow">Final experience</p><h2>One visual language across the complete journey.</h2></div></div>
-        <p class="invoice-experience-lede reveal">The final interface keeps monetary information calm and legible, while green action zones create a clear rhythm from overview to completion.</p>
-        <figure class="invoice-board invoice-board--final reveal"><img src="./assets/invoice-design/05-final-experience.png" alt="Dashboard, invoices, invoice creation, invoice detail, clients and account screens" loading="lazy" /><figcaption>Six core destinations: dashboard, invoices, creation, detail, clients and account.</figcaption></figure>
-        <div class="invoice-moment-grid reveal">
-          <figure><img src="./assets/invoice-design/06-create-client.png" alt="Create a client within the invoice flow" loading="lazy" /><figcaption>Contextual client creation</figcaption></figure>
-          <figure><img src="./assets/invoice-design/07-invoice-form.png" alt="Invoice form with line items" loading="lazy" /><figcaption>Structured invoice details</figcaption></figure>
-          <figure><img src="./assets/invoice-design/08-success.png" alt="Invoice sent success feedback" loading="lazy" /><figcaption>Clear success feedback</figcaption></figure>
-          <figure><img src="./assets/invoice-design/09-invoice-detail.png" alt="Created invoice detail" loading="lazy" /><figcaption>Invoice detail and actions</figcaption></figure>
-          <figure><img src="./assets/invoice-design/10-invoice-list.png" alt="Invoice list with selected filter" loading="lazy" /><figcaption>Search and selected filters</figcaption></figure>
-          <figure><img src="./assets/invoice-design/11-account.png" alt="Business account settings" loading="lazy" /><figcaption>Business account settings</figcaption></figure>
+        <div class="invoice-section-head reveal"><span>08 · Final experience</span><div><h2>The interface gets out of the way, then becomes explicit at decision points.</h2><p class="invoice-head-note">I gave the dashboard the strongest overview, invoice creation the clearest sequence and confirmation moments the highest contrast. The screens are not equally important, so the presentation is not equal either.</p></div></div>
+        <div class="invoice-showcase reveal">
+          <figure class="invoice-showcase-primary"><img src="./assets/invoice-design/invoice-design-poster.jpg" alt="Facture dashboard presented as the primary product view" loading="lazy" /><figcaption><span>01 · Orientation</span><strong>Money, status and next actions in one calm scan.</strong></figcaption></figure>
+          <figure class="invoice-showcase-secondary"><img src="./assets/invoice-design/07-invoice-form.png" alt="Invoice creation form and line items" loading="lazy" /><figcaption><span>02 · Core workflow</span><strong>Creation stays structured without feeling administrative.</strong></figcaption></figure>
+          <aside class="invoice-showcase-quote"><span>Design decision</span><p>Keep the user inside one continuous task—even when the data they need does not exist yet.</p></aside>
         </div>
-        <div class="invoice-closing reveal"><p>Mobile UI craft · Interaction design · System thinking</p><h2>A compact product, designed from architecture to interaction.</h2></div>
+        <div class="invoice-detail-story reveal">
+          <div><span>03 · Feedback</span><h3>Success is a transition, not a dead end.</h3><p>After sending, confirmation resolves uncertainty and leads directly to the created invoice, where the next useful actions remain available.</p></div>
+          <figure class="is-success"><img src="./assets/invoice-design/08-success.png" alt="Invoice sent confirmation" loading="lazy" /></figure>
+          <figure class="is-detail"><img src="./assets/invoice-design/09-invoice-detail.png" alt="Created invoice detail and actions" loading="lazy" /></figure>
+        </div>
+        <div class="invoice-supporting-moments reveal">
+          <figure><img src="./assets/invoice-design/06-create-client.png" alt="Create a missing client within the invoice flow" loading="lazy" /><figcaption><strong>Create in context</strong><span>A missing client becomes a short detour, not a reset.</span></figcaption></figure>
+          <figure><img src="./assets/invoice-design/10-invoice-list.png" alt="Invoice search and selected filter" loading="lazy" /><figcaption><strong>Make state visible</strong><span>Search and selected filters explain what the list is showing.</span></figcaption></figure>
+          <figure><img src="./assets/invoice-design/11-account.png" alt="Business account settings" loading="lazy" /><figcaption><strong>Keep settings secondary</strong><span>Business configuration supports the work without crowding it.</span></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="invoice-reflection invoice-section" id="reflection">
+        <div class="invoice-section-head reveal"><span>Reflection</span><div><h2>The strongest simplification was preserving context—not removing steps.</h2></div></div>
+        <div class="invoice-reflection-grid reveal">
+          <article><span>What I learned</span><h3>Fewer screens do not automatically mean less friction.</h3><p>A clear sequence can feel faster than one overloaded form when progress, data and next actions remain visible.</p></article>
+          <article><span>Trade-off</span><h3>The flow favours guidance over expert-speed shortcuts.</h3><p>For frequent users, I would explore reusable line items, duplication and draft templates without weakening the first-use model.</p></article>
+          <article><span>Next iteration</span><h3>Validate the product logic with real independent workers.</h3><p>I would test terminology, interruption recovery, tax cases and the speed of repeat invoicing before extending the feature set.</p></article>
+        </div>
+        <div class="invoice-closing reveal"><p>Mobile UI craft · Interaction design · Product judgement</p><h2>A coherent interface is the visible result. Continuity is the product decision behind it.</h2></div>
       </section>
 
       <section class="project-next">
