@@ -3,20 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Esendeo case study by Chloé Chen: one visual foundation extended across brand identity, web design and communication."
-    />
-    <title>Esendeo Brand Ecosystem — Chloé Chen</title>
+    <meta name="description" content="Esendeo case study by Chloé Chen: translating one brand foundation into a coherent digital and communication ecosystem." />
+    <title>Esendeo Brand Ecosystem - Chloé Chen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Instrument+Serif:ital,wght@0,400;1,400&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./src/styles.css?v=42" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Instrument+Serif:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles.css?v=49" />
+    <style>
+      .es3 .es3-foundation__canvas{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);grid-template-rows:360px auto auto auto;gap:18px}
+      .es3 .es3-type{min-height:0;padding:34px 38px}.es3 .es3-type small{font-size:11px}.es3 .es3-type strong{font-size:clamp(52px,6vw,78px);font-weight:500}
+      .es3 .es3-logo{display:flex;min-height:0;padding:34px 38px}.es3 .es3-logo img{width:min(72%,320px);max-width:none;height:auto;max-height:150px;transform:none}
+      .es3 .es3-palette{grid-column:1/-1;gap:10px}.es3 .es3-palette span{min-height:104px;padding:16px}.es3 .es3-palette b{font-size:13px}.es3 .es3-palette small{font-size:11px}
+      .es3 .es3-type-spec{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);height:auto;min-height:118px}.es3 .es3-principles{grid-column:1/-1}
+      .es3 .es3-tour{display:block;max-width:980px}.es3-macbook{position:relative;padding:0 20px;perspective:1200px}.es3-macbook__lid{position:relative;padding:13px 13px 17px;border:1px solid #3b3b3b;border-radius:18px 18px 8px 8px;background:linear-gradient(145deg,#242424,#090909 72%);box-shadow:0 26px 56px rgba(0,38,32,.16),inset 0 1px 0 rgba(255,255,255,.13);transform:rotateX(-1deg)}
+      .es3-macbook__camera{position:absolute;z-index:3;top:6px;left:50%;width:5px;height:5px;border-radius:50%;background:#424242;transform:translateX(-50%)}
+      .es3-macbook__screen{position:relative;height:clamp(480px,53vw,620px);overflow:hidden;border-radius:7px;background:#fff}
+      .es3-macbook__screen img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transform:translateY(0);transition:opacity .55s ease}
+      .es3-macbook__screen img.is-active{z-index:1;opacity:1;animation:es3-site-reel 9s cubic-bezier(.62,0,.32,1) both}
+      @keyframes es3-site-reel{0%,12%{transform:translateY(0)}42%{transform:translateY(-27%)}72%{transform:translateY(-58%)}90%,100%{transform:translateY(-82%)}}
+      .es3-macbook__base{position:relative;z-index:2;width:105%;height:29px;margin:-1px 0 0 -2.5%;border-top:1px solid rgba(255,255,255,.9);border-radius:2px 2px 13px 13px;background:linear-gradient(180deg,#f2f3f3 0,#c9cbcc 35%,#989b9c 78%,#777a7b 100%);clip-path:polygon(1.5% 0,98.5% 0,100% 72%,98% 100%,2% 100%,0 72%);box-shadow:0 16px 24px rgba(0,38,32,.13)}
+      .es3-macbook__base i{position:absolute;top:0;left:50%;width:118px;height:5px;border-radius:0 0 7px 7px;background:linear-gradient(180deg,#888b8c,#b8babb);box-shadow:0 1px 0 rgba(255,255,255,.45);transform:translateX(-50%)}
+      .es3-site-switcher{display:flex;justify-content:space-between;align-items:end;margin:30px 5% 0}.es3-site-switcher p{display:grid;gap:5px;margin:0}.es3-site-switcher p span{color:rgba(0,38,32,.52);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.es3-site-switcher p strong{font-size:18px;font-weight:500}
+      .es3-site-switcher>div{display:flex;gap:7px}.es3-site-switcher button{width:42px;height:42px;border:1px solid rgba(0,38,32,.18);border-radius:50%;background:transparent;color:rgba(0,38,32,.5);cursor:pointer}.es3-site-switcher button.is-active{border-color:var(--es3-ink);background:var(--es3-ink);color:#fff}
+      .es3 .es3-web-details{display:none}
+      .es3 .es3-newsletters__stage{display:grid;grid-template-columns:270px minmax(0,1fr);gap:58px;max-width:920px;padding:0;background:transparent}
+      .es3-mail-list{display:flex;flex-direction:column;align-self:center}.es3-mail-list p{margin:0 0 34px}.es3-mail-list small{display:block;margin-bottom:12px;color:rgba(0,38,32,.52);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.es3-mail-list strong{font-size:27px;font-weight:500;letter-spacing:-.04em;line-height:1.08}
+      .es3-mail-list button{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;width:100%;min-height:58px;padding:0;border:0;border-top:1px solid rgba(0,38,32,.16);background:transparent;color:rgba(0,38,32,.55);text-align:left;cursor:pointer}.es3-mail-list button:last-child{border-bottom:1px solid rgba(0,38,32,.16)}.es3-mail-list button b{font-size:10px;font-weight:500}.es3-mail-list button span{font-size:13px}.es3-mail-list button.is-active{color:var(--es3-ink)}.es3-mail-list button.is-active span{font-weight:600}
+      .es3-mail-preview{justify-self:end;width:min(100%,520px);overflow:hidden;border:1px solid rgba(0,38,32,.14);border-radius:10px;background:#fff;box-shadow:0 24px 60px rgba(0,38,32,.1)}
+      .es3-mail-preview__bar{display:grid;grid-template-columns:1fr auto 8px;gap:12px;align-items:center;height:48px;padding:0 16px;border-bottom:1px solid rgba(0,38,32,.1);font-size:10px}.es3-mail-preview__bar span{color:rgba(0,38,32,.5)}.es3-mail-preview__bar strong{font-weight:500}.es3-mail-preview__bar i{width:7px;height:7px;border-radius:50%;background:#c5ed5e}
+      .es3-mail-preview__screen{position:relative;height:610px;overflow:hidden;background:#f5f5f3}.es3-mail-preview__screen img{position:absolute;inset:0;margin:auto;width:100%;height:auto;opacity:0;transition:opacity .45s ease}.es3-mail-preview__screen img.is-active{z-index:1;opacity:1;animation:es3-mail-reel 9s cubic-bezier(.62,0,.32,1) both}
+      @keyframes es3-mail-reel{0%,14%{transform:translateY(0)}52%{transform:translateY(var(--reel-mid,0px))}88%,100%{transform:translateY(var(--reel-end,0px))}}
+      .es3-mail-note{grid-column:1/-1;max-width:650px;margin:10px 0 0 auto;color:rgba(0,38,32,.62);font-size:14px;line-height:1.65}
+      .es3 .es3-sales__slides{display:block;max-width:980px}.es3 .es3-sales__slides .es3-sales__gallery{width:100%;margin:0;border:1px solid rgba(0,38,32,.12);box-shadow:0 18px 46px rgba(0,38,32,.07)}.es3 .es3-sales__gallery img{display:block;width:100%;height:auto;transform:none}
+      .es3 .es3-sales__print{display:grid;grid-template-columns:1fr;gap:42px;max-width:980px}.es3 .es3-sales__print>div{grid-column:auto;max-width:640px}.es3 .es3-sales__print h3{max-width:13ch;font-size:clamp(40px,4.2vw,58px);line-height:.94}.es3 .es3-sales__print figure{width:100%;margin:0;transform:none}
+      .es3 .es3-cover{isolation:isolate;background:#875eed;color:#fff}
+      .es3 .es3-cover::before{position:absolute;z-index:-1;top:0;right:0;bottom:0;width:28%;background:#c5ed5e;content:""}
+      .es3 .es3-cover__intro,.es3 .es3-cover__title,.es3 .es3-cover__meta{position:relative;z-index:1}
+      .es3 .es3-cover__intro p:first-child{color:#fff}
+      .es3 .es3-cover__intro p:last-child{color:#002620}
+      .es3 .es3-cover__title{grid-template-columns:minmax(0,1fr) minmax(240px,28%);gap:5.5vw}
+      .es3 .es3-cover__title h1{max-width:8.2ch;color:#fff}
+      .es3 .es3-cover__title h1 span:first-child{color:#c5ed5e}
+      .es3 .es3-cover__title h1 em{color:#002620}
+      .es3 .es3-cover__title>p{align-self:end;padding-left:28px;color:rgba(0,38,32,.78);font-size:16px;font-weight:500;line-height:1.55}
+      .es3 .es3-cover__meta{width:min(760px,64%);border-color:rgba(255,255,255,.48)}
+      .es3 .es3-cover__meta dt{color:rgba(255,255,255,.62)}
+      .es3 .es3-cover__meta dd{color:#fff}
+      .es3 .es3-outcome{padding-top:clamp(150px,18vh,200px);padding-bottom:clamp(130px,16vh,180px);background:#f0edf8}
+      .es3 .es3-outcome__eyebrow,.es3 .es3-outcome>h2,.es3 .es3-outcome__chain,.es3 .es3-outcome__conclusion{width:min(980px,calc(100% - 104px));margin-right:auto;margin-left:clamp(52px,7vw,104px)}
+      .es3 .es3-outcome__eyebrow{margin-top:0;margin-bottom:30px;color:rgba(0,38,32,.58);font-size:10px;font-weight:600;letter-spacing:.14em;line-height:1.4;text-transform:uppercase}
+      .es3 .es3-outcome>h2{max-width:900px;margin-top:0;font-size:clamp(50px,5.4vw,74px);font-weight:500;letter-spacing:-.062em;line-height:.94}
+      .es3-outcome__chain{padding:0;margin-top:clamp(72px,9vh,104px);list-style:none;border-top:1px solid rgba(0,38,32,.24)}
+      .es3-outcome__chain li{display:grid;grid-template-columns:42px 170px minmax(0,1fr) 220px;gap:24px;align-items:center;min-height:124px;border-bottom:1px solid rgba(0,38,32,.2)}
+      .es3-outcome__chain li>span{align-self:start;padding-top:34px;color:#7651dc;font-size:11px;font-weight:600;letter-spacing:.08em}
+      .es3-outcome__chain h3{margin:0;font-size:14px;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+      .es3-outcome__chain p{max-width:35ch;margin:0;color:var(--es3-ink);font-size:18px;letter-spacing:-.025em;line-height:1.4}
+      .es3-outcome__chain small{display:block;color:rgba(0,38,32,.58);font-size:12px;letter-spacing:.01em;line-height:1.55}
+      .es3-outcome__conclusion{display:grid;grid-template-columns:212px minmax(0,1fr);gap:24px;margin-top:72px;padding-top:28px;border-top:1px solid rgba(0,38,32,.24)}
+      .es3-outcome__conclusion>p{margin:2px 0 0;color:rgba(0,38,32,.58);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+      .es3-outcome__conclusion div{max-width:650px}
+      .es3-outcome__conclusion h3{max-width:18ch;margin:0;font-size:clamp(30px,3.2vw,42px);font-weight:500;letter-spacing:-.045em;line-height:1.04}
+      .es3-outcome__conclusion div p{max-width:62ch;margin:26px 0 0;color:rgba(0,38,32,.7);font-size:15px;line-height:1.7}
+      @media(max-width:900px){.es3 .es3-cover::before{width:22%}.es3 .es3-cover__title{grid-template-columns:1fr}.es3 .es3-cover__title>p{max-width:32ch;padding-left:0;color:rgba(255,255,255,.78)}.es3 .es3-cover__meta{width:74%}.es3-outcome__chain li{grid-template-columns:38px 150px minmax(0,1fr);padding:26px 0}.es3-outcome__chain li>span{padding-top:3px}.es3-outcome__chain small{grid-column:3}}
+      @media(max-width:767px){.es3 .es3-foundation__canvas{grid-template-columns:1fr;grid-template-rows:auto}.es3 .es3-type,.es3 .es3-logo{min-height:300px;padding:28px}.es3 .es3-palette{grid-column:auto;grid-template-columns:1fr 1fr}.es3 .es3-type-spec{grid-column:auto;grid-template-columns:1fr 1fr}.es3 .es3-principles{grid-column:auto}.es3-macbook{padding:0}.es3-macbook__lid{padding:8px 8px 12px;border-radius:12px 12px 5px 5px}.es3-macbook__screen{height:330px}.es3-macbook__base{height:32px}.es3-site-switcher{margin:22px 0 0}.es3-site-switcher button{width:36px;height:36px}.es3 .es3-newsletters__stage{grid-template-columns:1fr;gap:34px}.es3-mail-list{order:2}.es3-mail-preview{justify-self:center}.es3-mail-preview__screen{height:480px}.es3-mail-note{order:3;grid-column:auto}.es3 .es3-sales__print{grid-template-columns:1fr}}
+      @media(max-width:767px){.es3 .es3-cover::before{top:auto;width:100%;height:14px}.es3 .es3-cover__intro p:first-child{max-width:20ch}.es3 .es3-cover__title{display:block}.es3 .es3-cover__title h1{max-width:none}.es3 .es3-cover__title h1 em{color:#c5ed5e}.es3 .es3-cover__title>p{max-width:29ch}.es3 .es3-cover__meta{width:100%;border-color:rgba(255,255,255,.4)}.es3 .es3-cover__meta dt{color:rgba(255,255,255,.58)}.es3 .es3-outcome{padding-top:110px;padding-bottom:112px}.es3 .es3-outcome__eyebrow,.es3 .es3-outcome>h2,.es3 .es3-outcome__chain,.es3 .es3-outcome__conclusion{width:calc(100% - 40px);margin-right:auto;margin-left:auto}.es3 .es3-outcome__eyebrow{margin-bottom:22px}.es3 .es3-outcome>h2{font-size:clamp(42px,12vw,58px);line-height:.96}.es3-outcome__chain{margin-top:58px}.es3-outcome__chain li{grid-template-columns:34px minmax(0,1fr);gap:7px 14px;min-height:0;padding:25px 0}.es3-outcome__chain li>span{grid-column:1;grid-row:1;padding-top:2px}.es3-outcome__chain h3{grid-column:2;grid-row:1;font-size:15px}.es3-outcome__chain p{grid-column:2;font-size:17px;line-height:1.45}.es3-outcome__chain small{grid-column:2;font-size:12px}.es3-outcome__conclusion{grid-template-columns:1fr;gap:18px;margin-top:58px}.es3-outcome__conclusion h3{font-size:32px}.es3-outcome__conclusion div p{font-size:16px}}
+      @media(prefers-reduced-motion:reduce){.es3-macbook__screen img.is-active,.es3-mail-preview__screen img.is-active{animation:none}}
+    </style>
   </head>
-  <body class="is-loading" data-page="case">
+  <body class="is-loading page-esendeo" data-page="case">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="loader" id="loader" aria-hidden="true">
       <div class="loader-mark"><span>Esendeo</span><i></i></div>
@@ -25,111 +79,185 @@
     <div class="page-texture" aria-hidden="true"></div>
 
     <header class="header" aria-label="Portfolio navigation">
-      <a class="brand" href="./index.html" aria-label="Chloé Chen home">
-        <span>CC</span>
-        <strong>Chloé Chen</strong>
-      </a>
-      <div class="header-center">
-        <span>Product designer</span>
-        <span>Case study · Brand to digital</span>
-      </div>
+      <a class="brand" href="./index.html" aria-label="Chloé Chen home"><span>CC</span><strong>Chloé Chen</strong></a>
+      <div class="header-center"><span>Product designer</span><span>Case study · Brand to digital</span></div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="./index.html">Home</a>
-        <a class="is-active" href="./work.html">Work</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
+        <a href="./index.html">Home</a><a class="is-active" href="./work.html">Work</a><a href="./about.html">About</a><a href="./contact.html">Contact</a>
       </nav>
     </header>
 
     <main class="case case--esendeo es3" id="main">
-      <section class="es3-hero" aria-labelledby="es-title">
-        <div class="es3-hero__copy reveal">
-          <p>Brand identity · Web design · Communication</p>
-          <h1 id="es-title">Esendeo</h1>
-          <h2>One visual foundation.<br />An entire brand ecosystem.</h2>
+      <section class="es3-cover" aria-labelledby="cover-title">
+        <div class="es3-cover__intro reveal">
+          <p>Brand strategy<br />Product design<br />B2B communication</p>
+          <p>Logistics SaaS<br />France</p>
         </div>
-        <div class="es3-hero__composition reveal">
-          <figure class="es3-hero__browser">
-            <div><i></i><i></i><i></i><span>esendeo.com</span></div>
-            <picture><img src="./assets/esendeo/source-website-home.png" alt="Esendeo homepage" /></picture>
-          </figure>
-          <figure class="es3-hero__logo"><img src="./assets/esendeo/source-logo-primary.png" alt="Esendeo logo" /></figure>
-          <figure class="es3-hero__detail"><img src="./assets/esendeo/source-website-features.png" alt="Esendeo solution page detail" /></figure>
-          <span class="es3-hero__loop" aria-hidden="true"></span>
+        <div class="es3-cover__title reveal">
+          <h1 id="cover-title"><span>Esendeo.</span><span>A brand system<br />built to <em>move.</em></span></h1>
+          <p>One coherent identity across the website, lifecycle communication and B2B sales tools.</p>
         </div>
-        <dl class="es3-meta reveal">
+        <dl class="es3-cover__meta">
           <div><dt>Role</dt><dd>Product Designer</dd></div>
-          <div><dt>Scope</dt><dd>Identity · Website · Communication</dd></div>
-          <div><dt>Period</dt><dd>2022–2023</dd></div>
+          <div><dt>Scope</dt><dd>Strategy, identity, digital</dd></div>
+          <div><dt>Outputs</dt><dd>Website, newsletters, sales deck, print</dd></div>
         </dl>
       </section>
 
-      <section class="es3-context">
-        <p class="es3-context__index reveal">01 / The world</p>
-        <h2 class="reveal">Not a brand, a website and a campaign.<br /><em>One recognisable visual world.</em></h2>
-        <p class="reveal">Esendeo is a SaaS platform for e-commerce logistics. I connected its identity, digital experience and communication into a system that could explain a complex B2B offer without becoming cold or generic.</p>
+      <section class="es3-context" aria-labelledby="context-title">
+        <p class="es3-context__index">Context and challenge</p>
+        <h2 id="context-title">Not a brand, a website and a campaign. <em>One recognisable visual world.</em></h2>
+        <div class="es3-context__body reveal">
+          <p>Esendeo is a SaaS platform for e-commerce logistics. It lets companies manage, track and centralise deliveries through one interface connected to multiple carriers.</p>
+          <p>The product had to make a complex B2B operation feel simpler, reliable and scalable. But its visual identity was fragmented, communication varied from one team and channel to another, and every new marketing or sales asset required slow, costly rework.</p>
+          <p>My responsibility was to clarify the positioning and build one system that could support product growth, daily business use and every customer-facing conversation.</p>
+        </div>
+        <div class="es3-problem-map reveal" aria-label="Business problems before the redesign">
+          <p><strong>Fragmented identity</strong><span>The brand changed from one touchpoint to the next.</span></p>
+          <p><strong>Complex offer</strong><span>Different audiences struggled to identify the right use case.</span></p>
+          <p><strong>Slow production</strong><span>Teams recreated layouts and decisions for every new asset.</span></p>
+          <p><strong>Visual drift</strong><span>Quality was difficult to maintain without constant design support.</span></p>
+        </div>
+      </section>
+
+      <section class="es3-strategy" aria-labelledby="strategy-title">
+        <div class="es3-section-head reveal">
+          <span>Brand strategy</span>
+          <h2 id="strategy-title">Build trust first. Make complexity feel simple.</h2>
+          <p>The strategy connected Esendeo's operational strengths with a more human promise. Reliability and transparency build confidence in a critical logistics service. Speed, simplicity and proactive care make the experience feel useful in everyday work.</p>
+        </div>
+        <div class="es3-values reveal">
+          <p class="es3-values__lead">We do care.</p>
+          <p><b>Reliability</b><span>A system that looks stable enough for high-stakes operations.</span></p>
+          <p><b>Transparency</b><span>Clear information, visible proof and direct language.</span></p>
+          <p><b>Speed and simplicity</b><span>Fast comprehension and less effort at every step.</span></p>
+          <p><b>Proactivity</b><span>A partner that anticipates problems instead of reacting late.</span></p>
+        </div>
       </section>
 
       <section class="es3-foundation" aria-labelledby="foundation-title">
-        <header class="es3-section-head reveal">
-          <span>02 / The foundation</span>
+        <div class="es3-section-head reveal">
+          <span>Visual foundation</span>
           <h2 id="foundation-title">The visual grammar behind every touchpoint.</h2>
-          <p>Bold Satoshi typography, a broad but controlled colour scale, organic crops and direct hierarchy gave the system both clarity and range.</p>
-        </header>
+          <p>I translated the strategy into repeatable decisions: a direct typographic voice, a controlled but energetic colour scale, clear hierarchy and a logo system flexible enough for product, partner and sales contexts.</p>
+        </div>
         <div class="es3-foundation__canvas reveal">
-          <div class="es3-type"><small>Satoshi / Bold</small><strong>We do<br />care.</strong><b>Brand typography became digital hierarchy.</b></div>
-          <figure class="es3-logo"><img src="./assets/esendeo/source-logo-primary.png" alt="Esendeo primary logo lockup" loading="lazy" /></figure>
-          <div class="es3-palette" aria-label="Esendeo brand palette">
-            <span style="--c:#4fffe3"><b>Aqua</b><small>#4FFFE3</small></span>
-            <span style="--c:#61c6ed"><b>Blue</b><small>#61C6ED</small></span>
-            <span style="--c:#875eed"><b>Purple</b><small>#875EED</small></span>
-            <span style="--c:#ed875e"><b>Orange</b><small>#ED875E</small></span>
-            <span style="--c:#c5ed5e"><b>Lime</b><small>#C5ED5E</small></span>
+          <div class="es3-type">
+            <small>Primary typeface</small>
+            <strong>Satoshi</strong>
+            <p>Aa Bb Cc 01</p>
+            <div><span>Regular</span><span>Medium</span><span>Bold</span></div>
           </div>
-          <figure class="es3-type-spec"><img src="./assets/esendeo/source-typography-title.png" alt="Esendeo typography system" loading="lazy" /></figure>
-          <div class="es3-principles"><span>Functional minimalism</span><span>Tech + human</span><span>Built to expand</span></div>
-        </div>
-      </section>
-
-      <section class="es3-website" aria-labelledby="web-title">
-        <header class="es3-section-head reveal">
-          <span>03 / From identity to interface</span>
-          <h2 id="web-title">The website made the system move.</h2>
-          <p>Colour sets context. Type builds hierarchy. Cropped people and product moments make logistics concrete. The same grammar adapts to different audiences without changing identity.</p>
-        </header>
-        <div class="es3-tour reveal">
-          <div class="es3-browser">
-            <div class="es3-browser__bar"><i></i><i></i><i></i><span>esendeo.com</span></div>
-            <div class="es3-browser__screen"><img src="./assets/esendeo/source-website-home.png" alt="Animated tour through the Esendeo homepage" loading="lazy" /></div>
+          <figure class="es3-logo">
+            <figcaption>Primary wordmark</figcaption>
+            <img src="./assets/esendeo/source-logo-primary.png" alt="Esendeo primary wordmark" loading="lazy" />
+            <p>One recognisable signature across product, partner and sales contexts.</p>
+          </figure>
+          <div class="es3-palette" aria-label="Esendeo colour system">
+            <span style="--c:#4fffe3"><b>Aqua</b><small>#4FFFE3</small></span><span style="--c:#61c6ed"><b>Blue</b><small>#61C6ED</small></span><span style="--c:#875eed"><b>Purple</b><small>#875EED</small></span><span style="--c:#ed875e"><b>Orange</b><small>#ED875E</small></span><span style="--c:#c5ed5e"><b>Lime</b><small>#C5ED5E</small></span>
           </div>
-          <aside><img src="./assets/esendeo/source-website-home.png" alt="Full Esendeo homepage overview" loading="lazy" /><span>Full page / structure</span></aside>
-        </div>
-        <div class="es3-web-details reveal">
-          <figure class="es3-web-detail es3-web-detail--hero"><img src="./assets/esendeo/source-website-features.png" alt="Esendeo solution page hero and social proof" loading="lazy" /><figcaption>Audience-specific entry point</figcaption></figure>
-          <figure class="es3-web-detail es3-web-detail--flow"><img src="./assets/esendeo/source-website-home.png" alt="Esendeo four-step logistics flow" loading="lazy" /><figcaption>Product story as a visual rhythm</figcaption></figure>
-          <figure class="es3-web-detail es3-web-detail--system"><img src="./assets/esendeo/source-website-solution-a.png" alt="Esendeo responsive solution page" loading="lazy" /><figcaption>One system, a different business context</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="es3-ecosystem" aria-labelledby="ecosystem-title">
-        <header class="es3-section-head reveal">
-          <span>04 / Brand ecosystem</span>
-          <h2 id="ecosystem-title">One visual system, many touchpoints.</h2>
-          <p>The identity continued into partner newsletters and printed sales material. Different formats, same voice—and enough flexibility to let each piece have its own composition.</p>
-        </header>
-        <div class="es3-ecosystem__composition reveal">
-          <figure class="es3-mail es3-mail--shipping"><img src="./assets/esendeo/source-newsletter-shippingbo.png" alt="Esendeo and Shippingbo partnership newsletter" loading="lazy" /></figure>
-          <figure class="es3-mail es3-mail--brick"><img src="./assets/esendeo/source-newsletter-brick.png" alt="Esendeo and Brick Par Brick partnership newsletter" loading="lazy" /></figure>
-          <figure class="es3-flyer es3-flyer--a"><img src="./assets/esendeo/source-flyer-front.png" alt="Esendeo printed flyer" loading="lazy" /></figure>
-          <figure class="es3-flyer es3-flyer--b"><img src="./assets/esendeo/source-flyer-front-v2.png" alt="Alternative Esendeo printed flyer" loading="lazy" /></figure>
-          <strong aria-hidden="true">Designed to stay<br />consistent as it grows.</strong>
+          <div class="es3-type-spec" aria-label="Esendeo type scale">
+            <span><small>Display</small><b>48 / 52</b></span>
+            <span><small>Section</small><b>32 / 38</b></span>
+            <span><small>Body</small><b>16 / 25</b></span>
+            <span><small>Label</small><b>12 / 16</b></span>
+          </div>
+          <div class="es3-principles"><span><b>Deep teal</b><br />Credibility and contrast</span><span><b>Bright colour</b><br />Context and energy</span><span><b>Clear scale</b><br />Fast comprehension</span></div>
         </div>
       </section>
 
-      <section class="es3-outcome">
-        <p class="reveal">The result</p>
-        <h2 class="reveal">A shared foundation teams could reuse—without every new touchpoint starting from zero.</h2>
-        <div class="es3-outcome__list reveal"><span>Consistent brand expression</span><span>Reusable digital patterns</span><span>Clearer cross-team production</span></div>
+      <section class="es3-website" aria-labelledby="website-title">
+        <div class="es3-section-head reveal">
+          <span>From identity to interface</span>
+          <h2 id="website-title">The website made the system move.</h2>
+          <p>The website had to explain a multi-carrier logistics platform without flattening it into generic SaaS language. I structured the story around user needs, sector-specific entry points and a simple operational sequence: compare, ship, manage and track.</p>
+        </div>
+        <div class="es3-web-logic reveal">
+          <p><strong>Start from the business context</strong><span>Solution pages let each company recognise a precise use case before exploring features.</span></p>
+          <p><strong>Reduce comprehension effort</strong><span>Strong hierarchy and progressive disclosure turn a technical offer into a readable product story.</span></p>
+          <p><strong>Make benefits concrete</strong><span>Operational flows, platform views and customer proof help users understand how Esendeo solves daily logistics problems.</span></p>
+        </div>
+        <div class="es3-tour reveal" data-es3-site-demo>
+          <div class="es3-macbook">
+            <div class="es3-macbook__lid">
+              <i class="es3-macbook__camera" aria-hidden="true"></i>
+              <div class="es3-macbook__screen">
+                <img class="is-active" src="./assets/esendeo/source-website-home-hd.png" alt="Esendeo homepage" loading="lazy" data-label="Homepage" />
+                <img src="./assets/esendeo/source-website-solution-a-hd.png" alt="Esendeo e-commerce solution page" loading="lazy" data-label="E-commerce" />
+                <img src="./assets/esendeo/source-website-features-hd.png" alt="Esendeo product features page" loading="lazy" data-label="Product features" />
+                <img src="./assets/esendeo/source-website-solution-b-hd.png" alt="Esendeo retail solution page" loading="lazy" data-label="Retail solution" />
+              </div>
+            </div>
+            <div class="es3-macbook__base" aria-hidden="true"><i></i></div>
+          </div>
+          <div class="es3-site-switcher" aria-label="Website pages">
+            <p><span>Now showing</span><strong>Homepage</strong></p>
+            <div><button class="is-active" type="button" data-index="0">01</button><button type="button" data-index="1">02</button><button type="button" data-index="2">03</button><button type="button" data-index="3">04</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="es3-newsletters" aria-labelledby="newsletter-title">
+        <div class="es3-section-head reveal">
+          <span>B2B lifecycle communication</span>
+          <h2 id="newsletter-title">Newsletters became part of the service, not an afterthought.</h2>
+          <p>I designed modular structures for onboarding, advanced features, customer feedback and partner announcements. Each message has a precise job, a clear hierarchy and one visible next action, while remaining recognisably Esendeo.</p>
+        </div>
+        <div class="es3-newsletters__stage reveal" data-es3-mail-demo>
+          <div class="es3-mail-list" aria-label="Newsletter campaigns">
+            <p><small>Campaign system</small><strong>Five messages.<br />One recognisable voice.</strong></p>
+            <button class="is-active" type="button" data-index="0"><b>01</b><span>Partner launch</span></button>
+            <button type="button" data-index="1"><b>02</b><span>Co-branded offer</span></button>
+            <button type="button" data-index="2"><b>03</b><span>Welcome journey</span></button>
+            <button type="button" data-index="3"><b>04</b><span>Feature activation</span></button>
+            <button type="button" data-index="4"><b>05</b><span>Customer follow-up</span></button>
+          </div>
+          <div class="es3-mail-preview">
+            <div class="es3-mail-preview__bar"><span>From: Esendeo</span><strong>Partner launch</strong><i></i></div>
+            <div class="es3-mail-preview__screen">
+              <img class="is-active" src="./assets/esendeo/source-newsletter-shippingbo.png" alt="Shippingbo partner newsletter" loading="lazy" data-label="Partner launch" />
+              <img src="./assets/esendeo/source-newsletter-brick.png" alt="Brick par Brick partner newsletter" loading="lazy" data-label="Co-branded offer" />
+              <img src="./assets/esendeo/source-newsletter-welcome.png" alt="Esendeo welcome newsletter" loading="lazy" data-label="Welcome journey" />
+              <img src="./assets/esendeo/source-newsletter-features.png" alt="Esendeo advanced features newsletter" loading="lazy" data-label="Feature activation" />
+              <img src="./assets/esendeo/source-newsletter-thankyou.png" alt="Esendeo customer thank-you newsletter" loading="lazy" data-label="Customer follow-up" />
+            </div>
+          </div>
+          <p class="es3-mail-note">Each format has one job, a clear hierarchy and one next action. The shared grid keeps partner, onboarding and product communication visibly connected.</p>
+        </div>
+      </section>
+
+      <section class="es3-sales" aria-labelledby="sales-title">
+        <div class="es3-section-head reveal">
+          <span>B2B sales system</span>
+          <h2 id="sales-title">One visual system, many touchpoints.</h2>
+          <p>The sales deck and print-ready materials turned the same strategy into a reusable commercial narrative. Modular slides help teams present the company, services, transport offer, proof points and client cases clearly without rebuilding every presentation.</p>
+        </div>
+        <div class="es3-sales__slides reveal">
+          <figure class="es3-sales__gallery"><img src="./assets/esendeo/source-sales-reference.png" alt="Selected Esendeo presentation system shown as a multi-page slide gallery" loading="lazy" /></figure>
+        </div>
+        <div class="es3-sales__print reveal">
+          <div><p>Digital to physical</p><h3>The same system, ready for real conversations.</h3><p>Sales decks and print materials share one hierarchy, colour logic and tone, while each format keeps its own composition.</p></div>
+          <figure><img src="./assets/esendeo/07-flyers.png" alt="Esendeo printed sales materials and flyer mockups" loading="lazy" /></figure>
+        </div>
+      </section>
+
+      <section class="es3-process" aria-labelledby="process-title">
+        <div class="es3-section-head reveal"><span>End-to-end approach</span><h2 id="process-title">A system built from strategy, then tested in real use.</h2><p>The work moved from brand understanding to concrete daily tools, with each stage giving the next one clearer constraints and reusable foundations.</p></div>
+        <ol class="es3-process__flow reveal"><li><b>Understand</b><span>User needs, brand vision and competitive context</span></li><li><b>Define</b><span>Values, positioning, personality and tone of voice</span></li><li><b>Explore</b><span>Creative direction, colour and typography</span></li><li><b>Systemise</b><span>Logo, palette, type, icon and layout rules</span></li><li><b>Apply</b><span>Website, newsletters, sales deck and print</span></li><li><b>Enable</b><span>Guidelines and reusable assets for product and marketing teams</span></li></ol>
+      </section>
+
+      <section class="es3-outcome" aria-labelledby="outcome-title">
+        <p class="es3-outcome__eyebrow">Outcome and business value</p>
+        <h2 id="outcome-title">One system that connects brand expression with daily business use.</h2>
+        <ol class="es3-outcome__chain reveal">
+          <li><span>01</span><h3>Brand foundation</h3><p>Shared principles replaced one-off visual decisions.</p><small>Positioning · Tone of voice · Visual rules</small></li>
+          <li><span>02</span><h3>Digital experience</h3><p>Use-case architecture made a complex logistics offer easier to navigate.</p><small>Homepage · Solution pages · Product stories</small></li>
+          <li><span>03</span><h3>Lifecycle communication</h3><p>Five repeatable newsletter formats gave recurring messages a consistent structure.</p><small>Partner · Welcome · Activation · Follow-up</small></li>
+          <li><span>04</span><h3>Sales enablement</h3><p>A modular deck and print toolkit created one coherent commercial story.</p><small>Sales deck · Flyers · Meeting material</small></li>
+        </ol>
+        <div class="es3-outcome__conclusion reveal">
+          <p>What changed</p>
+          <div><h3>From isolated assets to a system teams could use.</h3><p>The project connected strategy, identity, digital experience and B2B communication. New touchpoints could be created from shared rules instead of restarting the design process each time.</p></div>
+        </div>
       </section>
 
       <section class="project-next">
@@ -137,7 +265,46 @@
         <a class="round-link" href="./contact.html"><span>Contact</span><i aria-hidden="true">→</i></a>
       </section>
     </main>
-
     <script src="./src/main.js?v=20"></script>
+    <script>
+      (() => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const setupReel = (rootSelector, imageSelector, buttonSelector, labelSelector, delay = 9400) => {
+          const root = document.querySelector(rootSelector);
+          if (!root) return;
+          const images = [...root.querySelectorAll(imageSelector)];
+          const buttons = [...root.querySelectorAll(buttonSelector)];
+          const label = root.querySelector(labelSelector);
+          let index = 0;
+          let timer;
+          const show = (next) => {
+            index = (next + images.length) % images.length;
+            images.forEach((image, i) => image.classList.toggle('is-active', i === index));
+            buttons.forEach((button, i) => button.classList.toggle('is-active', i === index));
+            if (label) label.textContent = images[index].dataset.label || '';
+            const image = images[index];
+            const viewport = image.parentElement;
+            const setTravel = () => {
+              const renderedHeight = viewport.clientWidth * image.naturalHeight / image.naturalWidth;
+              const end = Math.min(0, viewport.clientHeight - renderedHeight - 2);
+              image.style.setProperty('--reel-mid', `${end / 2}px`);
+              image.style.setProperty('--reel-end', `${end}px`);
+            };
+            if (image.complete) setTravel();
+            else image.addEventListener('load', setTravel, { once: true });
+          };
+          const schedule = () => {
+            if (reduce) return;
+            window.clearTimeout(timer);
+            timer = window.setTimeout(() => { show(index + 1); schedule(); }, delay);
+          };
+          buttons.forEach((button, i) => button.addEventListener('click', () => { show(i); schedule(); }));
+          show(0);
+          schedule();
+        };
+        setupReel('[data-es3-site-demo]', '.es3-macbook__screen img', '.es3-site-switcher button', '.es3-site-switcher p strong');
+        setupReel('[data-es3-mail-demo]', '.es3-mail-preview__screen img', '.es3-mail-list button', '.es3-mail-preview__bar strong');
+      })();
+    </script>
   </body>
 </html>
