@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles.css?v=37" />
-    <link rel="stylesheet" href="./src/invoice-case.css?v=5" />
+    <link rel="stylesheet" href="./src/invoice-case.css?v=6" />
   </head>
   <body class="is-loading invoice-page" data-page="case">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -34,9 +34,9 @@
     <main class="invoice-case" id="main">
       <section class="invoice-hero" id="overview" aria-labelledby="invoice-title">
         <div class="invoice-hero-copy reveal">
-          <p class="eyebrow">01 · Overview — Concept design · 2026</p>
-          <h1 id="invoice-title">Invoicing,<br /><em>designed for independent work.</em></h1>
-          <p>A mobile-first experience that helps freelancers and small businesses create, organise and track invoices with less friction.</p>
+          <p class="eyebrow">Mobile product · Independent concept · 2026</p>
+          <h1 id="invoice-title">Make the work.<br /><em>Keep the momentum.</em></h1>
+          <p>Facture brings invoicing into one clear mobile journey, so independent workers can create, send and follow up without losing their place.</p>
         </div>
         <dl class="invoice-meta reveal">
           <div><dt>Role</dt><dd>Product design · UX/UI</dd></div>
@@ -45,10 +45,8 @@
           <div><dt>Status</dt><dd>Independent concept · Not launched</dd></div>
         </dl>
         <figure class="invoice-film reveal">
-          <video autoplay muted loop playsinline controls preload="metadata" poster="./assets/invoice-design/invoice-design-poster.jpg" aria-label="Facture mobile app interaction demonstration">
-            <source src="./assets/invoice-design/invoice-design-demo.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span>40 sec interaction demo</span><span>Invoice creation → client → line item → send → detail</span></figcaption>
+          <img src="./assets/invoice-design/invoice-design-poster.jpg" alt="Facture mobile dashboard showing cash overview, overdue invoices and recent client payments" />
+          <figcaption><span>Facture · mobile invoicing</span><span>Designed for a 390 px screen</span></figcaption>
         </figure>
       </section>
 
@@ -137,8 +135,14 @@
 
       <section class="invoice-experience invoice-section invoice-section--dark" id="experience">
         <div class="invoice-section-head reveal"><span>08 · Final experience</span><div><h2>The interface gets out of the way, then becomes explicit at decision points.</h2><p class="invoice-head-note">I gave the dashboard the strongest overview, invoice creation the clearest sequence and confirmation moments the highest contrast. The screens are not equally important, so the presentation is not equal either.</p></div></div>
+        <figure class="invoice-demo reveal">
+          <video controls playsinline preload="metadata" poster="./assets/invoice-design/invoice-design-poster.jpg" aria-label="Facture interaction demo showing the invoice creation journey">
+            <source src="./assets/invoice-design/invoice-design-demo.mp4" type="video/mp4" />
+          </video>
+          <figcaption><span>Interaction preview · 40 sec</span><span>Create invoice → add client → review → send</span></figcaption>
+        </figure>
         <div class="invoice-studio-stage reveal">
-          <div class="invoice-studio-note"><span>01 · Product overview</span><h3>Three screens. Three different jobs.</h3><p>The devices remain close to their native resolution, so type and interface details stay sharp.</p></div>
+          <div class="invoice-studio-note"><span>01 · Product overview</span><h3>Three screens.<br />Three clear jobs.</h3><p>Orient, create and act. Each screen earns its place in the journey.</p></div>
           <div class="invoice-device-line">
             <figure class="invoice-device invoice-device--dashboard"><img src="./assets/invoice-design/12-dashboard.png" alt="Facture dashboard" loading="lazy" /><figcaption>Orient</figcaption></figure>
             <figure class="invoice-device invoice-device--creation"><img src="./assets/invoice-design/07-invoice-form.png" alt="Invoice creation form" loading="lazy" /><figcaption>Create</figcaption></figure>
@@ -175,6 +179,6 @@
       </section>
     </main>
     <script src="./src/main.js?v=25"></script>
-    <script src="./src/invoice-case.js?v=1"></script>
+    <script src="./src/invoice-case.js?v=2"></script>
   </body>
 </html>
