@@ -11,18 +11,35 @@ const sectionLinks = [...document.querySelectorAll('.case-nav ol a')];
 const sections = sectionLinks.map(link => document.getElementById(link.hash.slice(1))).filter(Boolean);
 if (sections.length) {
   let pending = false;
+  let previousActiveId = '';
   const update = () => {
-    const offset = window.innerWidth <= 720 ? 105 : 160;
+    const nav = document.querySelector('.case-nav');
+    const navRect = nav?.getBoundingClientRect();
+    const offset = window.innerWidth <= 720
+      ? (navRect ? navRect.bottom + 8 : 72)
+      : (navRect ? navRect.top + 20 : 135);
     let active = sections[0];
     for (const section of sections) if (section.getBoundingClientRect().top <= offset) active = section;
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) active = sections[sections.length - 1];
     sectionLinks.forEach(link => {
-      if (link.hash === '#' + active.id) link.setAttribute('aria-current', 'location');
+      const isActive = link.hash === '#' + active.id;
+      if (isActive) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
+      if (isActive && active.id !== previousActiveId && window.innerWidth <= 720 && nav) {
+        const list = nav.querySelector('ol');
+        const linkRect = link.getBoundingClientRect();
+        const listRect = list.getBoundingClientRect();
+        if (linkRect.left < listRect.left || linkRect.right > listRect.right) {
+          list.scrollTo({left: list.scrollLeft + linkRect.left - listRect.left - 12, behavior: 'smooth'});
+        }
+      }
     });
+    previousActiveId = active.id;
     pending = false;
   };
   window.addEventListener('scroll', () => { if (!pending) { pending = true; requestAnimationFrame(update); } }, {passive:true});
   window.addEventListener('resize', update);
+  window.addEventListener('hashchange', update);
   update();
 }
 
