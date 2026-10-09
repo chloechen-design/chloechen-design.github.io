@@ -36,7 +36,6 @@
   .lvv-case .mobile-scroll{width:min(100%,220px);aspect-ratio:9/19.5}
 }
 
-.gallery-controls{display:none}.gallery-panel[hidden]{display:block}
 
 /* LVV visual layer: logistics motifs, small purposeful icons, and FTL foundation colors. */
 .lvv-case {
