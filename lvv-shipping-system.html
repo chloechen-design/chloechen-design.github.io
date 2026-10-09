@@ -31,6 +31,7 @@
           <li><a href="#problem">Problem</a></li>
           <li><a href="#evidence">Evidence</a></li>
           <li><a href="#decisions">Design decisions</a></li>
+          <li><a href="#components">Component logic</a></li>
           <li><a href="#final-product">Final product</a></li>
           <li><a href="#delivery">Delivery &amp; status</a></li>
           <li><a href="#reflections">Reflections</a></li>
@@ -60,6 +61,15 @@
             <div><dt>Contribution</dt><dd>Product flow, UI, prototype and front-end implementation</dd></div>
             <div><dt>Project status</dt><dd>Developed; not operated in store</dd></div>
           </dl>
+          <div class="lvv-scope" aria-label="Project scope: seven workflow steps, three languages, two collaborators and one shared iPad">
+            <span class="eyebrow">Project scope · not outcome metrics</span>
+            <div class="lvv-scope-grid">
+              <div><strong>07</strong><span>workflow steps</span></div>
+              <div><strong>03</strong><span>interface languages</span></div>
+              <div><strong>02</strong><span>people sharing the flow</span></div>
+              <div><strong>01</strong><span>shared in-store iPad</span></div>
+            </div>
+          </div>
         </section>
 
         <section id="background" class="case-section">
@@ -90,10 +100,13 @@
           <span class="section-label">Evidence and constraints</span>
           <h2>What informed the design—and what remained untested.</h2>
           <p>The project was shaped by stakeholder requirements, observation of the planned service location, team reviews of the flow and prototype, and internal flow testing.</p>
-          <div class="two-notes">
-            <article class="evidence-card"><span class="evidence-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v13H4zM8 9h8M8 12h6M8 15h8"/><path d="m3 3 2 2M21 3l-2 2"/></svg></span><h3>Evidence available</h3><p>Service requirements, on-site observation of circulation and the planned location, iterative team reviews, internal flow checks and the implemented front end.</p></article>
-            <article class="evidence-card evidence-card--limit"><span class="evidence-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2M4 4l3 3"/></svg></span><h3>Validation not completed</h3><p>No formal interviews with store staff, usability tests with real shoppers or live-store trial are documented. The case therefore reports design intent and delivery, not measured customer outcomes.</p></article>
+          <div class="lvv-evidence-grid">
+            <article><span>01 · Requirements</span><h3>Stakeholder discovery</h3><p>Business and logistics requirements shaped the information the order needed and the rules that affected service choice.</p></article>
+            <article><span>02 · Place</span><h3>On-site observation</h3><p>I observed circulation, the exit and the planned service location while the store was still under construction. This informed the setting, not live staff behavior.</p></article>
+            <article><span>03 · Iteration</span><h3>Team reviews and flow checks</h3><p>The team reviewed the flow, wireframes and prototype; internal checks helped examine sequence and hand-offs.</p></article>
+            <article><span>04 · Delivery</span><h3>Front-end implementation</h3><p>The designed flow was handed off and implemented. That confirms delivery, but does not demonstrate use in the store.</p></article>
           </div>
+          <div class="lvv-evidence-boundary"><strong>Not measured</strong><span>No formal staff interviews, real-customer usability tests, live-store trial or post-launch dataset are documented. There is no defensible time-saved, error-rate or conversion figure to report.</span></div>
         </section>
 
         <section id="decisions" class="case-section">
@@ -138,6 +151,42 @@
           </article>
         </section>
 
+        <section id="components" class="case-section">
+          <span class="section-label">Component logic · reconstructed from the delivered UI</span>
+          <h2>Repeated patterns carried the flow across seven steps.</h2>
+          <p>The original screen below shows several patterns working together. The component notes are a retrospective re-presentation of the delivered interface, not screenshots from a separate design-system library.</p>
+          <figure class="lvv-component-evidence">
+            <button class="image-link evidence-media" type="button" data-lightbox="./assets/lvv/03-service.png" aria-label="Enlarge original service comparison screen showing progress and persistent actions">
+              <img src="./assets/lvv/03-service.png" alt="Original services screen: seven-step progress, shipping options compared by speed and reference price, and a persistent action bar" loading="lazy" />
+            </button>
+            <figcaption>Original prototype · service choice, progress state and persistent actions in one screen.</figcaption>
+          </figure>
+          <div class="lvv-component-grid">
+            <article class="lvv-component-card lvv-component-stepper">
+              <span class="eyebrow">01 · Progress</span>
+              <div class="mini-stepper" aria-hidden="true"><i class="is-done">1</i><b></b><i class="is-done">2</i><b></b><i class="is-current">3</i><b></b><i>4</i><b></b><i>5</i><b></b><i>6</i><b></b><i>7</i></div>
+              <h3>Current, complete and upcoming</h3><p>The stepper keeps the current position visible while distinguishing completed and future tasks.</p>
+            </article>
+            <article class="lvv-component-card lvv-component-choice">
+              <span class="eyebrow">02 · Service choice</span>
+              <div class="mini-service"><strong>Express Europe</strong><span>5–6 days</span><b>13.25 €</b><em>Lowest prices</em></div>
+              <div class="mini-service"><strong>Express Line</strong><span>2–3 days</span><b>17.35 €</b><em class="fastest">The fastest</em></div>
+              <h3>Compare like with like</h3><p>Service, speed and price share one structure. Values shown are prototype reference prices, subject to payment.</p>
+            </article>
+            <article class="lvv-component-card lvv-component-actions">
+              <span class="eyebrow">03 · Persistent actions</span>
+              <div class="mini-actions" aria-hidden="true"><span>← Return</span><span>Cancel this order</span><b>Confirm →</b></div>
+              <h3>Return, cancel, confirm</h3><p>The action bar stays in view; the screenshot shows Confirm disabled until the required information is complete.</p>
+            </article>
+            <article class="lvv-component-card lvv-component-languages">
+              <span class="eyebrow">04 · Language</span>
+              <div class="mini-languages" aria-label="Supported prototype languages"><b>EN</b><span>FR</span><span>中文</span></div>
+              <h3>One structure, three languages</h3><p>English, French and Chinese use the same sequence and interaction patterns.</p>
+            </article>
+          </div>
+          <p class="note">These are project-level components and interaction patterns. No claim is made that they formed a mature, independently maintained design system.</p>
+        </section>
+
         <section id="final-product" class="case-section">
           <span class="section-label">Final product</span>
           <h2>Follow the service from entry to staff hand-off.</h2>
@@ -176,7 +225,7 @@
             <div><strong>Delivered</strong><span>Front-end implementation and interaction patterns</span></div>
             <div><strong>Not completed</strong><span>Live-store trial and operational rollout</span></div>
           </div>
-          <p class="note">The project record available for this case does not confirm a reason for the service not entering store operation. No post-launch usage or business impact is claimed.</p>
+          <div class="lvv-result-note"><strong>What the evidence supports</strong><p>End-to-end design delivery and a completed front-end implementation. The service was not put into store operation, so usage, efficiency and business impact remain unknown.</p></div>
         </section>
 
         <section id="reflections" class="case-section">
