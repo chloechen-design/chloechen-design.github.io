@@ -1,438 +1,211 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="A reflective product design case study for a multilingual, staff-assisted shipping experience at La Vallée Village."
-    />
-    <title>LVV Shipping System — Chloé Chen</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A multilingual, staff-assisted shipping experience for La Vallée Village, designed and developed by Chloé Chen." />
+    <meta property="og:title" content="LVV Shipping System — Chloé Chen" />
+    <meta property="og:description" content="How a shared iPad flow made cross-border shipping decisions clearer for staff and shoppers." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://chloechen-design.github.io/assets/lvv/01-start.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles.css?v=27" />
+    <link rel="stylesheet" href="./src/lvv-case.css?v=1" />
+    <title>LVV Shipping System — Chloé Chen</title>
   </head>
-  <body class="is-loading lvv-page" data-page="case">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div class="loader" id="loader" aria-hidden="true">
-      <div class="loader-mark"><span>LVV</span><i></i></div>
-      <p>Product case study</p>
-    </div>
-    <div class="page-texture" aria-hidden="true"></div>
-
-    <header class="header" aria-label="Portfolio navigation">
-      <a class="brand" href="./index.html" aria-label="Chloé Chen home">
-        <span>CC</span>
-        <strong>Chloé Chen</strong>
-      </a>
-      <div class="header-center">
-        <span>Lead product designer</span>
-        <span>Reflective case study</span>
-      </div>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="./index.html">Home</a>
-        <a class="is-active" href="./work.html">Work</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
+  <body class="lvv-case">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="./index.html"><span class="monogram" aria-hidden="true">CC</span> Chloé Chen</a>
+      <nav aria-label="Main navigation"><a href="./work.html">Work</a><a href="./about.html">About</a><a href="./contact.html">Contact</a></nav>
     </header>
 
-    <main class="case case--lvv" id="main">
-      <section class="case-hero case-hero--lvv">
-        <div class="case-title reveal">
-          <p class="eyebrow">FTL × La Vallée Village · Product design</p>
-          <h1>Staff-assisted shipping at La Vallée Village</h1>
-          <p class="case-lede">
-            A multilingual iPad prototype that turns cross-border parcel rules into a guided in-store
-            experience shared by staff and customers.
-          </p>
-        </div>
-        <dl class="case-meta reveal">
-          <div>
-            <dt>Role</dt>
-            <dd>Lead Product Designer</dd>
-          </div>
-          <div>
-            <dt>Duration</dt>
-            <dd>Approx. 2–3 months</dd>
-          </div>
-          <div>
-            <dt>Status</dt>
-            <dd>Developed, not deployed in store</dd>
-          </div>
-        </dl>
-      </section>
-
-      <section class="lvv-hero-stage reveal" aria-label="Original LVV delivery service prototype">
-        <div class="lvv-device lvv-device--hero">
-          <div class="lvv-device-bar"><span></span><span></span><span></span><strong>Original prototype</strong></div>
-          <img src="./assets/lvv/01-start.png" alt="Original multilingual LVV delivery service start screen" />
-        </div>
-        <p>Original high-fidelity prototype · shown as delivered, not retrospectively polished</p>
-      </section>
-
-      <section class="lvv-truth-strip" aria-label="Project facts">
-        <article class="reveal">
-          <span>01 · Device</span>
-          <strong>Shared in-store iPad</strong>
-        </article>
-        <article class="reveal">
-          <span>02 · Languages</span>
-          <strong>English · French · Chinese</strong>
-        </article>
-        <article class="reveal">
-          <span>03 · Delivery</span>
-          <strong>Prototype + front-end implementation</strong>
-        </article>
-        <article class="reveal">
-          <span>04 · Evidence boundary</span>
-          <strong>No live-store or real-user data</strong>
-        </article>
-      </section>
-
-      <section class="lvv-context">
-        <div class="lvv-section-label reveal">
-          <span>01</span>
-          <p>Context</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">A service problem, not a screen redesign</p>
-          <h2>A luxury purchase leaves the store. The logistics complexity begins.</h2>
-          <p>
-            FTL planned a parcel service near the LVV exit for international visitors sending purchases to
-            hotels or overseas addresses. The existing desktop tool was built around operations. The new iPad
-            had to support a premium, face-to-face service without asking customers or staff to understand every
-            cross-border rule in advance.
-          </p>
-        </div>
-        <blockquote class="lvv-north-star reveal">
-          <span>North star</span>
-          <p>Let staff and customers complete a complex international order together, without either person knowing every logistics rule beforehand.</p>
-        </blockquote>
-      </section>
-
-      <section class="lvv-frame">
-        <div class="lvv-section-label reveal">
-          <span>02</span>
-          <p>Frame</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">The product equation</p>
-          <h2>Two actors. One shared device. Uneven knowledge.</h2>
-        </div>
-        <div class="lvv-actor-grid">
-          <article class="reveal">
-            <span>Customer knows</span>
-            <h3>Destination, items and private information.</h3>
-            <p>Customers need clarity and control when entering addresses, contact details and parcel contents.</p>
-          </article>
-          <article class="reveal">
-            <span>Staff knows</span>
-            <h3>Service rules, exceptions and what happens next.</h3>
-            <p>Staff guide the service, explain trade-offs and continue payment and operations outside the product.</p>
-          </article>
-          <article class="reveal">
-            <span>The interface must know</span>
-            <h3>When to narrow, compare, validate and hand off.</h3>
-            <p>The system carries rule complexity so neither actor has to hold the entire process in memory.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="lvv-flow-section">
-        <div class="lvv-section-label reveal">
-          <span>03</span>
-          <p>Map</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">Information architecture</p>
-          <h2>Start with the variable that changes everything else.</h2>
-          <p>
-            Destination determines carrier availability, delivery time, price, insurance and required fields.
-            Asking it first prevents customers from entering details that may later become irrelevant.
-          </p>
-        </div>
-        <ol class="lvv-flow reveal" aria-label="Seven-step shipping flow">
-          <li class="is-key"><span>01</span><strong>Destination</strong><small>Rules begin here</small></li>
-          <li><span>02</span><strong>Weight</strong></li>
-          <li><span>03</span><strong>Services</strong></li>
-          <li><span>04</span><strong>Item</strong></li>
-          <li><span>05</span><strong>Contact</strong></li>
-          <li><span>06</span><strong>Insurance</strong></li>
-          <li><span>07</span><strong>Finish</strong></li>
+    <div class="case-layout">
+      <nav class="case-nav" aria-label="Case study sections">
+        <a href="./work.html">← All work</a>
+        <ol>
+          <li><a href="#overview" aria-current="location">Project overview</a></li>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#evidence">Evidence</a></li>
+          <li><a href="#decisions">Design decisions</a></li>
+          <li><a href="#final-product">Final product</a></li>
+          <li><a href="#delivery">Delivery &amp; status</a></li>
+          <li><a href="#reflections">Reflections</a></li>
         </ol>
-      </section>
+      </nav>
 
-      <section class="lvv-decisions">
-        <div class="lvv-section-label reveal">
-          <span>04</span>
-          <p>Decide</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">Three decisions that shaped the product</p>
-          <h2>The work was not the number of screens. It was deciding what the system should carry.</h2>
-        </div>
-        <div class="lvv-decision-list">
-          <article class="reveal">
-            <span>Decision 01</span>
-            <h3>Progressive disclosure over one exhaustive form.</h3>
-            <p>Seven focused steps reduce visible complexity while persistent progress, return and cancel controls support recovery.</p>
-          </article>
-          <article class="reveal">
-            <span>Decision 02</span>
-            <h3>Shared control over forced self-service.</h3>
-            <p>Staff guide logistics decisions; customers can enter sensitive information directly. The device becomes a collaboration surface.</p>
-          </article>
-          <article class="reveal">
-            <span>Decision 03</span>
-            <h3>Comparable trade-offs over a list of carriers.</h3>
-            <p>Service, speed and starting price use a consistent structure, with “Lowest price” and “Fastest” labels supporting choice.</p>
-          </article>
-        </div>
-      </section>
+      <main id="main" class="case-body">
+        <figure class="lvv-cover">
+          <div class="lvv-cover-frame">
+            <img src="./assets/lvv/01-start.png" alt="Original multilingual start screen for the La Vallée Village assisted shipping service" fetchpriority="high" />
+          </div>
+          <figcaption><span class="lvv-cover-caption-mark" aria-hidden="true">↗</span> Original high-fidelity prototype · service entry</figcaption>
+        </figure>
 
-      <section class="lvv-system" id="system">
-        <div class="lvv-section-label reveal">
-          <span>05</span>
-          <p>Systemise</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">A project-level component system</p>
-          <h2>Shared rules for seven steps, three languages and one hand-off.</h2>
-          <p>
-            Repeating navigation, actions and form states screen by screen would invite drift. I turned
-            the recurring interaction logic into reusable components so design reviews and front-end
-            implementation could refer to the same states.
-          </p>
+        <div class="case-title">
+          <span class="eyebrow">FTL × La Vallée Village · Product design</span>
+          <h1>A shared iPad flow for cross-border shipping.</h1>
+          <div class="tags"><span class="tag">Staff-assisted service</span><span class="tag">iPad</span><span class="tag">English · French · Chinese</span></div>
         </div>
 
-        <div class="lvv-system-demo reveal" data-lvv-system>
-          <div class="lvv-system-head">
-            <div>
-              <span>Original component logic</span>
-              <strong>Retrospectively re-presented for clarity</strong>
+        <section id="overview" class="case-section">
+          <span class="section-label">Project overview</span>
+          <p class="summary">I designed and developed a multilingual in-store shipping flow that helps staff guide service decisions while shoppers provide destination, contact and parcel details.</p>
+          <dl class="facts">
+            <div><dt>My role</dt><dd>Lead Product Designer</dd></div>
+            <div><dt>Timeline</dt><dd>Approximately 2–3 months</dd></div>
+            <div><dt>Contribution</dt><dd>Product flow, UI, prototype and front-end implementation</dd></div>
+            <div><dt>Project status</dt><dd>Developed; not operated in store</dd></div>
+          </dl>
+        </section>
+
+        <section id="background" class="case-section">
+          <span class="section-label">Background</span>
+          <h2>A shipping service at the end of a shopping visit.</h2>
+          <p>FTL planned a parcel service near the La Vallée Village exit for international visitors sending purchases to a hotel or an overseas address. The existing desktop tool supported operations; the new iPad needed to support a face-to-face service between staff and shoppers.</p>
+          <div class="two-notes">
+            <article class="actor-card actor-shopper"><span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.2"/><path d="M5.5 20c.4-4.1 2.6-6.2 6.5-6.2s6.1 2.1 6.5 6.2"/><path d="M17.6 5.4h3.1v3.1"/></svg></span><h3>Shoppers bring</h3><p>The destination, purchase details and private contact information.</p></article>
+            <article class="actor-card actor-staff"><span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V8.5L12 4l8 4.5V20"/><path d="M8 20v-6h8v6M8 9h.01M12 9h.01M16 9h.01"/></svg></span><h3>Staff bring</h3><p>Knowledge of shipping options, service rules and the operational hand-off.</p></article>
+          </div>
+        </section>
+
+        <section id="problem" class="case-section">
+          <span class="section-label">The problem</span>
+          <h2>One order depended on two people with different information.</h2>
+          <p>Shoppers knew where a parcel should go and what it contained. Staff knew how the shipping service worked. A long operational form would make the shopper carry too much logistics detail; a self-service flow would remove staff guidance from decisions that needed it.</p>
+          <blockquote class="callout"><span class="eyebrow">The design question</span>How can staff and shoppers complete an international order together without either person having to remember every shipping rule?</blockquote>
+          <div class="handoff-map" aria-label="Shared service roles: shopper, guided iPad, staff hand-off">
+            <div><span class="handoff-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.2"/><path d="M5.5 20c.4-4.1 2.6-6.2 6.5-6.2s6.1 2.1 6.5 6.2"/></svg></span><strong>Shopper</strong><small>Destination + parcel</small></div>
+            <span class="handoff-connector" aria-hidden="true">→</span>
+            <div class="handoff-device"><span class="handoff-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M9 6h6M8 10h8M8 13h5M11 18h2"/></svg></span><strong>Shared iPad</strong><small>Guided choices</small></div>
+            <span class="handoff-connector" aria-hidden="true">→</span>
+            <div><span class="handoff-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V8.5L12 4l8 4.5V20"/><path d="M8 20v-6h8v6M8 9h.01M12 9h.01M16 9h.01"/></svg></span><strong>Staff</strong><small>Service + hand-off</small></div>
+          </div>
+        </section>
+
+        <section id="evidence" class="case-section">
+          <span class="section-label">Evidence and constraints</span>
+          <h2>What informed the design—and what remained untested.</h2>
+          <p>The project was shaped by stakeholder requirements, observation of the planned service location, team reviews of the flow and prototype, and internal flow testing.</p>
+          <div class="two-notes">
+            <article class="evidence-card"><span class="evidence-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v13H4zM8 9h8M8 12h6M8 15h8"/><path d="m3 3 2 2M21 3l-2 2"/></svg></span><h3>Evidence available</h3><p>Service requirements, on-site observation of circulation and the planned location, iterative team reviews, internal flow checks and the implemented front end.</p></article>
+            <article class="evidence-card evidence-card--limit"><span class="evidence-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2M4 4l3 3"/></svg></span><h3>Validation not completed</h3><p>No formal interviews with store staff, usability tests with real shoppers or live-store trial are documented. The case therefore reports design intent and delivery, not measured customer outcomes.</p></article>
+          </div>
+        </section>
+
+        <section id="decisions" class="case-section">
+          <span class="section-label">Process · Three design decisions</span>
+          <h2>Turn shipping rules into choices people can make together.</h2>
+          <p class="decision-intro">The flow uses seven focused steps instead of one exhaustive form. The order starts with destination because it changes which services and information are relevant.</p>
+          <ol class="page-sequence" aria-label="Seven-step shipping flow">
+            <li><span>01</span><div><strong>Destination</strong><p>Set the route and available services.</p></div><i class="flow-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.2"/><path d="M12 1.8v3M12 19.2v3M1.8 12h3M19.2 12h3"/></svg></i></li>
+            <li><span>02</span><div><strong>Weight</strong><p>Capture parcel information.</p></div><i class="flow-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 8 8-4 8 4-8 4-8-4Z"/><path d="M4 8v9l8 4 8-4V8M12 12v9M8 6l8 4"/></svg></i></li>
+            <li><span>03</span><div><strong>Services</strong><p>Compare delivery options.</p></div><i class="flow-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h14M15 4l3 3-3 3M20 17H6M9 14l-3 3 3 3"/></svg></i></li>
+            <li><span>04</span><div><strong>Item</strong><p>Describe what is being sent.</p></div><i class="flow-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5zM8 9h8M8 12h5M8 15h7"/></svg></i></li>
+            <li><span>05</span><div><strong>Contact</strong><p>Enter recipient information.</p></div><i class="flow-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.3"/><path d="M5 20c.5-4 2.8-6 7-6s6.5 2 7 6"/></svg></i></li>
+            <li><span>06</span><div><strong>Insurance</strong><p>Review protection for the parcel.</p></div><i class="flow-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 7 3v5c0 4.7-2.6 7.7-7 10-4.4-2.3-7-5.3-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></i></li>
+            <li><span>07</span><div><strong>Finish</strong><p>Return the order to staff for the next step.</p></div><i class="flow-glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></svg></i></li>
+          </ol>
+
+          <article class="decision">
+            <h3><span class="decision-number">01</span>Ask for the destination first.</h3>
+            <p>Destination affects carrier availability, delivery time, price, insurance and required details. Asking it first narrows the route before the shopper enters information that may not apply.</p>
+            <figure class="evidence">
+              <button class="image-link evidence-media" type="button" data-lightbox="./assets/lvv/02-destination.png" aria-label="Enlarge destination selection screen"><img src="./assets/lvv/02-destination.png" alt="Destination selection with country shortcuts and search" loading="lazy" /></button>
+              <figcaption>Interface evidence · The destination screen establishes the route before parcel details.</figcaption>
+            </figure>
+          </article>
+
+          <article class="decision">
+            <h3><span class="decision-number">02</span>Compare services by trade-off.</h3>
+            <p>A consistent option layout puts service, speed and starting price in one view. “Lowest price” and “Fastest” help staff explain the options without making shoppers interpret a carrier list.</p>
+            <figure class="evidence">
+              <button class="image-link evidence-media" type="button" data-lightbox="./assets/lvv/03-service.png" aria-label="Enlarge service comparison screen"><img src="./assets/lvv/03-service.png" alt="Shipping options compared by service, delivery speed and starting price" loading="lazy" /></button>
+              <figcaption>Interface evidence · Comparable information supports a shared choice.</figcaption>
+            </figure>
+          </article>
+
+          <article class="decision">
+            <h3><span class="decision-number">03</span>Keep staff guidance and shopper input on one device.</h3>
+            <p>Staff can guide service decisions while shoppers enter personal and parcel details themselves. The iPad acts as a collaboration surface rather than forcing the whole service into self-service.</p>
+            <figure class="evidence">
+              <button class="image-link evidence-media" type="button" data-lightbox="./assets/lvv/04-item.png" aria-label="Enlarge item details screen"><img src="./assets/lvv/04-item.png" alt="Item details screen with structured parcel fields" loading="lazy" /></button>
+              <figcaption>Interface evidence · Structured fields give shoppers a clear way to provide item details.</figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <section id="final-product" class="case-section">
+          <span class="section-label">Final product</span>
+          <h2>Follow the service from entry to staff hand-off.</h2>
+          <p>The original prototype moves from language selection through destination, service choice and item details to order completion. Select a step to inspect the screens.</p>
+          <div class="gallery lvv-gallery" data-lvv-demo>
+            <div class="gallery-controls lvv-gallery-controls" role="tablist" aria-label="Original prototype screens">
+              <button type="button" class="is-active" role="tab" aria-selected="true" data-lvv-step="0">01 · Start</button>
+              <button type="button" role="tab" aria-selected="false" data-lvv-step="1">02 · Destination</button>
+              <button type="button" role="tab" aria-selected="false" data-lvv-step="2">03 · Services</button>
+              <button type="button" role="tab" aria-selected="false" data-lvv-step="3">04 · Item details</button>
+              <button type="button" role="tab" aria-selected="false" data-lvv-step="4">05 · Finish</button>
             </div>
-            <p>Choose a step to inspect the shared state model.</p>
+            <figure class="gallery-panel lvv-gallery-panel">
+              <div class="gallery-hint"><span data-lvv-status>Language and service entry</span><span data-lvv-number>01 / 05</span></div>
+              <div class="lvv-gallery-image"><img data-lvv-image src="./assets/lvv/01-start.png" alt="Original multilingual shipping service start screen" /></div>
+              <figcaption class="lvv-gallery-note" data-lvv-note>Set the language and introduce the assisted service before the order begins.</figcaption>
+            </figure>
           </div>
 
-          <div class="lvv-system-progress" role="tablist" aria-label="Seven-step component states">
-            <button class="is-current" type="button" role="tab" aria-selected="true" data-system-step="0"><span>1</span><small>Destination</small></button>
-            <button type="button" role="tab" aria-selected="false" data-system-step="1"><span>2</span><small>Weight</small></button>
-            <button type="button" role="tab" aria-selected="false" data-system-step="2"><span>3</span><small>Services</small></button>
-            <button type="button" role="tab" aria-selected="false" data-system-step="3"><span>4</span><small>Item</small></button>
-            <button type="button" role="tab" aria-selected="false" data-system-step="4"><span>5</span><small>Contact</small></button>
-            <button type="button" role="tab" aria-selected="false" data-system-step="5"><span>6</span><small>Insurance</small></button>
-            <button type="button" role="tab" aria-selected="false" data-system-step="6"><span>7</span><small>Finish</small></button>
-          </div>
-
-          <div class="lvv-system-state" aria-live="polite">
-            <div>
-              <span data-system-counter>Step 01 / 07</span>
-              <h3 data-system-title>Where is the parcel going?</h3>
-              <p data-system-helper>Destination sets the rules for every decision that follows.</p>
+          <div class="lvv-rules">
+            <span class="eyebrow">Interaction rules visible across the original screens</span>
+            <div class="two-notes lvv-pattern-cards">
+              <article><span class="pattern-index">01</span><h3>Keep progress visible</h3><p>Repeated step navigation helps staff and shoppers see where they are in the longer order.</p></article>
+              <article><span class="pattern-index">02</span><h3>Make recovery predictable</h3><p>Return, cancel and continue actions follow a consistent hierarchy across the flow.</p></article>
+              <article><span class="pattern-index">03</span><h3>Allow for three languages</h3><p>Shared patterns carry English, French and Chinese content through the same sequence.</p></article>
             </div>
-            <div class="lvv-system-field">
-              <label for="system-preview">Country / region</label>
-              <div id="system-preview"><span data-system-value>France</span><i aria-hidden="true">⌄</i></div>
+            <p class="note">This is a summary of recurring behavior in the original screens, not a claim that a separate design-system library shipped with the project.</p>
+          </div>
+        </section>
+
+        <section id="delivery" class="case-section">
+          <span class="section-label">Delivery and project status</span>
+          <h2>Designed and developed; not operated in the store.</h2>
+          <div class="facts-strip" aria-label="Project delivery status">
+            <div><strong>Delivered</strong><span>End-to-end multilingual prototype</span></div>
+            <div><strong>Delivered</strong><span>Front-end implementation and interaction patterns</span></div>
+            <div><strong>Not completed</strong><span>Live-store trial and operational rollout</span></div>
+          </div>
+          <p class="note">The project record available for this case does not confirm a reason for the service not entering store operation. No post-launch usage or business impact is claimed.</p>
+        </section>
+
+        <section id="reflections" class="case-section">
+          <span class="section-label">Reflections</span>
+          <h2>The staff hand-off is part of the product.</h2>
+          <figure class="old-site-review lvv-review">
+            <button class="image-link" type="button" data-lightbox="./assets/lvv/04-item.png" aria-label="Enlarge original item details screen"><img src="./assets/lvv/04-item.png" alt="Original item details screen used for the retrospective review" loading="lazy" /></button>
+            <div class="old-site-caption">
+              <span class="eyebrow">Retrospective review · Original interface</span>
+              <h3>What I would refine next</h3>
+              <ol class="problem-list">
+                <li><strong>Strengthen contrast</strong><span>Some gray text is too faint for quick operational scanning.</span></li>
+                <li><strong>Recheck the display type</strong><span>The expressive serif is not always suited to fast operational reading.</span></li>
+                <li><strong>Clarify incomplete states</strong><span>The stepper makes incomplete steps too faint to scan.</span></li>
+                <li><strong>Explain disabled actions</strong><span>Show what information is missing and how to continue.</span></li>
+                <li><strong>Design the device hand-off</strong><span>Make the transition between staff guidance and shopper input explicit.</span></li>
+              </ol>
             </div>
-          </div>
-
-          <div class="lvv-system-actions" aria-label="Shared action hierarchy">
-            <button type="button" class="is-secondary">← Return</button>
-            <button type="button" class="is-danger">Cancel this order</button>
-            <button type="button" class="is-primary" data-system-action>Continue →</button>
-          </div>
-        </div>
-
-        <div class="lvv-system-patterns reveal">
-          <article>
-            <span>01 · Navigation</span>
-            <h3>One state model</h3>
-            <p>Complete, current and upcoming steps use the same visual and behavioral rules across the flow.</p>
-          </article>
-          <article>
-            <span>02 · Actions</span>
-            <h3>One hierarchy</h3>
-            <p>Return, cancel and continue remain predictable while labels adapt to the task.</p>
-          </article>
-          <article>
-            <span>03 · Content</span>
-            <h3>Three languages</h3>
-            <p>Flexible components absorb English, French and Chinese labels without rebuilding each screen.</p>
-          </article>
-        </div>
-
-        <div class="lvv-system-reflection reveal">
-          <p><span>What it created</span>Interaction consistency, faster iteration and a clearer implementation contract.</p>
-          <p><span>What it did not prove</span>Accessibility quality, live-store usability or long-term operational ownership.</p>
-        </div>
-      </section>
-
-      <section class="lvv-prototype">
-        <div class="lvv-section-label reveal">
-          <span>06</span>
-          <p>Prototype</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">Explore the original flow</p>
-          <h2>Five moments where product logic becomes visible.</h2>
-          <p>Use the controls to move through selected states from the delivered Figma prototype.</p>
-        </div>
-        <div class="lvv-demo reveal" data-lvv-demo>
-          <div class="lvv-demo-controls" role="tablist" aria-label="Prototype screens">
-            <button class="is-active" type="button" role="tab" aria-selected="true" data-lvv-step="0"><span>01</span>Start</button>
-            <button type="button" role="tab" aria-selected="false" data-lvv-step="1"><span>02</span>Destination</button>
-            <button type="button" role="tab" aria-selected="false" data-lvv-step="2"><span>03</span>Compare</button>
-            <button type="button" role="tab" aria-selected="false" data-lvv-step="3"><span>04</span>Describe</button>
-            <button type="button" role="tab" aria-selected="false" data-lvv-step="4"><span>05</span>Hand off</button>
-          </div>
-          <div class="lvv-device">
-            <div class="lvv-device-bar"><span></span><span></span><span></span><strong data-lvv-status>Language and service entry</strong></div>
-            <img
-              data-lvv-image
-              src="./assets/lvv/01-start.png"
-              alt="Original multilingual LVV delivery service start screen"
-            />
-          </div>
-          <div class="lvv-demo-note" aria-live="polite">
-            <span data-lvv-number>01 / 05</span>
-            <p data-lvv-note>Set language and frame the assisted service before the order begins.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="lvv-validation">
-        <div class="lvv-section-label reveal">
-          <span>07</span>
-          <p>Validate</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">Evidence, with its limits visible</p>
-          <h2>What we checked, and what we did not.</h2>
-        </div>
-        <div class="lvv-evidence-columns">
-          <article class="reveal">
-            <span>Confirmed evidence</span>
-            <ul>
-              <li>Stakeholder discovery and requirements</li>
-              <li>On-site observation of the LVV circulation and planned store location</li>
-              <li>Iterative team reviews of flow, wireframes and prototype</li>
-              <li>Internal flow testing and front-end implementation</li>
-            </ul>
-          </article>
-          <article class="reveal">
-            <span>Validation limits</span>
-            <ul>
-              <li>No formal store-staff interviews</li>
-              <li>No usability test with real customers</li>
-              <li>No live-store trial</li>
-              <li>No post-launch behavior or business data</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="lvv-critique">
-        <div class="lvv-section-label reveal">
-          <span>08</span>
-          <p>Look again</p>
-        </div>
-        <div class="lvv-section-copy reveal">
-          <p class="eyebrow">2026 retrospective</p>
-          <h2>The flow is stronger than the interface.</h2>
-          <p>
-            I am keeping the original UI visible because it is evidence of the real work. A future refinement
-            will be labeled clearly rather than presented as if it shipped with the project.
-          </p>
-        </div>
-        <div class="lvv-critique-board reveal">
-          <figure>
-            <img src="./assets/lvv/04-item.png" alt="Original item information screen showing the UI reviewed in retrospect" loading="lazy" />
-            <figcaption>Original prototype · item information</figcaption>
           </figure>
-          <div>
-            <article><span>01</span><p>Low-contrast gray text weakens hierarchy and accessibility.</p></article>
-            <article><span>02</span><p>The display serif is expressive, but not always right for operational scanning.</p></article>
-            <article><span>03</span><p>The dense stepper makes incomplete states too faint.</p></article>
-            <article><span>04</span><p>Disabled actions do not explain what is missing or how to continue.</p></article>
-            <article><span>05</span><p>The staff-to-customer device handoff is implied, not explicitly designed.</p></article>
-          </div>
-        </div>
-      </section>
+          <p>The next iteration should test these changes with store staff and shoppers, then observe where the service needs a clearer hand-off or more guidance. That would validate the interaction in the setting it was designed for.</p>
+        </section>
 
-      <section class="lvv-outcome">
-        <div class="lvv-section-label reveal">
-          <span>09</span>
-          <p>Deliver & learn</p>
-        </div>
-        <div class="lvv-outcome-copy reveal">
-          <p class="eyebrow">The honest outcome</p>
-          <h2>Developed, but not operated in the LVV store.</h2>
-          <p>
-            The front end was completed after design handoff, but the service was not put into store operation.
-            The most credible explanation in the available record is a lack of clear long-term maintenance and
-            operational ownership; the store continued with the legacy desktop system.
-          </p>
-          <blockquote>Maintenance and operational ownership are product requirements, not post-launch details.</blockquote>
-        </div>
-        <div class="lvv-outcome-status reveal" aria-label="Project outcome status">
-          <p><span>Completed</span>End-to-end flow and high-fidelity prototype</p>
-          <p><span>Completed</span>Multilingual direction and component states</p>
-          <p><span>Completed</span>Development handoff and front-end implementation</p>
-          <p class="is-not"><span>Not completed</span>Live-store validation and operational rollout</p>
-        </div>
-      </section>
+        <nav class="next-project" aria-label="More projects"><a href="./work.html"><span>Explore</span>← All work</a><a href="./wms-design-system.html"><span>Next case study</span>WMS Design System →</a></nav>
+      </main>
+    </div>
 
-      <section class="lvv-interview">
-        <div class="lvv-interview-intro reveal">
-          <div class="lvv-avatar" aria-label="Portrait placeholder for Chloé Chen">CC</div>
-          <div>
-            <p class="eyebrow">Designer interview</p>
-            <h2>Hard questions, honest answers.</h2>
-            <p>The questions I would expect an interviewer, another designer or my future self to ask.</p>
-          </div>
-        </div>
-        <div class="lvv-interview-list">
-          <details class="reveal" open>
-            <summary><span>01</span>Was the product actually launched?</summary>
-            <p>No. The interface was designed and developed, but it was not put into operation at the LVV store. That distinction is why this case focuses on decisions and delivery evidence, not invented user or business impact.</p>
-          </details>
-          <details class="reveal">
-            <summary><span>02</span>How can you defend the design without real-user validation?</summary>
-            <p>I can defend the logic that was reviewed, internally tested and implemented. I cannot claim that the experience improved store performance. A stronger process would have added staff interviews, customer usability tests and a live-store pilot.</p>
-          </details>
-          <details class="reveal">
-            <summary><span>03</span>Why show a project that did not make it into the store?</summary>
-            <p>Because non-deployment does not erase the product thinking. It reveals another layer of it: a product is not ready when only the interface is ready. Ownership, maintenance and operations belong inside the product definition.</p>
-          </details>
-          <details class="reveal">
-            <summary><span>04</span>What would you change if you did it again?</summary>
-            <p>I would involve store staff and real customers earlier, define a named operational owner before development, and improve accessibility, error recovery, role handoff and the final next-step guidance.</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="lvv-final-note reveal">
-        <p>Not every valuable case is a perfect launch story.</p>
-        <h2>Sometimes the strongest design evidence is knowing exactly what remains unresolved.</h2>
-      </section>
-
-      <section class="project-next">
-        <a class="round-link" href="./work.html">
-          <span>Back to work</span>
-          <i aria-hidden="true">←</i>
-        </a>
-        <a class="round-link" href="./wms-design-system.html">
-          <span>Next case</span>
-          <i aria-hidden="true">→</i>
-        </a>
-      </section>
-    </main>
-
+    <footer class="site-footer"><span>Chloé Chen · Product Designer · Paris</span><div><a href="mailto:chloechenjob00@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/chloechen0823" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></footer>
+    <dialog id="lightbox" class="lightbox" aria-label="Enlarged project image"><button class="lightbox-close" type="button" aria-label="Close enlarged image">Close ×</button><img alt="" /></dialog>
     <script src="./src/main.js?v=20"></script>
+    <script src="./src/lvv-case.js?v=1"></script>
   </body>
 </html>
