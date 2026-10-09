@@ -13,7 +13,8 @@
       if (active) {
         link.setAttribute("aria-current", "location");
         if (window.matchMedia("(max-width: 720px)").matches) {
-          link.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+          const list = link.closest("ol");
+          list.scrollTo({ left: link.parentElement.offsetLeft - list.clientWidth / 2 + link.offsetWidth / 2, behavior: "auto" });
         }
       } else {
         link.removeAttribute("aria-current");
@@ -81,7 +82,7 @@
   }, { passive: true });
   syncArrows();
 
-  const motionItems = Array.from(document.querySelectorAll(".case-section, .decision, .lvv-evidence-grid article, .lvv-component-card"));
+  const motionItems = Array.from(document.querySelectorAll(".decision, .lvv-evidence-grid article, .next-tests article"));
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if ("IntersectionObserver" in window && !reducedMotion) {
     const revealObserver = new IntersectionObserver((entries, currentObserver) => {
@@ -91,11 +92,62 @@
           currentObserver.unobserve(entry.target);
         }
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0 });
     motionItems.forEach((item) => {
       item.classList.add("lvv-reveal");
       revealObserver.observe(item);
     });
     document.body.classList.add("is-enhanced");
   }
+})();
+
+// Self-contained, retrospective component demonstrations.
+(() => {
+  const lab = document.querySelector('[data-component-lab]');
+  if (!lab) return;
+  const tabs = [...lab.querySelectorAll('[data-lab]')];
+  const selectTab = (tab) => {
+    tabs.forEach(item => {
+      const active = item === tab;
+      item.setAttribute('aria-selected', String(active));
+      item.tabIndex = active ? 0 : -1;
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
+    });
+  };
+  tabs.forEach((tab,index) => {
+    tab.addEventListener('click', () => selectTab(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if(event.key === 'ArrowRight') next=(index+1)%tabs.length;
+      if(event.key === 'ArrowLeft') next=(index-1+tabs.length)%tabs.length;
+      if(event.key === 'Home') next=0;
+      if(event.key === 'End') next=tabs.length-1;
+      if(next !== undefined) { event.preventDefault(); selectTab(tabs[next]); tabs[next].focus(); }
+    });
+  });
+  const steps = [...lab.querySelectorAll('[data-progress]')];
+  const showProgress = selected => {
+    steps.forEach(step => {
+      step.classList.toggle('is-done', +step.dataset.progress < +selected.dataset.progress);
+      step.setAttribute('aria-pressed', String(step === selected));
+    });
+    lab.querySelector('[data-progress-note]').textContent = `Step ${selected.dataset.progress} of 7 · ${selected.querySelector('small').textContent}`;
+  };
+  steps.forEach(step => step.addEventListener('click', () => showProgress(step)));
+  showProgress(steps[2]);
+  const services = [...lab.querySelectorAll('[data-service]')];
+  services.forEach(service => service.addEventListener('click', () => {
+    services.forEach(item => item.setAttribute('aria-pressed', String(item === service)));
+    lab.querySelector('[data-service-note]').textContent = service.dataset.service === 'economy'
+      ? 'Express Europe selected · lower reference price, longer delivery window.'
+      : 'Express Line selected · faster delivery, higher reference price.';
+  }));
+  const ready = lab.querySelector('[data-ready]');
+  const confirm = lab.querySelector('[data-confirm]');
+  const feedback = lab.querySelector('[data-action-note]');
+  ready.addEventListener('change', () => {
+    confirm.disabled = !ready.checked;
+    feedback.textContent = ready.checked ? 'Complete · confirmation is now available.' : 'Incomplete · confirmation is unavailable.';
+  });
+  confirm.addEventListener('click', () => { feedback.textContent = 'Confirmation state demonstrated. No order is created.'; });
 })();
