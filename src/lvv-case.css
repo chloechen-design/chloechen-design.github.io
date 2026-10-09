@@ -417,3 +417,5 @@
  .lvv-case .demo-actionbar { gap:9px; font-size:9px; padding:14px 8px; }.lvv-case .demo-actionbar button { font-size:10px;padding:9px; }
  .lvv-case .service-boundary>div { grid-template-columns:1fr; gap:8px; }.lvv-case .service-boundary>div>span { transform:rotate(90deg); width:15px; }
 }
+
+@media(min-width:721px) { .lvv-case .case-nav { overflow-x:hidden; } .lvv-case .case-nav li a:hover { transform:none; } }
