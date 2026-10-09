@@ -1,260 +1,185 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="WMS Design System case study by Chloé Chen: a scalable interface system for warehouse management products."
-    />
-    <title>WMS Design System — Chloé Chen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./src/styles.css?v=24" />
-  </head>
-  <body class="is-loading" data-page="case">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div class="loader" id="loader" aria-hidden="true">
-      <div class="loader-mark"><span>WMS</span><i></i></div>
-      <p>Design system</p>
-    </div>
-    <div class="page-texture" aria-hidden="true"></div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How user research, UX audit and a reusable interface system shaped FTL's WMS and warehouse tools." />
+  <meta property="og:title" content="WMS Product System — Chloé Chen" />
+  <meta property="og:description" content="From warehouse feedback to shared interface rules, high-fidelity product flows and developer documentation." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://chloechen-design.github.io/assets/wms-design-system/01-FR.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/styles.css?v=27" />
+  <link rel="stylesheet" href="./src/lvv-case.css?v=2" />
+  <link rel="stylesheet" href="./src/wms-case.css?v=1" />
+  <title>WMS Product System — Chloé Chen</title>
+</head>
+<body class="wms-case is-loading" data-page="case">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="loader" id="loader" aria-hidden="true"><div class="loader-mark"><span>WMS</span><i></i></div><p>Product system case study</p></div>
+  <header class="site-header">
+    <a class="brand" href="./index.html"><span class="monogram" aria-hidden="true">CC</span> Chloé Chen</a>
+    <nav aria-label="Main navigation"><a href="./work.html">Work</a><a href="./about.html">About</a><a href="./contact.html">Contact</a></nav>
+  </header>
 
-    <header class="header" aria-label="Portfolio navigation">
-      <a class="brand" href="./index.html" aria-label="Chloé Chen home">
-        <span>CC</span>
-        <strong>Chloé Chen</strong>
-      </a>
-      <div class="header-center">
-        <span>Product designer</span>
-        <span>Case study · Design system</span>
+  <div class="case-layout">
+    <nav class="case-nav" aria-label="Case study sections">
+      <a href="./work.html">← All work</a>
+      <ol>
+        <li><a href="#overview" aria-current="location">Overview</a></li>
+        <li><a href="#context">Context</a></li>
+        <li><a href="#evidence">Evidence</a></li>
+        <li><a href="#synthesis">Synthesis</a></li>
+        <li><a href="#decisions">Decisions</a></li>
+        <li><a href="#system">System</a></li>
+        <li><a href="#adoption">Adoption</a></li>
+        <li><a href="#delivery">Delivery</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ol>
+    </nav>
+
+    <main id="main" class="case-body">
+      <figure class="wms-cover">
+        <img src="./assets/wms-design-system/01-FR.png" alt="Original WMS project presentation cover, with the WMS interface shown on a desktop display" fetchpriority="high" />
+        <figcaption>Original project material · the WMS and its internal design system</figcaption>
+      </figure>
+
+      <div class="case-title" id="overview">
+        <span class="eyebrow">FTL Group · Warehouse software · 2021–2022</span>
+        <h1>Making warehouse software easier to learn, use and extend.</h1>
+        <p class="wms-lede">I worked across WMS discovery, UX improvements and a reusable interface system. The work connected frontline feedback to product flows, Figma components, high-fidelity screens and developer documentation.</p>
+        <div class="tags"><span class="tag">UX/UI design</span><span class="tag">WMS + PDA</span><span class="tag">Design system</span><span class="tag">Internal tools</span></div>
       </div>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="./index.html">Home</a>
-        <a class="is-active" href="./work.html">Work</a>
-        <a href="./about.html">About</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
-    </header>
 
-    <main id="main">
-      <section class="case-hero case-hero--wms">
-        <div class="case-title reveal">
-          <p class="eyebrow">Warehouse Management System · Design System</p>
-          <h1>Building a scalable interface system for complex logistics tools.</h1>
-          <p class="case-lede">
-            I helped structure a WMS product experience into a reusable design system, turning scattered
-            interface patterns into shared components, clearer workflows and a more reliable handoff process.
-          </p>
-        </div>
-        <dl class="case-meta reveal">
-          <div>
-            <dt>Role</dt>
-            <dd>UX/UI Designer</dd>
-          </div>
-          <div>
-            <dt>Scope</dt>
-            <dd>Audit · Components · Prototype · Handoff</dd>
-          </div>
-          <div>
-            <dt>Timeline</dt>
-            <dd>2021-2022</dd>
-          </div>
+      <section class="case-section wms-snapshot">
+        <dl class="facts">
+          <div><dt>My role</dt><dd>UX/UI Designer · research, audit, flows, interface system and product screens</dd></div>
+          <div><dt>Team</dt><dd>Product, design, operations, warehouse users and international development</dd></div>
+          <div><dt>Methods</dt><dd>Interviews, internal survey, UX audit, prototype reviews and user tests</dd></div>
+          <div><dt>Tools</dt><dd>Figma, Miro, Jira, Storybook and Webflow release notes</dd></div>
         </dl>
+        <aside class="wms-evidence-boundary"><strong>What the evidence can show</strong><p>The materials document research, design decisions, prototypes, a Figma library, Storybook and team communication. They do not provide verified adoption, productivity or error-reduction metrics.</p></aside>
       </section>
 
-      <section class="case-visual-hero reveal" aria-label="Project visual overview">
-        <img src="./assets/wms-design-system/01-FR.png" alt="WMS Design System presentation cover" />
-      </section>
-
-      <section class="snapshot-strip" aria-label="Project snapshot">
-        <article class="snapshot-item reveal">
-          <span>Problem</span>
-          <p>Multiple WMS interfaces were evolving without a shared visual and interaction language.</p>
-        </article>
-        <article class="snapshot-item reveal">
-          <span>Challenge</span>
-          <p>Create consistency without slowing down delivery or over-designing a still-evolving product.</p>
-        </article>
-        <article class="snapshot-item reveal">
-          <span>Outcome</span>
-          <p>A reusable Figma library, documented patterns and a clearer collaboration model for product teams.</p>
-        </article>
-      </section>
-
-      <section class="story-block">
-        <div class="story-copy reveal">
-          <span class="story-number">01</span>
-          <h3>Start with the operational reality, not the UI surface.</h3>
-          <p>
-            The product served warehouse teams working with dense information, repetitive actions and strict
-            operational constraints. Before proposing components, I mapped where inconsistency was creating
-            friction for users, designers and developers.
-          </p>
+      <section id="context" class="case-section">
+        <span class="section-label">01 · Context</span>
+        <h2>The warehouse depended on an internal WMS that had become difficult to maintain.</h2>
+        <p>FTL already operated an internal warehouse management system. As logistics needs and workflows grew, the existing experience presented ergonomic and maintainability challenges. The brief combined two connected needs: make day-to-day work clearer for warehouse teams, and give future product changes a more consistent interface foundation.</p>
+        <div class="wms-context-contrast">
+          <article><span>At the product level</span><h3>Improve the work people do every day.</h3><p>Clarify navigation, task flows and information on WMS and PDA screens used in operational settings.</p></article>
+          <article><span>At the system level</span><h3>Make repeated decisions reusable.</h3><p>Build shared foundations and components so similar controls and states do not need to be redefined on every screen.</p></article>
         </div>
-        <div class="story-image reveal">
-          <img src="./assets/wms-design-system/02-FR.png" alt="Project context and objectives for the WMS platform" />
-          <span>Context & objectives</span>
-        </div>
+        <figure class="wms-evidence-image"><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/02-FR.png" aria-label="Enlarge project context and responsibilities evidence"><img src="./assets/wms-design-system/02-FR.png" alt="Original project context: WMS goals, responsibilities, collaborators, methods and tools" loading="lazy" /></button><figcaption>Project brief · scope, collaborators and my areas of contribution. Select to zoom.</figcaption></figure>
       </section>
 
-      <section class="process-stack" aria-label="Case study process">
-        <h2 class="process-headline reveal">
-          A reusable case-study structure: understand the system, define priorities, build patterns, then make
-          adoption easier.
-        </h2>
-        <div class="disk-stack">
-          <article class="disk reveal" style="--tone-a: #c9e7ff; --tone-b: #dac6eb">
-            <div class="disk-graphic"></div>
-            <div>
-              <span>Discovery</span>
-              <h4>Audit the current product language</h4>
-              <p>Interviews, interface review and benchmark analysis revealed where the experience was fragmented.</p>
-            </div>
-          </article>
-          <article class="disk reveal" style="--tone-a: #dac6eb; --tone-b: #9ddb89">
-            <div class="disk-graphic"></div>
-            <div>
-              <span>Definition</span>
-              <h4>Turn findings into system priorities</h4>
-              <p>I translated research into a roadmap: what to standardize first, what to document and what to defer.</p>
-            </div>
-          </article>
-          <article class="disk reveal" style="--tone-a: #a7df89; --tone-b: #c9e7ff">
-            <div class="disk-graphic"></div>
-            <div>
-              <span>Development</span>
-              <h4>Build the component foundation</h4>
-              <p>Core UI patterns were organized into reusable Figma components with clearer states and usage logic.</p>
-            </div>
-          </article>
-          <article class="disk reveal" style="--tone-a: #ff6d46; --tone-b: #dac6eb">
-            <div class="disk-graphic"></div>
-            <div>
-              <span>Delivery</span>
-              <h4>Make adoption part of the design</h4>
-              <p>Documentation and feedback loops helped the system become usable by teams, not just polished in Figma.</p>
-            </div>
-          </article>
+      <section id="evidence" class="case-section">
+        <span class="section-label">02 · Evidence</span>
+        <h2>Look at the work through three lenses: people, product and delivery.</h2>
+        <p>Rather than treating the design system as a visual cleanup, the project combined user input with an audit of the product and the way changes reached development.</p>
+        <div class="wms-evidence-tabs" role="tablist" aria-label="WMS evidence sources">
+          <button id="wms-tab-interviews" role="tab" aria-selected="true" aria-controls="wms-panel-interviews">01 People</button>
+          <button id="wms-tab-audit" role="tab" aria-selected="false" aria-controls="wms-panel-audit" tabindex="-1">02 Product</button>
+          <button id="wms-tab-delivery" role="tab" aria-selected="false" aria-controls="wms-panel-delivery" tabindex="-1">03 Delivery</button>
+        </div>
+        <div class="wms-evidence-panel" id="wms-panel-interviews" role="tabpanel" aria-labelledby="wms-tab-interviews">
+          <div><span class="eyebrow">Research input</span><h3>Different roles described different parts of the same system.</h3><p>Interview materials span warehouse-floor staff, managers and operations, and product or development roles. An internal WMS survey gathered usage habits, difficulties, unmet expectations and suggestions for future improvements.</p><p class="wms-proof"><b>Why it mattered</b>Frontline tasks and system constraints had to be considered together.</p></div>
+          <figure><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/04-FR.png" aria-label="Enlarge WMS interview synthesis"><img src="./assets/wms-design-system/04-FR.png" alt="Interview synthesis across frontline, operations management and product or engineering roles" loading="lazy" /></button><figcaption>Interview synthesis and current-product audit · original project board</figcaption></figure>
+        </div>
+        <div class="wms-evidence-panel" id="wms-panel-audit" role="tabpanel" aria-labelledby="wms-tab-audit" hidden>
+          <div><span class="eyebrow">Interface audit</span><h3>Small inconsistencies accumulated into real interpretation work.</h3><p>The audit called out unclear navigation structure, labels and icons that were hard to recognize, inconsistent button and tag use, and technical error messages that did not explain what to do next.</p><p class="wms-proof"><b>Why it mattered</b>Standardization needed to cover meaning and state, not just colour and shape.</p></div>
+          <figure><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/04-FR.png" aria-label="Enlarge current WMS audit evidence"><img src="./assets/wms-design-system/04-FR.png" alt="Original UX audit board showing navigation, label, icon, button and error-message issues" loading="lazy" /></button><figcaption>Current WMS UX audit · evidence and issues annotated by the project team</figcaption></figure>
+        </div>
+        <div class="wms-evidence-panel" id="wms-panel-delivery" role="tabpanel" aria-labelledby="wms-tab-delivery" hidden>
+          <div><span class="eyebrow">Ways of working</span><h3>The system had to work across roles and release cycles.</h3><p>Product, design, operations and international development collaborated through Agile sprints. Jira tickets, a Help Center and internal release notes helped communicate work, questions and product changes.</p><p class="wms-proof"><b>Why it mattered</b>Documentation and feedback channels were part of the system's delivery, not decoration around it.</p></div>
+          <figure><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/10-FR.png" aria-label="Enlarge WMS delivery framework evidence"><img src="./assets/wms-design-system/10-FR.png" alt="Original delivery framework with Jira tickets, Help Center, release notes and collaboration routines" loading="lazy" /></button><figcaption>Original delivery materials · Jira, Help Center and internal release communication</figcaption></figure>
         </div>
       </section>
 
-      <section class="decision-grid" aria-label="Key design decisions">
-        <div class="decision-copy reveal">
-          <p class="eyebrow">Key decisions</p>
-          <h2>Where the design work became strategic.</h2>
+      <section id="synthesis" class="case-section">
+        <span class="section-label">03 · From evidence to requirements</span>
+        <h2>Turn verbatims into needs, then into changes a team can act on.</h2>
+        <p>The research synthesis used a VerbATIM → Need → Requirement structure: keep the user's words visible, infer the need carefully, then write a product requirement the team can discuss and test.</p>
+        <div class="wms-synthesis-grid">
+          <article><span>01 · Verbatim</span><blockquote>“Overall, the WMS interface is intuitive if you use it frequently.”</blockquote><small>Internal WMS survey · translated from French</small></article>
+          <article><span>02 · Need</span><p>Recognize the right action and location without relying on repeated use or memory.</p></article>
+          <article><span>03 · Requirement</span><p>Use predictable navigation, recognizable labels and consistent control states across related tasks.</p></article>
         </div>
-        <article class="decision-card reveal">
-          <span>01</span>
-          <h3>Use audit as a product alignment tool</h3>
-          <p>
-            The interface audit was not only visual cleanup. It helped the team see duplicated patterns, unclear
-            states and inconsistent workflow logic.
-          </p>
+        <p class="note">This is one traceable example of the synthesis logic. It does not claim that one survey response alone set the roadmap.</p>
+        <figure class="wms-evidence-image"><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/09-FR.png" aria-label="Enlarge internal WMS survey and needs synthesis"><img src="./assets/wms-design-system/09-FR.png" alt="Internal WMS survey questions, feedback themes and verbatim-to-need-to-requirement synthesis" loading="lazy" /></button><figcaption>Survey and feedback synthesis · the source material behind the example above</figcaption></figure>
+        <div class="wms-roadmap-line"><span>Research</span><i>→</i><span>Audit</span><i>→</i><span>Prioritize</span><i>→</i><span>Prototype</span><i>→</i><span>Review</span></div>
+      </section>
+
+      <section id="decisions" class="case-section">
+        <span class="section-label">04 · Design decisions</span>
+        <h2>Three decisions connected usability work to a system teams could maintain.</h2>
+        <article class="wms-decision">
+          <div><span>01</span><h3>Fix the meaning of controls before polishing their appearance.</h3><p>The audit exposed unclear labels, inconsistent button and tag use, and weakly explained errors. I treated component semantics, variants and feedback states as part of the UX problem, so that colour and visual polish would reinforce a rule people could understand.</p></div>
+          <figure><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/07-FR.png" aria-label="Enlarge component variants and states"><img src="./assets/wms-design-system/07-FR.png" alt="WMS design system component library with buttons, form controls, tags and multiple states" loading="lazy" /></button><figcaption>Figma component variants and states · source artifact</figcaption></figure>
         </article>
-        <article class="decision-card reveal">
-          <span>02</span>
-          <h3>Prioritize reusable patterns over isolated screens</h3>
-          <p>
-            Instead of redesigning pages one by one, the work focused on components that could support tables,
-            forms, filters, navigation and operational feedback.
-          </p>
+        <article class="wms-decision">
+          <div><span>02</span><h3>Make shared foundations flexible enough for different operational tasks.</h3><p>Buttons, fields, tags, tables, navigation and feedback recur across modules, but warehouse workflows are not identical. The library established reusable rules and variants; product screens still had to apply them to the task, role and information density in context.</p></div>
+          <figure><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/06-FR.png" aria-label="Enlarge WMS system foundations and task planning"><img src="./assets/wms-design-system/06-FR.png" alt="WMS design system foundations, reference benchmark and working plan" loading="lazy" /></button><figcaption>System foundation and work plan · original design artifact</figcaption></figure>
         </article>
-        <article class="decision-card reveal">
-          <span>03</span>
-          <h3>Design the handoff model with the system</h3>
-          <p>
-            A design system only works when people can use it. Documentation, naming and collaboration channels
-            were treated as part of the product experience.
-          </p>
+        <article class="wms-decision">
+          <div><span>03</span><h3>Use product screens to make the system accountable to real work.</h3><p>A component library is only useful when its rules survive a real workflow. I applied the patterns to high-fidelity WMS screens and related PDA flows, then used prototype reviews and functional checks with product and development to refine the interface.</p></div>
+          <figure><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/08-FR.png" aria-label="Enlarge WMS interface and Storybook examples"><img src="./assets/wms-design-system/08-FR.png" alt="High-fidelity WMS interface prototype shown alongside interactive Storybook component documentation" loading="lazy" /></button><figcaption>WMS interface and Storybook · implementation-facing evidence</figcaption></figure>
         </article>
       </section>
 
-      <section class="system-showcase" aria-label="Design system evidence">
-        <div class="system-copy reveal">
-          <p class="eyebrow">System building</p>
-          <h2>From scattered UI decisions to a shared product language.</h2>
-          <p>
-            The system connected visual foundations, component rules and product scenarios. This made the WMS
-            interface easier to extend while keeping screens consistent across teams and features.
-          </p>
+      <section id="system" class="case-section">
+        <span class="section-label">05 · The system</span>
+        <h2>Foundations, components and product patterns formed one working language.</h2>
+        <p>The Figma library grouped foundations such as colour, typography and layout with reusable controls and WMS-specific patterns. Variants and states made the rules inspectable. High-fidelity WMS and PDA work showed how the library behaved in context.</p>
+        <div class="wms-system-map" aria-label="WMS design system architecture">
+          <article><span>01</span><h3>Foundations</h3><p>Colour · typography · grid · layout</p></article><b aria-hidden="true">↓</b>
+          <article><span>02</span><h3>Components</h3><p>Buttons · fields · tags · tables · navigation · feedback</p></article><b aria-hidden="true">↓</b>
+          <article><span>03</span><h3>Product patterns</h3><p>WMS workflows · dense data · operational states · PDA tasks</p></article>
         </div>
-        <div class="system-gallery">
-          <figure class="system-figure system-figure--large reveal">
-            <img src="./assets/wms-design-system/06-FR.png" alt="Design system benchmark and reference work" />
-            <figcaption>Benchmark & reference architecture</figcaption>
-          </figure>
-          <figure class="system-figure reveal">
-            <img src="./assets/wms-design-system/07-FR.png" alt="Figma component library examples" />
-            <figcaption>Figma library & components</figcaption>
-          </figure>
-          <figure class="system-figure reveal">
-            <img src="./assets/wms-design-system/08-FR.png" alt="Prototype and interface documentation examples" />
-            <figcaption>Prototype & documentation</figcaption>
-          </figure>
+        <div class="wms-artifact-gallery" data-wms-gallery>
+          <div class="wms-gallery-head"><div><span class="eyebrow">Original project artifacts</span><p>Switch between the source boards. Select an image to inspect it at full size.</p></div><div class="wms-gallery-controls" role="tablist" aria-label="WMS source boards">
+            <button role="tab" aria-selected="true" aria-controls="wms-art-foundations" id="wms-art-tab-foundations">Foundations</button><button role="tab" aria-selected="false" aria-controls="wms-art-components" id="wms-art-tab-components" tabindex="-1">Components</button><button role="tab" aria-selected="false" aria-controls="wms-art-implementation" id="wms-art-tab-implementation" tabindex="-1">Implementation</button>
+          </div></div>
+          <figure class="wms-art-panel" role="tabpanel" id="wms-art-foundations" aria-labelledby="wms-art-tab-foundations"><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/06-FR.png" aria-label="Open WMS foundations artifact"><img src="./assets/wms-design-system/06-FR.png" alt="Foundations and component planning board" loading="lazy" /></button><figcaption>Foundations, component planning and design-system reference · original slide</figcaption></figure>
+          <figure class="wms-art-panel" role="tabpanel" id="wms-art-components" aria-labelledby="wms-art-tab-components" hidden><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/07-FR.png" aria-label="Open Figma component library artifact"><img src="./assets/wms-design-system/07-FR.png" alt="Figma component library and variants" loading="lazy" /></button><figcaption>Component library and states · original slide</figcaption></figure>
+          <figure class="wms-art-panel" role="tabpanel" id="wms-art-implementation" aria-labelledby="wms-art-tab-implementation" hidden><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/08-FR.png" aria-label="Open WMS implementation and Storybook artifact"><img src="./assets/wms-design-system/08-FR.png" alt="WMS interface prototype and Storybook documentation" loading="lazy" /></button><figcaption>WMS prototype and Storybook · original slide</figcaption></figure>
         </div>
       </section>
 
-      <section class="evidence-grid" aria-label="Process evidence">
-        <button class="evidence-card reveal" data-lightbox="./assets/wms-design-system/04-FR.png">
-          <img src="./assets/wms-design-system/04-FR.png" alt="Discovery phase synthesis and audit boards" loading="lazy" />
-          <strong>Discovery</strong>
-          <span>Research synthesis, interface audit and benchmark signals.</span>
-        </button>
-        <button class="evidence-card reveal" data-lightbox="./assets/wms-design-system/05-FR.png">
-          <img src="./assets/wms-design-system/05-FR.png" alt="Definition phase roadmap and stakeholder mapping" loading="lazy" />
-          <strong>Definition</strong>
-          <span>Roadmap, stakeholder mapping and scope decisions.</span>
-        </button>
-        <button class="evidence-card reveal" data-lightbox="./assets/wms-design-system/09-FR.png">
-          <img src="./assets/wms-design-system/09-FR.png" alt="User testing and feedback analysis deliverables" loading="lazy" />
-          <strong>Validation</strong>
-          <span>User feedback translated into iteration priorities.</span>
-        </button>
-        <button class="evidence-card reveal" data-lightbox="./assets/wms-design-system/10-FR.png">
-          <img src="./assets/wms-design-system/10-FR.png" alt="Delivery framework and next-step documentation" loading="lazy" />
-          <strong>Delivery</strong>
-          <span>Working frame, communication model and next steps.</span>
-        </button>
+      <section id="adoption" class="case-section">
+        <span class="section-label">06 · Adoption is part of the product</span>
+        <h2>Give the team a way to find, discuss and carry the rules forward.</h2>
+        <p>Figma defined the design language. Storybook gave developers an interactive place to inspect components. Jira, a Help Center and internal release notes supported questions, handoff and awareness of WMS changes.</p>
+        <div class="wms-adoption-grid">
+          <article><b>Figma</b><span>Design source</span><p>Foundations, components, variants and product screens.</p></article>
+          <article><b>Storybook</b><span>Component reference</span><p>Interactive documentation developed by the technical team from the shared component work.</p></article>
+          <article><b>Jira + Help Center</b><span>Working channels</span><p>Track delivery, report issues and answer recurring product questions.</p></article>
+          <article><b>Release notes</b><span>Team communication</span><p>Internal updates described product changes and helped teams follow releases.</p></article>
+        </div>
+        <figure class="wms-evidence-image"><button class="image-link" type="button" data-lightbox="./assets/wms-design-system/10-FR.png" aria-label="Enlarge working agreement and release-note artifacts"><img src="./assets/wms-design-system/10-FR.png" alt="Original Jira, Help Center, user story and WMS release note artifacts" loading="lazy" /></button><figcaption>Adoption and communication artifacts · original project material</figcaption></figure>
       </section>
 
-      <section class="impact impact--wms">
-        <div class="impact-copy reveal">
-          <p class="eyebrow">Impact</p>
-          <h3>A system designed for clarity, reuse and team adoption.</h3>
-          <p>
-            The work gave the WMS product a stronger foundation: fewer one-off UI decisions, clearer component
-            logic and a more structured way for design and development to collaborate.
-          </p>
-        </div>
-        <div class="impact-points reveal" aria-label="Impact summary">
-          <p><span>01</span> More consistent product screens</p>
-          <p><span>02</span> Faster design decisions through reusable components</p>
-          <p><span>03</span> Clearer handoff and documentation practices</p>
-        </div>
+      <section id="delivery" class="case-section">
+        <span class="section-label">07 · Delivery and evidence</span>
+        <h2>The deliverable was a connected product workflow, not a library in isolation.</h2>
+        <div class="wms-delivery-checks"><article><b>Research</b><span>Interviews, internal survey, audit and feedback synthesis</span></article><article><b>Design</b><span>Priorities, flows, Figma system and high-fidelity WMS/PDA screens</span></article><article><b>Collaboration</b><span>Prototype reviews, functional checks and implementation reference</span></article><article><b>Communication</b><span>Jira process, Help Center and release notes</span></article></div>
+        <aside class="wms-evidence-boundary"><strong>Impact boundary</strong><p>These artifacts show the work was researched, designed and connected to delivery. The material available here does not verify adoption rate, reduced implementation errors, faster task completion or productivity gains. Those outcomes would need post-release usage data and operational follow-up.</p></aside>
       </section>
 
-      <section class="project-next">
-        <a class="round-link" href="./work.html">
-          <span>Back to work</span>
-          <i aria-hidden="true">←</i>
-        </a>
-        <a class="round-link" href="./contact.html">
-          <span>Contact</span>
-          <i aria-hidden="true">→</i>
-        </a>
+      <section id="reflection" class="case-section">
+        <span class="section-label">08 · Reflection</span>
+        <h2>What I would measure before calling a system successful.</h2>
+        <p>For the next phase, I would follow a small number of signals across the work: whether teams choose the shared components, which patterns are still duplicated, where implementation diverges from the specification, and whether warehouse staff complete priority tasks with fewer pauses or requests for help.</p>
+        <div class="wms-next-tests"><article><b>Adoption</b><p>Track component reuse and identify where teams work around the library.</p></article><article><b>Quality</b><p>Review implementation differences and repeated design or engineering questions.</p></article><article><b>Task experience</b><p>Test high-frequency WMS and PDA tasks with frontline staff in the operational context.</p></article></div>
+        <p class="note">These are proposed measures for a future iteration, not results reported from this project.</p>
       </section>
+
+      <nav class="next-project" aria-label="More projects"><a href="./work.html"><span>Explore</span>← All work</a><a href="./lvv-shipping-system.html"><span>Next case</span>LVV Shipping System →</a></nav>
     </main>
-
-    <dialog class="lightbox" id="lightbox" aria-label="Project image preview">
-      <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
-      <img src="" alt="" />
-    </dialog>
-
-    <script src="./src/main.js?v=18"></script>
-  </body>
+  </div>
+  <footer class="site-footer"><span>Chloé Chen · Product Designer · Paris</span><div><a href="mailto:chloechenjob00@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/chloechen0823" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></footer>
+  <dialog id="lightbox" class="lightbox" aria-label="Enlarged WMS project artifact"><button class="lightbox-close" type="button" aria-label="Close image preview">Close ×</button><img alt="" /></dialog>
+  <script src="./src/main.js?v=20"></script><script src="./src/wms-case.js?v=1"></script>
+</body>
 </html>

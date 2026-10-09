@@ -22,6 +22,7 @@ This directory stores the written source material for every portfolio project.
 - `lvv/interview-faq.zh-CN.md`: Chinese interview questions and evidence-safe answers derived from the source of truth
 - `lvv/project.en.md`: English portfolio version
 - `lvv/project.fr.md`: French portfolio version
+- `wms/project.zh-CN.md`: WMS and warehouse design system source of truth
 - `ftl-website/project.zh-CN.md`: FTL Group website project archaeology and Chinese source of truth
 - `ftl-website/retrospective-2026-07-17.zh-CN.md`: FTL portfolio page design retrospective and next motion criteria
 
