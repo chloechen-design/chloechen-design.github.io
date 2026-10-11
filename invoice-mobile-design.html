@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles.css?v=37" />
-    <link rel="stylesheet" href="./src/invoice-case.css?v=5" />
+    <link rel="stylesheet" href="./src/invoice-case.css?v=6" />
   </head>
   <body class="is-loading invoice-page" data-page="case">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -44,12 +44,24 @@
           <div><dt>Platform</dt><dd>Mobile · 390 px</dd></div>
           <div><dt>Status</dt><dd>Independent concept · Not launched</dd></div>
         </dl>
-        <figure class="invoice-film reveal">
-          <video autoplay muted loop playsinline controls preload="metadata" poster="./assets/invoice-design/invoice-design-poster.jpg" aria-label="Facture mobile app interaction demonstration">
+        <div class="invoice-film reveal" data-invoice-film>
+          <div class="invoice-film-screen"><video autoplay muted loop playsinline controls preload="metadata" poster="./assets/invoice-design/invoice-design-poster.jpg" aria-label="Facture product walkthrough with a time-synchronised written explanation">
             <source src="./assets/invoice-design/invoice-design-demo.mp4" type="video/mp4" />
-          </video>
-          <figcaption><span>40 sec interaction demo</span><span>Invoice creation → client → line item → send → detail</span></figcaption>
-        </figure>
+          </video><span class="invoice-film-screen-label">Product walkthrough · 00:40</span></div>
+          <div class="invoice-film-story" aria-label="Walkthrough commentary">
+            <div class="invoice-film-story-head"><span>Follow the decisions</span><span data-film-counter>01 / 07</span></div>
+            <div class="invoice-film-current" aria-live="off"><span data-film-type>Orientation</span><h2 data-film-title>Start with what needs attention.</h2><p data-film-description>The home view prioritises money awaiting payment, overdue work and recent invoices. Creation is one tap away, but the screen first answers “what should I do now?”</p></div>
+            <div class="invoice-film-chapters" role="group" aria-label="Jump to walkthrough moment">
+              <button type="button" class="is-active" data-film-time="0" data-film-label="Orientation" data-film-title="Start with what needs attention." data-film-description="The home view prioritises money awaiting payment, overdue work and recent invoices. Creation is one tap away, but the screen first answers ‘what should I do now?’" aria-current="true"><span>01</span> Home</button>
+              <button type="button" data-film-time="3" data-film-label="Entry point" data-film-title="Keep creation inside the work." data-film-description="Selecting an invoice opens the next decision in context. A client can be chosen without navigating away from the invoice being prepared."><span>02</span> Select client</button>
+              <button type="button" data-film-time="7" data-film-label="Recovery path" data-film-title="A missing client is a detour, not a restart." data-film-description="The client sheet validates required details where they are entered. After adding a client, the invoice resumes with that client selected."><span>03</span> Add client</button>
+              <button type="button" data-film-time="13" data-film-label="Composition" data-film-title="Make the amount inspectable as it is built." data-film-description="Service, quantity, price and tax sit near a running total. The next action stays anchored below the form rather than competing with every field."><span>04</span> Add service</button>
+              <button type="button" data-film-time="18" data-film-label="Commit point" data-film-title="Review before the irreversible action." data-film-description="The summary puts recipient, services and total together before sending. A distinct confirmation state then makes the outcome explicit."><span>05</span> Review &amp; send</button>
+              <button type="button" data-film-time="25" data-film-label="After send" data-film-title="The journey continues after delivery." data-film-description="The detail screen shows amount, status and the history of what happened. Download and payment actions remain available without recreating the invoice."><span>06</span> Track</button>
+              <button type="button" data-film-time="30" data-film-label="Lifecycle" data-film-title="Return to the right object later." data-film-description="Search, status filters and the four stable navigation spaces support the next visit: finding an invoice, checking a client or updating account details."><span>07</span> Manage</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <nav class="invoice-chapter-nav" aria-label="Case study chapters">
@@ -119,6 +131,7 @@
         <div class="invoice-section-head reveal"><span>06 · Wireframes</span><div><h2>I used fidelity to answer product questions, not to decorate placeholders.</h2></div></div>
         <div class="invoice-wireframe-copy reveal"><p>The mid-fidelity pass included realistic totals, statuses and actions because empty boxes could not reveal hierarchy problems. It let me check whether each screen answered three questions: where am I, what matters now and what can I do next?</p><div class="invoice-wireframe-rule"><span>Kept</span><strong>One dominant action per step</strong><span>Removed</span><strong>Repeated controls and secondary data without immediate value</strong></div></div>
         <figure class="invoice-board invoice-board--wireframes reveal"><img src="./assets/invoice-design/02-wireframes.png" alt="Six information-rich mobile wireframes" loading="lazy" /><figcaption>Six core screens at mid fidelity, using the same 390 px product frame as the final interface.</figcaption></figure>
+        <div class="invoice-flow-decisions reveal" aria-label="How the wireframes shaped the product"><article><span>01 · Interruption</span><h3>What if the client does not exist?</h3><p>Create them within the current task, validate the required fields and return to the invoice with the new client selected.</p></article><article><span>02 · Confidence</span><h3>What must be checked before send?</h3><p>Keep the recipient, service breakdown, tax and total visible together at the review point. Sending is a distinct commitment.</p></article><article><span>03 · Continuity</span><h3>What happens after sending?</h3><p>Move to an invoice detail with a clear status and timeline, so the user has a durable place to check and act later.</p></article></div>
       </section>
 
       <section class="invoice-system invoice-section" id="system">
@@ -136,27 +149,28 @@
       </section>
 
       <section class="invoice-experience invoice-section invoice-section--dark" id="experience">
-        <div class="invoice-section-head reveal"><span>08 · Final experience</span><div><h2>The interface gets out of the way, then becomes explicit at decision points.</h2><p class="invoice-head-note">I gave the dashboard the strongest overview, invoice creation the clearest sequence and confirmation moments the highest contrast. The screens are not equally important, so the presentation is not equal either.</p></div></div>
-        <div class="invoice-studio-stage reveal">
-          <div class="invoice-studio-note"><span>01 · Product overview</span><h3>Three screens. Three different jobs.</h3><p>The devices remain close to their native resolution, so type and interface details stay sharp.</p></div>
-          <div class="invoice-device-line">
-            <figure class="invoice-device invoice-device--dashboard"><img src="./assets/invoice-design/12-dashboard.png" alt="Facture dashboard" loading="lazy" /><figcaption>Orient</figcaption></figure>
-            <figure class="invoice-device invoice-device--creation"><img src="./assets/invoice-design/07-invoice-form.png" alt="Invoice creation form" loading="lazy" /><figcaption>Create</figcaption></figure>
-            <figure class="invoice-device invoice-device--detail"><img src="./assets/invoice-design/09-invoice-detail.png" alt="Invoice detail" loading="lazy" /><figcaption>Act</figcaption></figure>
+        <div class="invoice-section-head reveal"><span>08 · Final experience</span><div><h2>Seven screens. One continuous job.</h2><p class="invoice-head-note">Select a screen to inspect the interface at reading size. Each decision links a product need to the specific part of the UI that supports it.</p></div></div>
+        <div class="invoice-gallery reveal" data-invoice-gallery>
+          <div class="invoice-gallery-heading"><span>Explore the interface</span><span>Concept UI · Sample data</span></div>
+          <div class="invoice-gallery-tabs" role="tablist" aria-label="Facture interface screens">
+            <button role="tab" type="button" id="invoice-tab-1" aria-controls="invoice-panel-1" aria-selected="true" tabindex="0">01 <span>Home</span></button>
+            <button role="tab" type="button" id="invoice-tab-2" aria-controls="invoice-panel-2" aria-selected="false" tabindex="-1">02 <span>Client</span></button>
+            <button role="tab" type="button" id="invoice-tab-3" aria-controls="invoice-panel-3" aria-selected="false" tabindex="-1">03 <span>Compose</span></button>
+            <button role="tab" type="button" id="invoice-tab-4" aria-controls="invoice-panel-4" aria-selected="false" tabindex="-1">04 <span>Confirm</span></button>
+            <button role="tab" type="button" id="invoice-tab-5" aria-controls="invoice-panel-5" aria-selected="false" tabindex="-1">05 <span>Detail</span></button>
+            <button role="tab" type="button" id="invoice-tab-6" aria-controls="invoice-panel-6" aria-selected="false" tabindex="-1">06 <span>Manage</span></button>
+            <button role="tab" type="button" id="invoice-tab-7" aria-controls="invoice-panel-7" aria-selected="false" tabindex="-1">07 <span>Account</span></button>
           </div>
+          <div class="invoice-gallery-panel" role="tabpanel" id="invoice-panel-1" aria-labelledby="invoice-tab-1"><div class="invoice-gallery-copy"><span>01 / Orientation</span><h3>Home answers the question before the user asks it.</h3><p class="invoice-gallery-job">The job: understand what needs attention and start a new invoice.</p><p>The most actionable signals—outstanding money, overdue amount and recent invoices—come before secondary analytics. One creation control stays accessible without making the whole page a menu.</p><div class="invoice-gallery-callout"><b>Design trade-off</b><p>The overview is intentionally selective. A fuller report would add density to a screen used for quick decisions.</p></div></div><figure class="invoice-gallery-device"><img src="./assets/invoice-design/12-dashboard.png" alt="Home screen with outstanding amount, overdue balance, recent invoices and create action" loading="lazy" /><figcaption>Priority: action before reporting</figcaption></figure></div>
+          <div class="invoice-gallery-panel" role="tabpanel" id="invoice-panel-2" aria-labelledby="invoice-tab-2" hidden><div class="invoice-gallery-copy"><span>02 / Recovery</span><h3>Add the missing client without abandoning the invoice.</h3><p class="invoice-gallery-job">The job: continue creation when a prerequisite is missing.</p><p>The client form appears as a contextual sheet over the invoice. Inline errors identify which fields need correction. Completing it selects that client and returns to the original task.</p><div class="invoice-gallery-callout"><b>Why a sheet?</b><p>It signals a temporary detour. The invoice stays conceptually present instead of becoming a separate creation journey.</p></div></div><figure class="invoice-gallery-device"><img src="./assets/invoice-design/06-create-client.png" alt="Add-client sheet with required fields and inline validation" loading="lazy" /><figcaption>Pattern: contextual creation</figcaption></figure></div>
+          <div class="invoice-gallery-panel" role="tabpanel" id="invoice-panel-3" aria-labelledby="invoice-tab-3" hidden><div class="invoice-gallery-copy"><span>03 / Composition</span><h3>Build the invoice while seeing its financial consequence.</h3><p class="invoice-gallery-job">The job: add services, check tax and reach an accurate total.</p><p>A step indicator gives orientation; editable client and service rows keep corrections close to the source. The running total places price and tax beside the work that changes them, while the fixed bottom action moves to review.</p><div class="invoice-gallery-callout"><b>Design trade-off</b><p>Guided steps reduce first-use ambiguity, but may slow repeat work. Duplication and saved line items belong in a future test.</p></div></div><figure class="invoice-gallery-device"><img src="./assets/invoice-design/07-invoice-form.png" alt="Invoice form with selected client, service line, tax, total and review action" loading="lazy" /><figcaption>Hierarchy: inputs → calculation → review</figcaption></figure></div>
+          <div class="invoice-gallery-panel" role="tabpanel" id="invoice-panel-4" aria-labelledby="invoice-tab-4" hidden><div class="invoice-gallery-copy"><span>04 / Confirmation</span><h3>Make the send result unambiguous.</h3><p class="invoice-gallery-job">The job: know the invoice was sent and what to do next.</p><p>A confirmation message appears on the resulting invoice, then the detail becomes a durable record. The success state is attached to the object it changed, avoiding an isolated “done” screen.</p><div class="invoice-gallery-callout"><b>What to validate</b><p>In a working product, sending and delivery would need separate states, including retry and failure. This prototype demonstrates the success path only.</p></div></div><figure class="invoice-gallery-device"><img src="./assets/invoice-design/08-success.png" alt="Invoice detail showing sent confirmation feedback" loading="lazy" /><figcaption>Feedback: action → result → record</figcaption></figure></div>
+          <div class="invoice-gallery-panel" role="tabpanel" id="invoice-panel-5" aria-labelledby="invoice-tab-5" hidden><div class="invoice-gallery-copy"><span>05 / Follow-up</span><h3>The detail is a place to return, not a dead end.</h3><p class="invoice-gallery-job">The job: inspect the invoice, understand its status and act on payment.</p><p>The amount and status lead; client and service details support verification. A short timeline explains what happened, while download and mark-paid actions remain at the bottom for the next task.</p><div class="invoice-gallery-callout"><b>Why the timeline?</b><p>A status badge names the present state; a sequence gives context for how the invoice reached it.</p></div></div><figure class="invoice-gallery-device"><img src="./assets/invoice-design/09-invoice-detail.png" alt="Invoice detail with amount, status, services, history and follow-up actions" loading="lazy" /><figcaption>Priority: status → evidence → next action</figcaption></figure></div>
+          <div class="invoice-gallery-panel" role="tabpanel" id="invoice-panel-6" aria-labelledby="invoice-tab-6" hidden><div class="invoice-gallery-copy"><span>06 / Management</span><h3>Find the invoice that needs work.</h3><p class="invoice-gallery-job">The job: scan many invoices and focus on an exception.</p><p>Search supports known items; status filters support an intent such as “show overdue.” Each row repeats the same amount, client and state hierarchy. Colour reinforces text labels, so the scan does not depend on colour alone.</p><div class="invoice-gallery-callout"><b>Design trade-off</b><p>The list favours status and amount over every field. Full information lives in the detail view.</p></div></div><figure class="invoice-gallery-device"><img src="./assets/invoice-design/10-invoice-list.png" alt="Invoice list with search, status filters and labelled invoice rows" loading="lazy" /><figcaption>Pattern: search + status filter + detail</figcaption></figure></div>
+          <div class="invoice-gallery-panel" role="tabpanel" id="invoice-panel-7" aria-labelledby="invoice-tab-7" hidden><div class="invoice-gallery-copy"><span>07 / Configuration</span><h3>Move infrequent setup out of the daily workflow.</h3><p class="invoice-gallery-job">The job: maintain identity, payment details and preferences.</p><p>Business and bank details are grouped by the information they control. Notification preferences sit separately; the unavailable dark-mode option is explicitly marked as coming later rather than presented as functional.</p><div class="invoice-gallery-callout"><b>Why here?</b><p>Stable object-based navigation keeps settings reachable without giving them the same visual weight as sending and tracking invoices.</p></div></div><figure class="invoice-gallery-device"><img src="./assets/invoice-design/11-account.png" alt="Account settings with business, bank and notification preferences" loading="lazy" /><figcaption>Structure: profile → payment → preferences</figcaption></figure></div>
+          <div class="invoice-gallery-footer"><span data-gallery-position>01 / 07</span><div><button type="button" data-gallery-prev aria-label="Previous screen">←</button><button type="button" data-gallery-next aria-label="Next screen">→</button></div></div>
         </div>
-        <div class="invoice-ui-details reveal">
-          <div class="invoice-ui-details-copy"><span>02 · Sharp by design</span><h3>Important moments are rebuilt as HTML, not enlarged pixels.</h3><p>Status, totals and feedback stay crisp at every screen size.</p></div>
-          <div class="invoice-ui-detail invoice-ui-detail--status"><span>Invoice status</span><div><strong>FAC-2026-019</strong><i>Pending</i></div><b>3 000 €</b><small>Due 12 September 2026</small></div>
-          <div class="invoice-ui-detail invoice-ui-detail--feedback"><span>System feedback</span><div class="invoice-feedback-line"><i></i><p><strong>Invoice sent successfully</strong><small>PDF created and shared with Atelier Nova</small></p></div><div class="invoice-feedback-line is-next"><i></i><p><strong>Open invoice detail</strong><small>Continue with the next useful action</small></p></div></div>
-        </div>
-        <div class="invoice-studio-support reveal">
-          <div><span>03 · Supporting moments</span><h3>Only the states that explain the product.</h3></div>
-          <figure><img src="./assets/invoice-design/06-create-client.png" alt="Create a client with validation feedback" loading="lazy" /><figcaption><strong>Create in context</strong><span>Validation without losing the invoice</span></figcaption></figure>
-          <figure><img src="./assets/invoice-design/08-success.png" alt="Invoice sent confirmation" loading="lazy" /><figcaption><strong>Confirmation</strong><span>Feedback before transition</span></figcaption></figure>
-          <figure><img src="./assets/invoice-design/10-invoice-list.png" alt="Invoice list and filters" loading="lazy" /><figcaption><strong>Management</strong><span>Status stays scannable</span></figcaption></figure>
-          <figure><img src="./assets/invoice-design/11-account.png" alt="Business account settings" loading="lazy" /><figcaption><strong>Settings</strong><span>Configuration remains secondary</span></figcaption></figure>
-        </div>
+        <div class="invoice-experience-principle reveal"><span>One product, distinct decisions</span><p>Overview when orienting. Context when creating. Explicit feedback when committing. A stable record when returning.</p></div>
       </section>
 
       <section class="invoice-reflection invoice-section" id="reflection">
@@ -175,6 +189,6 @@
       </section>
     </main>
     <script src="./src/main.js?v=25"></script>
-    <script src="./src/invoice-case.js?v=1"></script>
+    <script src="./src/invoice-case.js?v=2"></script>
   </body>
 </html>
