@@ -58,32 +58,36 @@
     }
   }
 
-  const gallery = document.querySelector("[data-invoice-gallery]");
-  if (gallery) {
-    const tabs = [...gallery.querySelectorAll('[role="tab"]')];
-    const panels = [...gallery.querySelectorAll('[role="tabpanel"]')];
-    const position = gallery.querySelector("[data-gallery-position]");
-    let selected = 0;
-    const select = (index, focus = false) => {
-      selected = (index + tabs.length) % tabs.length;
-      tabs.forEach((tab, i) => {
-        tab.setAttribute("aria-selected", String(i === selected));
-        tab.tabIndex = i === selected ? 0 : -1;
-        panels[i].hidden = i !== selected;
+  const nav = document.querySelector(".invoice-side-nav");
+  if (nav) {
+    const links = [...nav.querySelectorAll('a[href^="#"]')];
+    const sections = links.map((link) => document.querySelector(link.hash)).filter(Boolean);
+    const progress = nav.querySelector("[data-invoice-progress]");
+    const activate = (section) => {
+      links.forEach((link, index) => {
+        const active = link.hash === `#${section.id}`;
+        if (active) {
+          link.setAttribute("aria-current", "location");
+          progress.textContent = String(index + 1).padStart(2, "0");
+          if (matchMedia("(max-width: 720px)").matches) {
+            const list = link.closest("ol");
+            list.scrollTo({ left: link.parentElement.offsetLeft - list.clientWidth / 2 + link.offsetWidth / 2, behavior: "auto" });
+          }
+        } else link.removeAttribute("aria-current");
       });
-      position.textContent = `${String(selected + 1).padStart(2, "0")} / ${String(tabs.length).padStart(2, "0")}`;
-      if (focus) tabs[selected].focus();
     };
-    tabs.forEach((tab, index) => {
-      tab.addEventListener("click", () => select(index));
-      tab.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowRight" || event.key === "ArrowLeft" || event.key === "Home" || event.key === "End") {
-          event.preventDefault();
-          select(event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 : selected + (event.key === "ArrowRight" ? 1 : -1), true);
-        }
-      });
-    });
-    gallery.querySelector("[data-gallery-prev]").addEventListener("click", () => select(selected - 1));
-    gallery.querySelector("[data-gallery-next]").addEventListener("click", () => select(selected + 1));
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible) activate(visible.target);
+    }, { rootMargin: "-12% 0px -60% 0px", threshold: [0, .15, .35] });
+    sections.forEach((section) => observer.observe(section));
+    links.forEach((link) => link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.hash);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      history.replaceState(null, "", link.hash);
+      activate(target);
+    }));
   }
 })();
