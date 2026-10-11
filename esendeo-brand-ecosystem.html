@@ -1,333 +1,49 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Esendeo case study by Chloé Chen: translating one brand foundation into a coherent digital and communication ecosystem." />
-    <title>Esendeo Brand Ecosystem - Chloé Chen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Instrument+Serif:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./src/styles.css?v=49" />
-    <style>
-      .es3 .es3-foundation__canvas{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);grid-template-rows:360px auto auto auto;gap:18px}
-      .es3 .es3-type{min-height:0;padding:34px 38px}.es3 .es3-type small{font-size:11px}.es3 .es3-type strong{font-size:clamp(52px,6vw,78px);font-weight:500}
-      .es3 .es3-logo{display:flex;min-height:0;padding:34px 38px}.es3 .es3-logo img{width:min(72%,320px);max-width:none;height:auto;max-height:150px;transform:none}
-      .es3 .es3-palette{grid-column:1/-1;gap:10px}.es3 .es3-palette span{min-height:104px;padding:16px}.es3 .es3-palette b{font-size:13px}.es3 .es3-palette small{font-size:11px}
-      .es3 .es3-type-spec{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);height:auto;min-height:118px}.es3 .es3-principles{grid-column:1/-1}
-      .es3 .es3-tour{display:block;max-width:980px}.es3-macbook{position:relative;padding:0 20px;perspective:1200px}.es3-macbook__lid{position:relative;padding:13px 13px 17px;border:1px solid #3b3b3b;border-radius:18px 18px 8px 8px;background:linear-gradient(145deg,#242424,#090909 72%);box-shadow:0 26px 56px rgba(0,38,32,.16),inset 0 1px 0 rgba(255,255,255,.13);transform:rotateX(-1deg)}
-      .es3-macbook__camera{position:absolute;z-index:3;top:6px;left:50%;width:5px;height:5px;border-radius:50%;background:#424242;transform:translateX(-50%)}
-      .es3-macbook__screen{position:relative;height:clamp(480px,53vw,620px);overflow:hidden;border-radius:7px;background:#fff}
-      .es3-macbook__screen img{position:absolute;inset:0;width:100%;height:auto;opacity:0;transform:translateY(0);transition:opacity .55s ease}
-      .es3-macbook__screen img.is-active{z-index:1;opacity:1;animation:es3-site-reel 9s cubic-bezier(.62,0,.32,1) both}
-      @keyframes es3-site-reel{0%,12%{transform:translateY(0)}42%{transform:translateY(-27%)}72%{transform:translateY(-58%)}90%,100%{transform:translateY(-82%)}}
-      .es3-macbook__base{position:relative;z-index:2;width:105%;height:29px;margin:-1px 0 0 -2.5%;border-top:1px solid rgba(255,255,255,.9);border-radius:2px 2px 13px 13px;background:linear-gradient(180deg,#f2f3f3 0,#c9cbcc 35%,#989b9c 78%,#777a7b 100%);clip-path:polygon(1.5% 0,98.5% 0,100% 72%,98% 100%,2% 100%,0 72%);box-shadow:0 16px 24px rgba(0,38,32,.13)}
-      .es3-macbook__base i{position:absolute;top:0;left:50%;width:118px;height:5px;border-radius:0 0 7px 7px;background:linear-gradient(180deg,#888b8c,#b8babb);box-shadow:0 1px 0 rgba(255,255,255,.45);transform:translateX(-50%)}
-      .es3-site-switcher{display:flex;justify-content:space-between;align-items:end;margin:30px 5% 0}.es3-site-switcher p{display:grid;gap:5px;margin:0}.es3-site-switcher p span{color:rgba(0,38,32,.52);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.es3-site-switcher p strong{font-size:18px;font-weight:500}
-      .es3-site-switcher>div{display:flex;gap:7px}.es3-site-switcher button{width:42px;height:42px;border:1px solid rgba(0,38,32,.18);border-radius:50%;background:transparent;color:rgba(0,38,32,.5);cursor:pointer}.es3-site-switcher button.is-active{border-color:var(--es3-ink);background:var(--es3-ink);color:#fff}
-      .es3 .es3-web-details{display:none}
-      .es3 .es3-newsletters__stage{display:grid;grid-template-columns:270px minmax(0,1fr);gap:58px;max-width:920px;padding:0;background:transparent}
-      .es3-mail-list{display:flex;flex-direction:column;align-self:center}.es3-mail-list p{margin:0 0 34px}.es3-mail-list small{display:block;margin-bottom:12px;color:rgba(0,38,32,.52);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.es3-mail-list strong{font-size:27px;font-weight:500;letter-spacing:-.04em;line-height:1.08}
-      .es3-mail-list button{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;width:100%;min-height:58px;padding:0;border:0;border-top:1px solid rgba(0,38,32,.16);background:transparent;color:rgba(0,38,32,.55);text-align:left;cursor:pointer}.es3-mail-list button:last-child{border-bottom:1px solid rgba(0,38,32,.16)}.es3-mail-list button b{font-size:10px;font-weight:500}.es3-mail-list button span{font-size:13px}.es3-mail-list button.is-active{color:var(--es3-ink)}.es3-mail-list button.is-active span{font-weight:600}
-      .es3-mail-preview{justify-self:end;width:min(100%,520px);overflow:hidden;border:1px solid rgba(0,38,32,.14);border-radius:10px;background:#fff;box-shadow:0 24px 60px rgba(0,38,32,.1)}
-      .es3-mail-preview__bar{display:grid;grid-template-columns:1fr auto 8px;gap:12px;align-items:center;height:48px;padding:0 16px;border-bottom:1px solid rgba(0,38,32,.1);font-size:10px}.es3-mail-preview__bar span{color:rgba(0,38,32,.5)}.es3-mail-preview__bar strong{font-weight:500}.es3-mail-preview__bar i{width:7px;height:7px;border-radius:50%;background:#c5ed5e}
-      .es3-mail-preview__screen{position:relative;height:610px;overflow:hidden;background:#f5f5f3}.es3-mail-preview__screen img{position:absolute;inset:0;margin:auto;width:100%;height:auto;opacity:0;transition:opacity .45s ease}.es3-mail-preview__screen img.is-active{z-index:1;opacity:1;animation:es3-mail-reel 9s cubic-bezier(.62,0,.32,1) both}
-      @keyframes es3-mail-reel{0%,14%{transform:translateY(0)}52%{transform:translateY(var(--reel-mid,0px))}88%,100%{transform:translateY(var(--reel-end,0px))}}
-      .es3-mail-note{grid-column:1/-1;max-width:650px;margin:10px 0 0 auto;color:rgba(0,38,32,.62);font-size:14px;line-height:1.65}
-      .es3 .es3-sales__slides{display:block;max-width:980px}.es3 .es3-sales__slides .es3-sales__gallery{width:100%;margin:0;border:1px solid rgba(0,38,32,.12);box-shadow:0 18px 46px rgba(0,38,32,.07)}.es3 .es3-sales__gallery img{display:block;width:100%;height:auto;transform:none}
-      .es3 .es3-sales__print{display:grid;grid-template-columns:1fr;gap:42px;max-width:980px}.es3 .es3-sales__print>div{grid-column:auto;max-width:640px}.es3 .es3-sales__print h3{max-width:13ch;font-size:clamp(40px,4.2vw,58px);line-height:.94}.es3 .es3-sales__print figure{width:100%;margin:0;transform:none}
-      .es3 .es3-cover{isolation:isolate;background:#875eed;color:#fff}
-      .es3 .es3-cover::before{position:absolute;z-index:-1;top:0;right:0;bottom:0;width:28%;background:#c5ed5e;content:""}
-      .es3 .es3-cover__intro,.es3 .es3-cover__title,.es3 .es3-cover__meta{position:relative;z-index:1}
-      .es3 .es3-cover__intro p:first-child{color:#fff}
-      .es3 .es3-cover__intro p:last-child{color:#002620}
-      .es3 .es3-cover__title{grid-template-columns:minmax(0,1fr) minmax(240px,28%);gap:5.5vw}
-      .es3 .es3-cover__title h1{max-width:8.2ch;color:#fff}
-      .es3 .es3-cover__title h1 span:first-child{color:#c5ed5e}
-      .es3 .es3-cover__title h1 em{color:#002620}
-      .es3 .es3-cover__title>p{align-self:end;padding-left:28px;color:rgba(0,38,32,.78);font-size:16px;font-weight:500;line-height:1.55}
-      .es3 .es3-cover__meta{width:min(760px,64%);border-color:rgba(255,255,255,.48)}
-      .es3 .es3-cover__meta dt{color:rgba(255,255,255,.62)}
-      .es3 .es3-cover__meta dd{color:#fff}
-      .es3 .es3-outcome{padding-top:clamp(150px,18vh,200px);padding-bottom:clamp(130px,16vh,180px);background:#f0edf8}
-      .es3 .es3-outcome__eyebrow,.es3 .es3-outcome>h2,.es3 .es3-outcome__chain,.es3 .es3-outcome__conclusion{width:min(980px,calc(100% - 104px));margin-right:auto;margin-left:clamp(52px,7vw,104px)}
-      .es3 .es3-outcome__eyebrow{margin-top:0;margin-bottom:30px;color:rgba(0,38,32,.58);font-size:10px;font-weight:600;letter-spacing:.14em;line-height:1.4;text-transform:uppercase}
-      .es3 .es3-outcome>h2{max-width:900px;margin-top:0;font-size:clamp(50px,5.4vw,74px);font-weight:500;letter-spacing:-.062em;line-height:.94}
-      .es3-outcome__chain{padding:0;margin-top:clamp(72px,9vh,104px);list-style:none;border-top:1px solid rgba(0,38,32,.24)}
-      .es3-outcome__chain li{display:grid;grid-template-columns:42px 170px minmax(0,1fr) 220px;gap:24px;align-items:center;min-height:124px;border-bottom:1px solid rgba(0,38,32,.2)}
-      .es3-outcome__chain li>span{align-self:start;padding-top:34px;color:#7651dc;font-size:11px;font-weight:600;letter-spacing:.08em}
-      .es3-outcome__chain h3{margin:0;font-size:14px;font-weight:600;letter-spacing:-.01em;line-height:1.35}
-      .es3-outcome__chain p{max-width:35ch;margin:0;color:var(--es3-ink);font-size:18px;letter-spacing:-.025em;line-height:1.4}
-      .es3-outcome__chain small{display:block;color:rgba(0,38,32,.58);font-size:12px;letter-spacing:.01em;line-height:1.55}
-      .es3-outcome__conclusion{display:grid;grid-template-columns:212px minmax(0,1fr);gap:24px;margin-top:72px;padding-top:28px;border-top:1px solid rgba(0,38,32,.24)}
-      .es3-outcome__conclusion>p{margin:2px 0 0;color:rgba(0,38,32,.58);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-      .es3-outcome__conclusion div{max-width:650px}
-      .es3-outcome__conclusion h3{max-width:18ch;margin:0;font-size:clamp(30px,3.2vw,42px);font-weight:500;letter-spacing:-.045em;line-height:1.04}
-      .es3-outcome__conclusion div p{max-width:62ch;margin:26px 0 0;color:rgba(0,38,32,.7);font-size:15px;line-height:1.7}
-      @media(min-width:1440px){
-        .es3{--es3-wide:min(1500px,calc(100vw - 260px));--es3-wide-left:clamp(72px,5vw,96px)}
-        .es3-context>*,.es3-strategy>*,.es3-foundation>*,.es3-website>*,.es3-newsletters>*,.es3-sales>*,.es3-process>*,.es3-outcome>*{width:var(--es3-wide);margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-context h2{max-width:1320px}
-        .es3 .es3-context__body{width:min(1260px,var(--es3-wide));max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-problem-map{width:var(--es3-wide);max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-section-head{width:min(1180px,var(--es3-wide));max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-section-head h2{max-width:1080px}
-        .es3 .es3-values{width:min(1380px,var(--es3-wide));max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-foundation__canvas{width:var(--es3-wide);max-width:none;margin-right:auto;margin-left:var(--es3-wide-left);grid-template-rows:420px auto auto auto}
-        .es3 .es3-web-logic{width:min(1320px,var(--es3-wide));max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-tour{width:var(--es3-wide);max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-macbook__screen{height:clamp(680px,42vw,780px)}
-        .es3 .es3-newsletters__stage{width:min(1360px,var(--es3-wide));max-width:none;margin-right:auto;margin-left:var(--es3-wide-left);grid-template-columns:320px minmax(0,1fr);gap:90px}
-        .es3 .es3-mail-preview{width:min(100%,680px)}
-        .es3 .es3-mail-preview__screen{height:760px}
-        .es3 .es3-sales__slides,.es3 .es3-sales__print{width:var(--es3-wide);max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-sales__print>div{max-width:760px}
-        .es3 .es3-process__flow{width:min(1440px,var(--es3-wide));max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-outcome__eyebrow,.es3 .es3-outcome>h2,.es3 .es3-outcome__chain,.es3 .es3-outcome__conclusion{width:var(--es3-wide);max-width:none;margin-right:auto;margin-left:var(--es3-wide-left)}
-        .es3 .es3-outcome>h2{max-width:1220px}
-        .es3 .es3-outcome__conclusion{grid-template-columns:250px minmax(0,1fr)}
-      }
-      @media(max-width:900px){.es3 .es3-cover::before{width:22%}.es3 .es3-cover__title{grid-template-columns:1fr}.es3 .es3-cover__title>p{max-width:32ch;padding-left:0;color:rgba(255,255,255,.78)}.es3 .es3-cover__meta{width:74%}.es3-outcome__chain li{grid-template-columns:38px 150px minmax(0,1fr);padding:26px 0}.es3-outcome__chain li>span{padding-top:3px}.es3-outcome__chain small{grid-column:3}}
-      @media(max-width:767px){.es3 .es3-foundation__canvas{grid-template-columns:1fr;grid-template-rows:auto}.es3 .es3-type,.es3 .es3-logo{min-height:300px;padding:28px}.es3 .es3-palette{grid-column:auto;grid-template-columns:1fr 1fr}.es3 .es3-type-spec{grid-column:auto;grid-template-columns:1fr 1fr}.es3 .es3-principles{grid-column:auto}.es3-macbook{padding:0}.es3-macbook__lid{padding:8px 8px 12px;border-radius:12px 12px 5px 5px}.es3-macbook__screen{height:330px}.es3-macbook__base{height:32px}.es3-site-switcher{margin:22px 0 0}.es3-site-switcher button{width:36px;height:36px}.es3 .es3-newsletters__stage{grid-template-columns:1fr;gap:34px}.es3-mail-list{order:2}.es3-mail-preview{justify-self:center}.es3-mail-preview__screen{height:480px}.es3-mail-note{order:3;grid-column:auto}.es3 .es3-sales__print{grid-template-columns:1fr}}
-      @media(max-width:767px){.es3 .es3-cover::before{top:auto;width:100%;height:14px}.es3 .es3-cover__intro p:first-child{max-width:20ch}.es3 .es3-cover__title{display:block}.es3 .es3-cover__title h1{max-width:none}.es3 .es3-cover__title h1 em{color:#c5ed5e}.es3 .es3-cover__title>p{max-width:29ch}.es3 .es3-cover__meta{width:100%;border-color:rgba(255,255,255,.4)}.es3 .es3-cover__meta dt{color:rgba(255,255,255,.58)}.es3 .es3-outcome{padding-top:110px;padding-bottom:112px}.es3 .es3-outcome__eyebrow,.es3 .es3-outcome>h2,.es3 .es3-outcome__chain,.es3 .es3-outcome__conclusion{width:calc(100% - 40px);margin-right:auto;margin-left:auto}.es3 .es3-outcome__eyebrow{margin-bottom:22px}.es3 .es3-outcome>h2{font-size:clamp(42px,12vw,58px);line-height:.96}.es3-outcome__chain{margin-top:58px}.es3-outcome__chain li{grid-template-columns:34px minmax(0,1fr);gap:7px 14px;min-height:0;padding:25px 0}.es3-outcome__chain li>span{grid-column:1;grid-row:1;padding-top:2px}.es3-outcome__chain h3{grid-column:2;grid-row:1;font-size:15px}.es3-outcome__chain p{grid-column:2;font-size:17px;line-height:1.45}.es3-outcome__chain small{grid-column:2;font-size:12px}.es3-outcome__conclusion{grid-template-columns:1fr;gap:18px;margin-top:58px}.es3-outcome__conclusion h3{font-size:32px}.es3-outcome__conclusion div p{font-size:16px}}
-      @media(prefers-reduced-motion:reduce){.es3-macbook__screen img.is-active,.es3-mail-preview__screen img.is-active{animation:none}}
-    </style>
-  </head>
-  <body class="is-loading page-esendeo" data-page="case">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <div class="loader" id="loader" aria-hidden="true">
-      <div class="loader-mark"><span>Esendeo</span><i></i></div>
-      <p>Brand ecosystem</p>
-    </div>
-    <div class="page-texture" aria-hidden="true"></div>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How Chloé Chen connected Esendeo's logistics website, brand system, lifecycle email and sales materials through one visual language.">
+<meta property="og:title" content="Esendeo — One product story across every touchpoint"><meta property="og:type" content="article"><meta property="og:image" content="https://chloechen-design.github.io/assets/esendeo/source-website-home-hd.png">
+<title>Esendeo — Chloé Chen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/esendeo-case.css"><script src="./src/esendeo-case.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="./index.html"><span class="monogram" aria-hidden="true">CC</span> Chloé Chen</a><nav aria-label="Main navigation"><a href="./work.html" aria-current="page">Work</a><a href="./about.html">About</a><a href="./contact.html">Contact</a></nav></header>
+<div class="case-layout">
+<nav class="case-nav" aria-label="Case study sections"><a class="back-link" href="./work.html">← All work</a><ol>
+<li><a href="#overview" aria-current="location">Overview</a></li><li><a href="#challenge">Challenge</a></li><li><a href="#decisions">Decisions</a></li><li><a href="#website">Website</a></li><li><a href="#system">Visual system</a></li><li><a href="#communications">Communication</a></li><li><a href="#delivery">Delivery</a></li>
+</ol><p class="nav-progress"><span data-progress>01</span> / 07</p></nav>
+<main class="case-body" id="main">
+<div class="cover reveal" aria-label="Esendeo website, email and visual system"><div class="cover-grid" aria-hidden="true"></div><div class="cover-intro"><span>Esendeo / 2022–2023</span><strong>One idea.<br><em>Many useful forms.</em></strong></div><div class="cover-browser"><div class="browser-bar"><span aria-hidden="true">● ● ●</span><span>esendeo.com · homepage</span></div><img src="./assets/esendeo/source-website-home-hd.png" alt="Esendeo homepage design" width="1440" height="7368" fetchpriority="high"></div><div class="cover-mail"><img src="./assets/esendeo/source-newsletter-welcome.png" alt="Esendeo welcome email" width="470" height="965"></div><div class="cover-seal" aria-hidden="true">E<span>✳</span></div><span class="cover-caption">Brand × digital × lifecycle</span></div>
+<div class="case-title"><span class="eyebrow">Esendeo · B2B logistics SaaS</span><h1>Make a complex platform <em>recognisable and easier to explain.</em></h1><div class="tags"><span>Product design</span><span>Brand system</span><span>Website</span><span>Lifecycle communication</span></div></div>
 
-    <header class="header" aria-label="Portfolio navigation">
-      <a class="brand" href="./index.html" aria-label="Chloé Chen home"><span>CC</span><strong>Chloé Chen</strong></a>
-      <div class="header-center"><span>Product designer</span><span>Case study · Brand to digital</span></div>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="./index.html">Home</a><a class="is-active" href="./work.html">Work</a><a href="./about.html">About</a><a href="./contact.html">Contact</a>
-      </nav>
-    </header>
+<section class="case-section" id="overview" aria-labelledby="overview-title"><span class="section-label">Overview</span><h2 id="overview-title">One platform, several moments of understanding.</h2><p class="lead">Esendeo helps e-commerce businesses compare carriers, prepare shipments, manage deliveries and track performance. My work connected its website, visual identity, email communication and sales materials so that each touchpoint explained the same service in its own context.</p><dl class="facts"><div><dt>Role</dt><dd>Product Designer</dd></div><div><dt>Period</dt><dd>2022–2023</dd></div><div><dt>Scope</dt><dd>Positioning, identity, digital and communication design</dd></div><div><dt>Artifacts</dt><dd>Website, email formats, presentation system and print</dd></div></dl></section>
 
-    <main class="case case--esendeo es3" id="main">
-      <section class="es3-cover" aria-labelledby="cover-title">
-        <div class="es3-cover__intro reveal">
-          <p>Brand strategy<br />Product design<br />B2B communication</p>
-          <p>Logistics SaaS<br />France</p>
-        </div>
-        <div class="es3-cover__title reveal">
-          <h1 id="cover-title"><span>Esendeo.</span><span>A brand system<br />built to <em>move.</em></span></h1>
-          <p>One coherent identity across the website, lifecycle communication and B2B sales tools.</p>
-        </div>
-        <dl class="es3-cover__meta">
-          <div><dt>Role</dt><dd>Product Designer</dd></div>
-          <div><dt>Scope</dt><dd>Strategy, identity, digital</dd></div>
-          <div><dt>Outputs</dt><dd>Website, newsletters, sales deck, print</dd></div>
-        </dl>
-      </section>
+<section class="case-section" id="challenge" aria-labelledby="challenge-title"><span class="section-label">01 / Challenge</span><h2 id="challenge-title">The offer had to make sense before the interface could earn trust.</h2><p>Esendeo brings several carrier and shipping activities into one service. A visitor could arrive as a shop, an e-commerce team, a wholesaler or a logistics operator; each needed a different reason to explore the same platform. The project also called for a visual language that could travel from digital pages to recurring commercial material.</p><div class="question-band reveal"><span>Design question</span><p>How could someone recognise their own logistics job, understand what Esendeo does, and meet the same clear identity later in an email or sales conversation?</p><i aria-hidden="true">↗</i></div><div class="evidence-callout"><div><span>Evidence in the archive</span><strong>Four audience routes are visible on the homepage; the website, email, slide and print files show the cross-channel scope.</strong></div><p>The available archive contains finished designs, not an original before screen or a measured baseline. This case examines decisions visible in those artifacts.</p></div></section>
 
-      <section class="es3-context" aria-labelledby="context-title">
-        <p class="es3-context__index">Context and challenge</p>
-        <h2 id="context-title">Not a brand, a website and a campaign. <em>One recognisable visual world.</em></h2>
-        <div class="es3-context__body reveal">
-          <p>Esendeo is a SaaS platform for e-commerce logistics. It lets companies manage, track and centralise deliveries through one interface connected to multiple carriers.</p>
-          <p>The product had to make a complex B2B operation feel simpler, reliable and scalable. But its visual identity was fragmented, communication varied from one team and channel to another, and every new marketing or sales asset required slow, costly rework.</p>
-          <p>My responsibility was to clarify the positioning and build one system that could support product growth, daily business use and every customer-facing conversation.</p>
-        </div>
-        <div class="es3-problem-map reveal" aria-label="Business problems before the redesign">
-          <p><strong>Fragmented identity</strong><span>The brand changed from one touchpoint to the next.</span></p>
-          <p><strong>Complex offer</strong><span>Different audiences struggled to identify the right use case.</span></p>
-          <p><strong>Slow production</strong><span>Teams recreated layouts and decisions for every new asset.</span></p>
-          <p><strong>Visual drift</strong><span>Quality was difficult to maintain without constant design support.</span></p>
-        </div>
-      </section>
+<section class="case-section" id="decisions" aria-labelledby="decisions-title"><span class="section-label">02 / Design decisions</span><h2 id="decisions-title">Three decisions hold the experience together.</h2><div class="decision-list">
+<article class="decision-card reveal"><span class="decision-index">01 <i aria-hidden="true">↗</i></span><div><h3>Start with a business situation.</h3><p>Show who the service is for before asking visitors to learn a feature catalogue. The homepage points to shops, e-commerce, wholesalers and logistics teams, while solution pages speak to specific operating needs.</p><a href="#website">See the website evidence ↓</a></div></article>
+<article class="decision-card reveal"><span class="decision-index">02 <i aria-hidden="true">✳</i></span><div><h3>Make an expressive brand usable as a system.</h3><p>Keep a stable typographic hierarchy and deep teal for reading; use bright colors as flexible accents across formats. The choice preserves personality without making every page start from a new visual rule.</p><a href="#system">Inspect the visual system ↓</a></div></article>
+<article class="decision-card reveal"><span class="decision-index">03 <i aria-hidden="true">→</i></span><div><h3>Give each message one job.</h3><p>A welcome email helps a customer get started. A feature email shows what to try next. Sales material supports a conversation. They share a voice, but not an identical composition.</p><a href="#communications">Compare the formats ↓</a></div></article>
+</div></section>
 
-      <section class="es3-strategy" aria-labelledby="strategy-title">
-        <div class="es3-section-head reveal">
-          <span>Brand strategy</span>
-          <h2 id="strategy-title">Build trust first. Make complexity feel simple.</h2>
-          <p>The strategy connected Esendeo's operational strengths with a more human promise. Reliability and transparency build confidence in a critical logistics service. Speed, simplicity and proactive care make the experience feel useful in everyday work.</p>
-        </div>
-        <div class="es3-values reveal">
-          <p class="es3-values__lead">We do care.</p>
-          <p><b>Reliability</b><span>A system that looks stable enough for high-stakes operations.</span></p>
-          <p><b>Transparency</b><span>Clear information, visible proof and direct language.</span></p>
-          <p><b>Speed and simplicity</b><span>Fast comprehension and less effort at every step.</span></p>
-          <p><b>Proactivity</b><span>A partner that anticipates problems instead of reacting late.</span></p>
-        </div>
-      </section>
+<section class="case-section" id="website" aria-labelledby="website-title"><span class="section-label">03 / Website</span><h2 id="website-title">From “who is this for?” to “how does it work?”</h2><p>The homepage introduces the service, branches into four business contexts, then explains an operational sequence: compare a carrier, ship, manage and track. A solution page can open with a more precise use case and still return to the same product capabilities.</p><div class="journey reveal" aria-label="Website information sequence"><div><span>01</span><strong>Recognise</strong><small>Choose a business context</small></div><div><span>02</span><strong>Understand</strong><small>See the platform at work</small></div><div><span>03</span><strong>Evaluate</strong><small>Review details and proof</small></div><div><span>04</span><strong>Act</strong><small>Request a conversation</small></div></div>
+<div class="artifact-head"><div><span class="eyebrow">Original interface artifacts</span><h3>Switch pages, then scroll inside the browser.</h3></div><p>Each view is an original design file. Open the full image to inspect details.</p></div>
+<div class="site-gallery" data-gallery="site"><div class="tab-row" role="tablist" aria-label="Esendeo website pages"><button type="button" role="tab" aria-selected="true" tabindex="0" data-index="0">01 <span>Homepage</span></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-index="1">02 <span>Boutiques</span></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-index="2">03 <span>Product features</span></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-index="3">04 <span>Logistics teams</span></button></div><div class="gallery-panel" role="tabpanel" tabindex="0" aria-label="Selected website page"><div class="browser-bar"><span aria-hidden="true">● ● ●</span><span data-site-address>esendeo.com / home</span><a data-site-open data-zoom href="./assets/esendeo/source-website-home-hd.png">Open full image ↗</a></div><div class="site-scroll"><img data-site-image src="./assets/esendeo/source-website-home-hd.png" alt="Complete Esendeo homepage including audience routes and the product sequence" width="1440" height="7368" loading="lazy"></div></div><p class="artifact-caption" data-site-caption>Homepage · Four customer routes precede the product sequence and contact prompt.</p></div>
+<div class="interface-proof"><span aria-hidden="true">↳</span><p><strong>What this design makes visible</strong>The same multi-carrier platform has different starting points. Customers enter through their situation, then learn the shared capabilities.</p></div></section>
 
-      <section class="es3-foundation" aria-labelledby="foundation-title">
-        <div class="es3-section-head reveal">
-          <span>Visual foundation</span>
-          <h2 id="foundation-title">The visual grammar behind every touchpoint.</h2>
-          <p>I translated the strategy into repeatable decisions: a direct typographic voice, a controlled but energetic colour scale, clear hierarchy and a logo system flexible enough for product, partner and sales contexts.</p>
-        </div>
-        <div class="es3-foundation__canvas reveal">
-          <div class="es3-type">
-            <small>Primary typeface</small>
-            <strong>Satoshi</strong>
-            <p>Aa Bb Cc 01</p>
-            <div><span>Regular</span><span>Medium</span><span>Bold</span></div>
-          </div>
-          <figure class="es3-logo">
-            <figcaption>Primary wordmark</figcaption>
-            <img src="./assets/esendeo/source-logo-primary.png" alt="Esendeo primary wordmark" loading="lazy" />
-            <p>One recognisable signature across product, partner and sales contexts.</p>
-          </figure>
-          <div class="es3-palette" aria-label="Esendeo colour system">
-            <span style="--c:#4fffe3"><b>Aqua</b><small>#4FFFE3</small></span><span style="--c:#61c6ed"><b>Blue</b><small>#61C6ED</small></span><span style="--c:#875eed"><b>Purple</b><small>#875EED</small></span><span style="--c:#ed875e"><b>Orange</b><small>#ED875E</small></span><span style="--c:#c5ed5e"><b>Lime</b><small>#C5ED5E</small></span>
-          </div>
-          <div class="es3-type-spec" aria-label="Esendeo type scale">
-            <span><small>Display</small><b>48 / 52</b></span>
-            <span><small>Section</small><b>32 / 38</b></span>
-            <span><small>Body</small><b>16 / 25</b></span>
-            <span><small>Label</small><b>12 / 16</b></span>
-          </div>
-          <div class="es3-principles"><span><b>Deep teal</b><br />Credibility and contrast</span><span><b>Bright colour</b><br />Context and energy</span><span><b>Clear scale</b><br />Fast comprehension</span></div>
-        </div>
-      </section>
+<section class="case-section" id="system" aria-labelledby="system-title"><span class="section-label">04 / Visual system</span><h2 id="system-title">The identity changes expression, not its rules.</h2><p>The design files use Satoshi, a deep teal anchor and a broad palette with lighter steps. Rather than using every color on every screen, the system has a quiet reading layer and expressive moments for differentiation.</p><div class="system-grid reveal"><div class="type-card"><small>01 / Typography</small><strong>Clear enough for operations.<br><em>Distinct enough for the brand.</em></strong><span>Satoshi in the Esendeo work · Geist + Instrument Serif in this portfolio</span></div><div class="logo-card"><small>02 / Signature</small><img src="./assets/esendeo/source-logo-primary.png" alt="Original Esendeo logo asset" width="1400" height="704" loading="lazy"><p>The wordmark stays recognisable across backgrounds and formats.</p></div></div><div class="palette" aria-label="Selected colors from the original Esendeo palette"><div style="--swatch:#002620;--text:#fff"><span>Anchor</span><strong>#002620</strong></div><div style="--swatch:#4fffe3;--text:#002620"><span>Aqua</span><strong>#4FFFE3</strong></div><div style="--swatch:#875eed;--text:#fff"><span>Purple</span><strong>#875EED</strong></div><div style="--swatch:#c5ed5e;--text:#002620"><span>Lime</span><strong>#C5ED5E</strong></div><div style="--swatch:#ed875e;--text:#002620"><span>Orange</span><strong>#ED875E</strong></div></div><a class="artifact-link" href="./assets/esendeo/source-foundation-color.png" data-zoom><span>Inspect the full source color scale</span><span aria-hidden="true">↗</span></a><p class="micro-note">These are documented design tokens and visual assets. Their effects on comprehension or conversion were not measured in the available material.</p></section>
 
-      <section class="es3-website" aria-labelledby="website-title">
-        <div class="es3-section-head reveal">
-          <span>From identity to interface</span>
-          <h2 id="website-title">The website made the system move.</h2>
-          <p>The website had to explain a multi-carrier logistics platform without flattening it into generic SaaS language. I structured the story around user needs, sector-specific entry points and a simple operational sequence: compare, ship, manage and track.</p>
-        </div>
-        <div class="es3-web-logic reveal">
-          <p><strong>Start from the business context</strong><span>Solution pages let each company recognise a precise use case before exploring features.</span></p>
-          <p><strong>Reduce comprehension effort</strong><span>Strong hierarchy and progressive disclosure turn a technical offer into a readable product story.</span></p>
-          <p><strong>Make benefits concrete</strong><span>Operational flows, platform views and customer proof help users understand how Esendeo solves daily logistics problems.</span></p>
-        </div>
-        <div class="es3-tour reveal" data-es3-site-demo>
-          <div class="es3-macbook">
-            <div class="es3-macbook__lid">
-              <i class="es3-macbook__camera" aria-hidden="true"></i>
-              <div class="es3-macbook__screen">
-                <img class="is-active" src="./assets/esendeo/source-website-home-hd.png" alt="Esendeo homepage" loading="lazy" data-label="Homepage" />
-                <img src="./assets/esendeo/source-website-solution-a-hd.png" alt="Esendeo e-commerce solution page" loading="lazy" data-label="E-commerce" />
-                <img src="./assets/esendeo/source-website-features-hd.png" alt="Esendeo product features page" loading="lazy" data-label="Product features" />
-                <img src="./assets/esendeo/source-website-solution-b-hd.png" alt="Esendeo retail solution page" loading="lazy" data-label="Retail solution" />
-              </div>
-            </div>
-            <div class="es3-macbook__base" aria-hidden="true"><i></i></div>
-          </div>
-          <div class="es3-site-switcher" aria-label="Website pages">
-            <p><span>Now showing</span><strong>Homepage</strong></p>
-            <div><button class="is-active" type="button" data-index="0">01</button><button type="button" data-index="1">02</button><button type="button" data-index="2">03</button><button type="button" data-index="3">04</button></div>
-          </div>
-        </div>
-      </section>
+<section class="case-section" id="communications" aria-labelledby="communications-title"><span class="section-label">05 / Communication</span><h2 id="communications-title">A shared voice, with a different task in each channel.</h2><p>Website content explains the offer. Lifecycle emails orient customers. Sales slides make the offer usable in conversation. A coherent brand needed all three to stay recognisable while doing distinct jobs.</p><div class="channel-header"><span class="channel-icon" aria-hidden="true">✳</span><div><span class="eyebrow">Lifecycle / five examples</span><h3>Choose the message to see its purpose and original design.</h3></div></div>
+<div class="mail-gallery" data-gallery="mail"><div class="mail-tabs" role="tablist" aria-label="Esendeo communication examples"><button type="button" role="tab" aria-selected="true" tabindex="0" data-index="0"><span>01</span><strong>Partner launch</strong></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-index="1"><span>02</span><strong>Co-branded offer</strong></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-index="2"><span>03</span><strong>Welcome journey</strong></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-index="3"><span>04</span><strong>Feature activation</strong></button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-index="4"><span>05</span><strong>Customer follow-up</strong></button></div><div class="mail-preview" role="tabpanel" tabindex="0" aria-label="Selected email example"><div class="mail-bar"><span>From / Esendeo</span><strong data-mail-title>Partner launch</strong><a data-mail-open data-zoom href="./assets/esendeo/source-newsletter-shippingbo.png">Open image ↗</a></div><div class="mail-scroll"><img data-mail-image src="./assets/esendeo/source-newsletter-shippingbo.png" alt="Esendeo partner launch newsletter" width="811" height="2200" loading="lazy"></div></div><p class="mail-purpose"><span>Design job</span><strong data-mail-purpose>Introduce a partner and connect the offer to a concrete shipping benefit.</strong></p></div>
+<div class="sales-block"><div class="sales-copy"><span class="eyebrow">Sales / print</span><h3>A presentation system the team could reuse.</h3><p>The source deck shows repeated title, value, offer and contact structures across slides. Print materials carry the same logo, palette and hierarchy into a different format.</p></div><a href="./assets/esendeo/source-sales-reference.png" data-zoom class="sales-image"><img src="./assets/esendeo/source-sales-reference.png" alt="Original Esendeo presentation slide system" width="1384" height="796" loading="lazy"><span>Inspect presentation ↗</span></a><a href="./assets/esendeo/07-flyers.png" data-zoom class="print-image"><img src="./assets/esendeo/07-flyers.png" alt="Esendeo flyer and print mockups" width="1920" height="1080" loading="lazy"><span>Inspect print ↗</span></a></div></section>
 
-      <section class="es3-newsletters" aria-labelledby="newsletter-title">
-        <div class="es3-section-head reveal">
-          <span>B2B lifecycle communication</span>
-          <h2 id="newsletter-title">Newsletters became part of the service, not an afterthought.</h2>
-          <p>I designed modular structures for onboarding, advanced features, customer feedback and partner announcements. Each message has a precise job, a clear hierarchy and one visible next action, while remaining recognisably Esendeo.</p>
-        </div>
-        <div class="es3-newsletters__stage reveal" data-es3-mail-demo>
-          <div class="es3-mail-list" aria-label="Newsletter campaigns">
-            <p><small>Campaign system</small><strong>Five messages.<br />One recognisable voice.</strong></p>
-            <button class="is-active" type="button" data-index="0"><b>01</b><span>Partner launch</span></button>
-            <button type="button" data-index="1"><b>02</b><span>Co-branded offer</span></button>
-            <button type="button" data-index="2"><b>03</b><span>Welcome journey</span></button>
-            <button type="button" data-index="3"><b>04</b><span>Feature activation</span></button>
-            <button type="button" data-index="4"><b>05</b><span>Customer follow-up</span></button>
-          </div>
-          <div class="es3-mail-preview">
-            <div class="es3-mail-preview__bar"><span>From: Esendeo</span><strong>Partner launch</strong><i></i></div>
-            <div class="es3-mail-preview__screen">
-              <img class="is-active" src="./assets/esendeo/source-newsletter-shippingbo.png" alt="Shippingbo partner newsletter" loading="lazy" data-label="Partner launch" />
-              <img src="./assets/esendeo/source-newsletter-brick.png" alt="Brick par Brick partner newsletter" loading="lazy" data-label="Co-branded offer" />
-              <img src="./assets/esendeo/source-newsletter-welcome.png" alt="Esendeo welcome newsletter" loading="lazy" data-label="Welcome journey" />
-              <img src="./assets/esendeo/source-newsletter-features.png" alt="Esendeo advanced features newsletter" loading="lazy" data-label="Feature activation" />
-              <img src="./assets/esendeo/source-newsletter-thankyou.png" alt="Esendeo customer thank-you newsletter" loading="lazy" data-label="Customer follow-up" />
-            </div>
-          </div>
-          <p class="es3-mail-note">Each format has one job, a clear hierarchy and one next action. The shared grid keeps partner, onboarding and product communication visibly connected.</p>
-        </div>
-      </section>
-
-      <section class="es3-sales" aria-labelledby="sales-title">
-        <div class="es3-section-head reveal">
-          <span>B2B sales system</span>
-          <h2 id="sales-title">One visual system, many touchpoints.</h2>
-          <p>The sales deck and print-ready materials turned the same strategy into a reusable commercial narrative. Modular slides help teams present the company, services, transport offer, proof points and client cases clearly without rebuilding every presentation.</p>
-        </div>
-        <div class="es3-sales__slides reveal">
-          <figure class="es3-sales__gallery"><img src="./assets/esendeo/source-sales-reference.png" alt="Selected Esendeo presentation system shown as a multi-page slide gallery" loading="lazy" /></figure>
-        </div>
-        <div class="es3-sales__print reveal">
-          <div><p>Digital to physical</p><h3>The same system, ready for real conversations.</h3><p>Sales decks and print materials share one hierarchy, colour logic and tone, while each format keeps its own composition.</p></div>
-          <figure><img src="./assets/esendeo/07-flyers.png" alt="Esendeo printed sales materials and flyer mockups" loading="lazy" /></figure>
-        </div>
-      </section>
-
-      <section class="es3-process" aria-labelledby="process-title">
-        <div class="es3-section-head reveal"><span>End-to-end approach</span><h2 id="process-title">A system built from strategy, then tested in real use.</h2><p>The work moved from brand understanding to concrete daily tools, with each stage giving the next one clearer constraints and reusable foundations.</p></div>
-        <ol class="es3-process__flow reveal"><li><b>Understand</b><span>User needs, brand vision and competitive context</span></li><li><b>Define</b><span>Values, positioning, personality and tone of voice</span></li><li><b>Explore</b><span>Creative direction, colour and typography</span></li><li><b>Systemise</b><span>Logo, palette, type, icon and layout rules</span></li><li><b>Apply</b><span>Website, newsletters, sales deck and print</span></li><li><b>Enable</b><span>Guidelines and reusable assets for product and marketing teams</span></li></ol>
-      </section>
-
-      <section class="es3-outcome" aria-labelledby="outcome-title">
-        <p class="es3-outcome__eyebrow">Outcome and business value</p>
-        <h2 id="outcome-title">One system that connects brand expression with daily business use.</h2>
-        <ol class="es3-outcome__chain reveal">
-          <li><span>01</span><h3>Brand foundation</h3><p>Shared principles replaced one-off visual decisions.</p><small>Positioning · Tone of voice · Visual rules</small></li>
-          <li><span>02</span><h3>Digital experience</h3><p>Use-case architecture made a complex logistics offer easier to navigate.</p><small>Homepage · Solution pages · Product stories</small></li>
-          <li><span>03</span><h3>Lifecycle communication</h3><p>Five repeatable newsletter formats gave recurring messages a consistent structure.</p><small>Partner · Welcome · Activation · Follow-up</small></li>
-          <li><span>04</span><h3>Sales enablement</h3><p>A modular deck and print toolkit created one coherent commercial story.</p><small>Sales deck · Flyers · Meeting material</small></li>
-        </ol>
-        <div class="es3-outcome__conclusion reveal">
-          <p>What changed</p>
-          <div><h3>From isolated assets to a system teams could use.</h3><p>The project connected strategy, identity, digital experience and B2B communication. New touchpoints could be created from shared rules instead of restarting the design process each time.</p></div>
-        </div>
-      </section>
-
-      <section class="project-next">
-        <a class="round-link" href="./work.html"><span>Back to work</span><i aria-hidden="true">←</i></a>
-        <a class="round-link" href="./contact.html"><span>Contact</span><i aria-hidden="true">→</i></a>
-      </section>
-    </main>
-    <script src="./src/main.js?v=20"></script>
-    <script>
-      (() => {
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const setupReel = (rootSelector, imageSelector, buttonSelector, labelSelector, delay = 9400) => {
-          const root = document.querySelector(rootSelector);
-          if (!root) return;
-          const images = [...root.querySelectorAll(imageSelector)];
-          const buttons = [...root.querySelectorAll(buttonSelector)];
-          const label = root.querySelector(labelSelector);
-          let index = 0;
-          let timer;
-          const show = (next) => {
-            index = (next + images.length) % images.length;
-            images.forEach((image, i) => image.classList.toggle('is-active', i === index));
-            buttons.forEach((button, i) => button.classList.toggle('is-active', i === index));
-            if (label) label.textContent = images[index].dataset.label || '';
-            const image = images[index];
-            const viewport = image.parentElement;
-            const setTravel = () => {
-              const renderedHeight = viewport.clientWidth * image.naturalHeight / image.naturalWidth;
-              const end = Math.min(0, viewport.clientHeight - renderedHeight - 2);
-              image.style.setProperty('--reel-mid', `${end / 2}px`);
-              image.style.setProperty('--reel-end', `${end}px`);
-            };
-            if (image.complete) setTravel();
-            else image.addEventListener('load', setTravel, { once: true });
-          };
-          const schedule = () => {
-            if (reduce) return;
-            window.clearTimeout(timer);
-            timer = window.setTimeout(() => { show(index + 1); schedule(); }, delay);
-          };
-          buttons.forEach((button, i) => button.addEventListener('click', () => { show(i); schedule(); }));
-          show(0);
-          schedule();
-        };
-        setupReel('[data-es3-site-demo]', '.es3-macbook__screen img', '.es3-site-switcher button', '.es3-site-switcher p strong');
-        setupReel('[data-es3-mail-demo]', '.es3-mail-preview__screen img', '.es3-mail-list button', '.es3-mail-preview__bar strong');
-      })();
-    </script>
-  </body>
-</html>
+<section class="case-section delivery" id="delivery" aria-labelledby="delivery-title"><span class="section-label">06 / Delivery and reflection</span><h2 id="delivery-title">A connected set of assets, with impact still to measure.</h2><p>The archive shows a website family, visual foundations, five email designs and reusable sales/print material. Together they demonstrate how one product story was carried into several customer-facing contexts.</p><div class="delivery-grid"><div><strong>04</strong><span>Website views in the archive</span></div><div><strong>05</strong><span>Lifecycle email examples</span></div><div><strong>01</strong><span>Shared visual language across channels</span></div></div><div class="reflection"><span aria-hidden="true">↗</span><div><h3>What I would validate next</h3><p>Test whether visitors find the right sector page without help, whether they can explain the compare → ship → manage → track model, and whether email recipients understand their next action. Track solution-page journeys and qualified enquiries after measurement is set up.</p></div></div><p class="boundary">The available files do not establish production adoption, conversion change or email performance. The counts above describe design artifacts, not business results.</p></section>
+<div class="next-project"><a href="./work.html"><span>Explore</span>← All work</a><a href="./wms-design-system.html"><span>Next case study</span>WMS Product System →</a></div>
+</main></div>
+<footer class="site-footer"><span>Chloé Chen · Product Designer · Paris</span><div><a href="mailto:chloechenjob00@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/chloechen0823/">LinkedIn ↗</a></div></footer>
+<dialog class="lightbox" aria-label="Full-size project artifact"><button type="button" data-close-lightbox aria-label="Close image">Close ×</button><img src="" alt=""></dialog>
+</body></html>
