@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/styles.css?v=48" />
+    <link rel="stylesheet" href="./src/work-categories.css?v=1" />
   </head>
   <body class="is-loading" data-page="work">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -38,125 +39,29 @@
       </nav>
     </header>
 
-    <main class="work-page" id="main">
-      <section class="work-hero">
+    <main class="work-page work-page--catalogue" id="main">
+      <section class="work-hero" aria-labelledby="work-title">
         <div class="work-hero__copy reveal">
           <p class="eyebrow">Selected work · 2021–2026</p>
-          <h1>Products, platforms and systems built to make complexity usable.</h1>
+          <h1 id="work-title">Products, platforms and systems built to make complexity usable.</h1>
         </div>
         <div class="work-hero__note reveal">
-          <p>
-            Six product design case studies spanning mobile, multilingual services, AI prototypes, brand and
-            operational systems.
-          </p>
-          <dl aria-label="Portfolio overview">
-            <div><dt>06</dt><dd>Case studies</dd></div>
-            <div><dt>04</dt><dd>Working products</dd></div>
-            <div><dt>03</dt><dd>Platforms</dd></div>
-          </dl>
+          <p>Start with real team constraints and delivered work, then explore independent prototypes. Choose a project type below; each card states how far the work went.</p>
+          <div class="work-hero__key"><span><i></i> Company &amp; team work</span><span><i></i> Independent exploration</span></div>
         </div>
       </section>
 
-      <section class="work-feature work-feature--editorial reveal" aria-labelledby="featured-projects">
-        <header class="work-section-head">
-          <div>
-            <span>Featured</span>
-            <h2 id="featured-projects">Case studies</h2>
-          </div>
-          <p>Three complementary views of my practice: mobile product design, AI prototyping and brand strategy.</p>
-        </header>
-
-        <div class="work-editorial-grid">
-          <a class="work-card work-card--spotlight work-card--spotlight-invoice" href="./invoice-mobile-design.html">
-            <div class="work-card__visual work-card__visual--invoice">
-              <img class="work-phone work-phone--back" src="./assets/invoice-design/12-dashboard.png" alt="Facture Mobile dashboard" />
-              <img class="work-phone work-phone--front" src="./assets/invoice-design/07-invoice-form.png" alt="Facture Mobile invoice creation flow" />
-              <span class="work-visual-note">Mobile-first flow</span>
-            </div>
-            <div class="work-card__content">
-              <span class="work-card__index">01</span>
-              <div class="work-card__title">
-                <p>Mobile product · Independent concept</p>
-                <h3>Facture Mobile</h3>
-              </div>
-              <p class="work-card__summary">A focused invoicing experience helping freelancers create clients, issue invoices and track payments with less friction.</p>
-              <div class="work-card__footer">
-                <span>UX architecture</span><span>UI system</span><span>Prototype</span>
-                <small>2026 · 6 min read</small>
-                <b class="work-card__cta">View case <i aria-hidden="true">↗</i></b>
-              </div>
-            </div>
-          </a>
-
-          <a class="work-card work-card--spotlight work-card--spotlight-memory" href="./interview-memory-system.html">
-            <div class="work-card__visual work-card__visual--memory">
-              <div class="work-browser">
-                <div class="work-browser__bar"><i></i><i></i><i></i><span>Prototype v0.5</span></div>
-                <div class="work-memory-demo" role="img" aria-label="Interview Memory System dashboard preview">
-                  <aside><strong><i>C</i> Chloe Library</strong><span class="is-active">01&nbsp;&nbsp; Motivation</span><span>02&nbsp;&nbsp; Behavioral</span><span>03&nbsp;&nbsp; AI &amp; Design</span></aside>
-                  <div class="work-memory-demo__main">
-                    <header><span>Application library</span><b>EN&nbsp;&nbsp; FR</b></header>
-                    <section><p>Prototype v0.5</p><h4>No more rebuilding stories under pressure.</h4><strong>18<small>answered prompts</small></strong></section>
-                    <div class="work-memory-demo__cards"><article><span>Q08</span><h5>Turn messy information into a clear system.</h5></article><article><span>Q14</span><h5>Integrate AI into a design workflow.</h5></article></div>
-                  </div>
-                </div>
-              </div>
-              <span class="work-card__stamp">Latest experiment</span>
-            </div>
-            <div class="work-card__content">
-              <span class="work-card__index">02</span>
-              <div class="work-card__title"><p>AI-assisted MVP · Web application</p><h3>Interview Memory System</h3></div>
-              <p class="work-card__summary">A privacy-aware workspace turning scattered career evidence into reusable interview stories.</p>
-              <div class="work-card__footer"><span>Human–AI UX</span><span>Vibe coding</span><small>2026 · 6 min read</small><b class="work-card__cta">View case <i aria-hidden="true">↗</i></b></div>
-            </div>
-          </a>
-
-          <a class="work-card work-card--spotlight work-card--spotlight-esendeo" href="./esendeo-brand-ecosystem.html">
-            <div class="work-card__visual work-card__visual--esendeo-strategy">
-              <div class="work-esendeo-strategy__copy">
-                <p>Brand strategy / B2B SaaS</p>
-                <h4>A brand system<br />built to move.</h4>
-              </div>
-              <div class="work-esendeo-strategy__art">
-                <span>One system</span>
-                <h5>Identity<br />Digital<br />Lifecycle<br />Sales</h5>
-                <p>Built to stay coherent as it grows.</p>
-              </div>
-            </div>
-            <div class="work-card__content">
-              <span class="work-card__index">03</span>
-              <div class="work-card__title"><p>Brand system · B2B SaaS</p><h3>Esendeo</h3></div>
-              <p class="work-card__summary">One visual foundation connecting identity, website, lifecycle communication and B2B sales.</p>
-              <div class="work-card__footer"><span>Brand strategy</span><span>Digital</span><small>2022–2023 · 5 min read</small><b class="work-card__cta">View case <i aria-hidden="true">↗</i></b></div>
-            </div>
-          </a>
+      <section class="work-catalogue" aria-labelledby="catalogue-title">
+        <div class="work-catalogue__head reveal"><div><p class="eyebrow">Browse by project type</p><h2 id="catalogue-title">Find the kind of work that matters to you.</h2></div><p>Type helps you navigate. Delivery status tells you what was actually made.</p></div>
+        <div class="work-filters" role="group" aria-label="Filter projects by type">
+          <button type="button" class="work-filter is-active" data-filter="all" aria-pressed="true"><span>01 / All work <b>06</b></span><small>Start with delivered work</small></button>
+          <button type="button" class="work-filter" data-filter="product" aria-pressed="false"><span>02 / Product &amp; systems <b>02</b></span><small>Operational flows and components</small></button>
+          <button type="button" class="work-filter" data-filter="web" aria-pressed="false"><span>03 / Web &amp; brand <b>02</b></span><small>Service websites and identity</small></button>
+          <button type="button" class="work-filter" data-filter="experiments" aria-pressed="false"><span>04 / Product experiments <b>02</b></span><small>Prototypes and concepts</small></button>
         </div>
-      </section>
-
-      <section class="work-group" aria-labelledby="more-selected-work">
-        <header class="work-section-head reveal">
-          <div>
-            <span>04–06</span>
-            <h2 id="more-selected-work">More selected work</h2>
-          </div>
-          <p>Responsive experiences designed around clearer journeys, commercial intent and everyday tasks.</p>
-        </header>
-
-        <div class="work-grid">
-          <a class="work-card reveal" href="./wms-design-system.html">
-            <div class="work-card__visual work-card__visual--wms">
-              <img class="work-sheet work-sheet--back" src="./assets/wms-design-system/03-FR.png" alt="WMS component system overview" />
-              <img class="work-sheet work-sheet--front" src="./assets/wms-design-system/01-FR.png" alt="WMS Design System case study cover" />
-              <span class="work-visual-note">System → product</span>
-            </div>
-            <div class="work-card__content">
-              <div class="work-card__title"><p>Design system · Logistics software</p><h3>WMS Design System</h3></div>
-              <p class="work-card__summary">Reusable patterns that brought consistency and a more reliable designer–developer handoff to dense logistics workflows.</p>
-              <div class="work-card__footer"><span>Systems thinking</span><span>Components</span><span>Handoff</span><small>2021–2022 · 5 min read</small><b class="work-card__cta">View case <i aria-hidden="true">↗</i></b></div>
-            </div>
-          </a>
-
-          <a class="work-card reveal" href="./ftl-group-website.html">
+        <p class="work-filter-result" role="status" aria-live="polite">Showing all six projects · delivered work first</p>
+        <div class="work-catalogue__grid">
+          <a data-category="web" class="work-card work-card--lead reveal" href="./ftl-group-website.html">
             <div class="work-card__visual work-card__visual--ftl">
               <div class="work-browser work-browser--ftl">
                 <div class="work-browser__bar"><i></i><i></i><i></i><span>ftl-group.com</span></div>
@@ -168,6 +73,8 @@
               <span class="work-visual-note">Launched · 3 languages</span>
             </div>
             <div class="work-card__content">
+              <div class="work-card__evidence"><span class="work-card__status">Launched website</span><span>Company team</span></div>
+              <span class="work-card__index">01</span>
               <div class="work-card__title">
                 <p>B2B website · Responsive platform</p>
                 <h3>FTL Group Website</h3>
@@ -184,22 +91,106 @@
             </div>
           </a>
 
-          <a class="work-card reveal" href="./lvv-shipping-system.html">
+          <a data-category="product" class="work-card reveal" href="./wms-design-system.html">
+            <div class="work-card__visual work-card__visual--wms">
+              <img class="work-sheet work-sheet--back" src="./assets/wms-design-system/03-FR.png" alt="WMS component system overview" />
+              <img class="work-sheet work-sheet--front" src="./assets/wms-design-system/01-FR.png" alt="WMS Design System case study cover" />
+              <span class="work-visual-note">System → product</span>
+            </div>
+            <div class="work-card__content">
+              <div class="work-card__evidence"><span class="work-card__status">Design system delivered</span><span>Company team</span></div>
+              <span class="work-card__index">02</span>
+              <div class="work-card__title"><p>Design system · Logistics software</p><h3>WMS Design System</h3></div>
+              <p class="work-card__summary">Reusable patterns that brought consistency and a more reliable designer–developer handoff to dense logistics workflows.</p>
+              <div class="work-card__footer"><span>Systems thinking</span><span>Components</span><span>Handoff</span><small>2021–2022 · 5 min read</small><b class="work-card__cta">View case <i aria-hidden="true">↗</i></b></div>
+            </div>
+          </a>
+
+          <a data-category="product" class="work-card reveal" href="./lvv-shipping-system.html">
             <div class="work-card__visual work-card__visual--lvv">
               <div class="work-tablet"><div class="work-tablet__camera"></div><img src="./assets/lvv/02-destination.png" alt="LVV multilingual shipping destination screen" /></div>
               <span class="work-visual-note">FR · EN · ZH</span>
             </div>
             <div class="work-card__content">
+              <div class="work-card__evidence"><span class="work-card__status">Developed · not operated</span><span>Company team</span></div>
+              <span class="work-card__index">03</span>
               <div class="work-card__title"><p>Assisted service · Shared iPad</p><h3>LVV Shipping System</h3></div>
               <p class="work-card__summary">A guided multilingual flow for staff and international shoppers completing cross-border shipping together.</p>
               <div class="work-card__footer"><span>Service UX</span><span>Multilingual UI</span><small>2023 · 8 min read</small><b class="work-card__cta">View case <i aria-hidden="true">↗</i></b></div>
             </div>
           </a>
 
+          <a data-category="web" class="work-card work-card--spotlight work-card--spotlight-esendeo reveal" href="./esendeo-brand-ecosystem.html">
+            <div class="work-card__visual work-card__visual--esendeo-strategy">
+              <div class="work-esendeo-strategy__copy">
+                <p>Brand strategy / B2B SaaS</p>
+                <h4>A brand system<br />built to move.</h4>
+              </div>
+              <div class="work-esendeo-strategy__art">
+                <span>One system</span>
+                <h5>Identity<br />Digital<br />Lifecycle<br />Sales</h5>
+                <p>Built to stay coherent as it grows.</p>
+              </div>
+            </div>
+            <div class="work-card__content">
+              <div class="work-card__evidence"><span class="work-card__status">Brand assets delivered</span><span>Company project</span></div>
+              <span class="work-card__index">04</span>
+              <div class="work-card__title"><p>Brand & digital · B2B logistics</p><h3>Esendeo</h3></div>
+              <p class="work-card__summary">One visual foundation connecting identity, website, lifecycle communication and B2B sales.</p>
+              <div class="work-card__footer"><span>Brand strategy</span><span>Digital</span><small>2022–2023 · 5 min read</small><b class="work-card__cta">View case <i aria-hidden="true">↗</i></b></div>
+            </div>
+          </a>
+
+          <a data-category="experiments" class="work-card work-card--spotlight work-card--spotlight-memory reveal" href="./interview-memory-system.html">
+            <div class="work-card__visual work-card__visual--memory">
+              <div class="work-browser">
+                <div class="work-browser__bar"><i></i><i></i><i></i><span>Prototype v0.5</span></div>
+                <div class="work-memory-demo" role="img" aria-label="Interview Memory System dashboard preview">
+                  <aside><strong><i>C</i> Chloe Library</strong><span class="is-active">01&nbsp;&nbsp; Motivation</span><span>02&nbsp;&nbsp; Behavioral</span><span>03&nbsp;&nbsp; AI &amp; Design</span></aside>
+                  <div class="work-memory-demo__main">
+                    <header><span>Application library</span><b>EN&nbsp;&nbsp; FR</b></header>
+                    <section><p>Prototype v0.5</p><h4>No more rebuilding stories under pressure.</h4><strong>18<small>answered prompts</small></strong></section>
+                    <div class="work-memory-demo__cards"><article><span>Q08</span><h5>Turn messy information into a clear system.</h5></article><article><span>Q14</span><h5>Integrate AI into a design workflow.</h5></article></div>
+                  </div>
+                </div>
+              </div>
+              <span class="work-card__stamp">Latest experiment</span>
+            </div>
+            <div class="work-card__content">
+              <div class="work-card__evidence"><span class="work-card__status">Self-initiated prototype</span><span>Independent</span></div>
+              <span class="work-card__index">05</span>
+              <div class="work-card__title"><p>Independent browser prototype</p><h3>Interview Memory System</h3></div>
+              <p class="work-card__summary">A privacy-aware workspace turning scattered career evidence into reusable interview stories.</p>
+              <div class="work-card__footer"><span>Human–AI UX</span><span>Vibe coding</span><small>2026 · 6 min read</small><b class="work-card__cta">View case <i aria-hidden="true">↗</i></b></div>
+            </div>
+          </a>
+
+          <a data-category="experiments" class="work-card work-card--spotlight work-card--spotlight-invoice reveal" href="./invoice-mobile-design.html">
+            <div class="work-card__visual work-card__visual--invoice">
+              <img class="work-phone work-phone--back" src="./assets/invoice-design/12-dashboard.png" alt="Facture Mobile dashboard" />
+              <img class="work-phone work-phone--front" src="./assets/invoice-design/07-invoice-form.png" alt="Facture Mobile invoice creation flow" />
+              <span class="work-visual-note">Mobile-first flow</span>
+            </div>
+            <div class="work-card__content">
+              <div class="work-card__evidence"><span class="work-card__status">Independent concept · not launched</span><span>Independent</span></div>
+              <span class="work-card__index">06</span>
+              <div class="work-card__title">
+                <p>Mobile product · Independent concept</p>
+                <h3>Facture Mobile</h3>
+              </div>
+              <p class="work-card__summary">An independent mobile concept exploring how freelancers could create clients, issue invoices and track payment status in one flow.</p>
+              <div class="work-card__footer">
+                <span>UX architecture</span><span>UI system</span><span>Prototype</span>
+                <small>2026 · 6 min read</small>
+                <b class="work-card__cta">View case <i aria-hidden="true">↗</i></b>
+              </div>
+            </div>
+          </a>
         </div>
       </section>
     </main>
 
     <script src="./src/main.js?v=19"></script>
+    <script src="./src/work-categories.js?v=1"></script>
   </body>
 </html>
