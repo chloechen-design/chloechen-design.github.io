@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERP System Design - Chloé Chen</title>
+  <meta name="description" content="How I translated direct client requirements into a launched ERP system for a Spanish beauty wholesaler.">
+  <meta property="og:title" content="ERP System Design - Chloé Chen">
+  <meta property="og:description" content="How I turned client requirements into flows, screens and a launched ERP system.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="./assets/erp-system/order-create.png">
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/erp-case.css?v=9">
+  <script src="./src/editorial.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="./index.html"><span class="monogram" aria-hidden="true">CC</span> Chloé Chen</a>
+    <nav aria-label="Main navigation"><a href="./work.html" aria-current="page">Work</a><a href="./about.html">About</a><a href="./contact.html">Contact</a></nav>
+  </header>
+
+  <div class="case-layout">
+    <nav class="case-nav" aria-label="Case study sections">
+      <a href="./work.html">← All work</a>
+      <ol>
+        <li><a href="#overview" aria-current="location">Overview</a></li>
+        <li><a href="#challenge">Challenge</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#model">System model</a></li>
+        <li><a href="#flow">Sales flow</a></li>
+        <li><a href="#product-screen">Key interfaces</a></li>
+        <li><a href="#shared-system">UX system</a></li>
+        <li><a href="#landscape">ERP references</a></li>
+        <li><a href="#impact">Validation & impact</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ol>
+    </nav>
+
+    <main id="main" class="case-body">
+      <section class="erp-hero" aria-labelledby="erp-title">
+        <div class="erp-hero-copy">
+          <span class="eyebrow">01 · Overview — B2B product design · ERP</span>
+          <h1 id="erp-title">One ERP,<br><em>designed for wholesale work.</em></h1>
+          <p>A back-office system for a Spanish beauty wholesaler to manage products, retailer orders, stock, shipping and invoices.</p>
+        </div>
+        <dl class="erp-hero-meta">
+          <div><dt>Role</dt><dd>Product Designer · UX/UI</dd></div>
+          <div><dt>Scope</dt><dd>Requirements · Flows · Interface design</dd></div>
+          <div><dt>Platform</dt><dd>Web · Back office</dd></div>
+          <div><dt>Status</dt><dd>Developed and launched</dd></div>
+        </dl>
+        <div class="hero-thumbnails" aria-label="Selected ERP prototype screens">
+          <figure class="hero-thumb hero-thumb--primary"><div class="hero-thumb-window"><img src="./assets/erp-system/order-create.png" alt="Sales draft interface with customer, address and product lines" draggable="false"></div><figcaption><span>01</span><strong>Sales draft</strong><small>Build a retailer’s order</small></figcaption></figure>
+          <figure class="hero-thumb hero-thumb--secondary"><div class="hero-thumb-window"><img src="./assets/erp-system/product-detail.png" alt="Product detail interface with shared product and packaging information" draggable="false"></div><figcaption><span>02</span><strong>Product record</strong><small>Details reused across teams</small></figcaption></figure>
+        </div>
+      </section>
+
+      <section id="overview" class="case-section overview-section">
+        <div class="overview-copy">
+          <p class="section-name">Project overview</p>
+          <h2>I designed the system from the client's verbal requirements, one module at a time.</h2>
+          <p>The client was a Spanish beauty, skincare and accessories wholesaler. I turned the client's requests into a module roadmap, mapped the work into flows and screens, then reviewed each module with the client. The system was developed and launched.</p>
+        </div>
+        <dl class="project-facts">
+          <div><dt>Role</dt><dd>Product Designer</dd></div>
+          <div><dt>Scope</dt><dd>Turning client needs into flows and screens</dd></div>
+          <div><dt>Collaboration</dt><dd>Direct client reviews after each module; wider team details are not in the material reviewed</dd></div>
+          <div><dt>Status</dt><dd>Developed and launched</dd></div>
+        </dl>
+      </section>
+
+      <section id="challenge" class="case-section challenge-section">
+        <div class="challenge-intro">
+          <h2>The client knew how the business worked, but there was no finished product brief.</h2>
+          <p>My first job was to turn spoken requests into something everyone could check: who does the task, what information they need, what can change and what should happen next.</p>
+        </div>
+        <div class="challenge-list">
+          <article><span>From request to requirement</span><h3>The client described tasks. I had to decide what the system needed.</h3><p>For every request, I listed the user, the information, the possible states and the next action.</p></article>
+          <article><span>Information used more than once</span><h3>Product and customer data had to work across several teams.</h3><p>A product entered in Catalog would later be used in sales, shipping, stock and invoicing. The same data could not be rebuilt on every screen.</p></article>
+          <article><span>Clear business consequences</span><h3>Saving a draft is different from sending a quote or confirming an order.</h3><p>The interface had to make those differences obvious so unfinished work could not trigger shipping or invoicing by mistake.</p></article>
+        </div>
+      </section>
+
+      <section id="process" class="case-section process-section">
+        <h2>I started with the questions each business task needed the system to answer.</h2>
+        <p class="lead">For each client request, I wrote down the business question first. Then I defined what information and screens were needed to answer it.</p>
+
+        <div class="question-map" role="table" aria-label="Business questions translated into product requirements">
+          <div class="question-row question-head" role="row"><span role="columnheader">Operational question</span><span role="columnheader">Requirement it created</span><span role="columnheader">Design evidence</span></div>
+          <div class="question-row" role="row"><span role="cell">How can we describe a product once and use it for sales, customs and shipping?</span><span role="cell">Keep languages, product details, customs data and packaging in one product record.</span><span role="cell"><a href="#product-screen">Create Product</a></span></div>
+          <div class="question-row" role="row"><span role="cell">How can sales save unfinished work without creating an order?</span><span role="cell">Add a Draft state, then offer separate actions for a quotation or a confirmed order.</span><span role="cell"><a href="#flow">Order flow</a></span></div>
+          <div class="question-row" role="row"><span role="cell">How can warehouse and finance use the order without entering the same information again?</span><span role="cell">Create shipments and invoices from the confirmed order and keep them linked to it.</span><span role="cell">Order relationships</span></div>
+        </div>
+
+        <div class="working-loop">
+          <div class="loop-copy"><h3>For each module, I repeated the same five actions.</h3><p>The screen was not the end of the process. It gave the client something concrete to correct before I moved to the next module.</p></div>
+          <ol>
+            <li><strong>Listen</strong><span>Write down the task in the client's own words.</span></li>
+            <li><strong>Break it down</strong><span>List the people, information, rules, states and unanswered questions.</span></li>
+            <li><strong>Draw the flow</strong><span>Show what happens first, where the flow branches and who acts next.</span></li>
+            <li><strong>Design the real screen</strong><span>Use the actual fields and realistic data density so missing details become visible.</span></li>
+            <li><strong>Review with the client</strong><span>Remove what was unnecessary, correct what was wrong and confirm the next module.</span></li>
+          </ol>
+        </div>
+        <aside class="process-rationale"><strong>Why I moved directly to high fidelity</strong><p>The main questions were about real fields, table density and what each button would do. A simple wireframe would hide those details. Using the design system early helped the client review the actual information, while the structure was still open to change.</p></aside>
+        <p class="evidence-note">The research process I can substantiate is client-led requirements discovery and iterative module review. I do not have evidence of direct observation, interviews with frontline staff or prototype usability testing.</p>
+      </section>
+
+      <section id="model" class="case-section model-section">
+        <h2>I used one simple rule: enter important information once, then reuse it.</h2>
+        <p>For example, a product team enters a lipstick's SKU, languages, packaging and customs details once. Sales can then add that lipstick to an order, warehouse knows how it is packed and finance knows which sale to invoice.</p>
+        <div class="system-model" aria-label="ERP system model">
+          <article class="model-foundation"><span>Information used by everyone</span><h3>Products, customers and business rules</h3><ul><li>Product details and packaging</li><li>Customer and supplier records</li><li>Addresses, units, prices and taxes</li></ul></article>
+          <div class="model-connector" aria-hidden="true">→</div>
+          <article class="model-hub"><span>Where the sale is prepared</span><h3>Sales draft and order</h3><ul><li>Choose customer and addresses</li><li>Add products and quantities</li><li>Send a quote or confirm the order</li></ul></article>
+          <div class="model-connector" aria-hidden="true">→</div>
+          <article class="model-execution"><span>What happens after confirmation</span><h3>Shipping, stock and invoices</h3><ul><li>Prepare and track shipments</li><li>Update inventory</li><li>Issue invoices and track payment</li></ul></article>
+        </div>
+        <div class="domain-strip" aria-label="Confirmed design domains"><span>Catalog</span><span>Sales</span><span>Inventory</span><span>Parties</span><span>Financial</span></div>
+      </section>
+
+      <section id="flow" class="case-section flow-section">
+        <h2>Imagine a retailer contacts the sales team to place a wholesale order.</h2>
+        <p>The salesperson may need to save the work before it is ready to send. The prototype separates a draft, a quotation and a confirmed order. Shipment and invoicing follow the confirmed sale.</p>
+        <div class="method-translation" aria-label="UX method used to translate work into product features"><div><strong>1. See the real work</strong><span>UX method: Context scenario</span></div><div><strong>2. Put the actions in order</strong><span>UX method: Task flow</span></div><div><strong>3. Turn each task into a feature</strong><span>UX method: Task-to-feature mapping</span></div></div>
+        <p class="evidence-note">This flow is reconstructed from the client-led module reviews and the states and fields visible in the prototype. The project material does not confirm formal observation or usability testing with frontline staff.</p>
+        <figure class="storyboard"><img src="./assets/erp-system/order-storyboard.png" alt="Storyboard showing a wholesale request moving from sales to customer approval, warehouse packing and invoicing" loading="lazy"><figcaption>The same order moves from a conversation to sales, warehouse and finance.</figcaption></figure>
+        <div class="action-map" role="table" aria-label="Real-world actions mapped to system tasks and interface features">
+          <div class="action-row action-head" role="row"><span role="columnheader">What the person is doing</span><span role="columnheader">What they do in the system</span><span role="columnheader">What I designed</span></div>
+          <div class="action-row" role="row"><span role="cell"><strong>Sales receives the retailer's request.</strong><small>The order may still be incomplete.</small></span><span role="cell">Start a new sales draft and choose the customer.</span><span role="cell">Draft status, customer search, invoice address and delivery address.</span></div>
+          <div class="action-row" role="row"><span role="cell"><strong>Sales checks products and box quantities.</strong><small>Different products may use different units and prices.</small></span><span role="cell">Search products, add lines and edit quantities, units, price and discount.</span><span role="cell">Search, filters and an editable product table with order totals.</span></div>
+          <div class="action-row" role="row"><span role="cell"><strong>The retailer reviews the offer.</strong><small>The sale is not final yet.</small></span><span role="cell">Send a quotation, or keep the work as a draft.</span><span role="cell">Separate Save Draft and Create Quotation actions.</span></div>
+          <div class="action-row" role="row"><span role="cell"><strong>The retailer agrees and the warehouse packs.</strong><small>Only confirmed work should reach the warehouse.</small></span><span role="cell">Confirm the order, then create its shipment.</span><span role="cell">Confirm Order action and a shipment linked to that order.</span></div>
+          <div class="action-row" role="row"><span role="cell"><strong>Finance bills the retailer.</strong><small>Payment still needs to be followed.</small></span><span role="cell">Create an invoice from the order and update payment status.</span><span role="cell">Linked invoice, document status and payment status.</span></div>
+        </div>
+        <div class="flow-rule"><strong>Why this matters</strong><p>I was not inventing a list of screens. I was translating real work into system tasks, then giving every interface feature a clear reason to exist.</p></div>
+      </section>
+
+      <section id="product-screen" class="case-section selected-interface">
+        <div class="deep-intro">
+          <span class="section-label">Three screens, three jobs</span>
+          <h2>Follow one product from setup to sale.</h2>
+          <p class="summary">I chose these screens because they show the hand-off: someone creates a product, sales adds it to a retailer’s order, and the saved product record keeps its details available to other teams. The trade-offs below are reconstructed from the prototype, not recovered records of formal design tests.</p>
+        </div>
+
+        <article class="interface-case interface-case--product">
+          <div class="interface-heading"><span>01 · Product setup</span><h3>Create Product</h3><p>A product manager records the details that sales, warehouse and shipping will need later.</p></div>
+          <figure class="selected-screen">
+            <img src="./assets/erp-system/product-create.png" alt="Create Product screen, with numbered markers for language and core fields, custom attributes, customs data, and packaging levels" loading="lazy" draggable="false">
+            <span class="product-marker product-marker--1">1</span>
+            <span class="product-marker product-marker--2">2</span>
+            <span class="product-marker product-marker--3">3</span>
+            <span class="product-marker product-marker--4">4</span>
+            <figcaption>Evidence: Create Product screen from the Catalog prototype.</figcaption>
+          </figure>
+          <div class="product-decisions" aria-label="Design decisions for the Create Product screen">
+            <p class="decision-column-label">Why the form is organised this way</p>
+            <article><span>1</span><div><h3>Keep language versions on one product</h3><p><strong>Need:</strong> The prototype supports several product languages and a default language.</p><p><strong>Decision:</strong> Keep those versions on one product record so the SKU still points to one item.</p><p><strong>Trade-off:</strong> One record is easier to reuse, but someone must keep translations aligned. I would test this with a real product entered in each required language.</p></div></article>
+            <article><span>2</span><div><h3>Add only the details a product needs</h3><p><strong>Need:</strong> The form includes repeatable custom-field rows for product-specific details.</p><p><strong>Decision:</strong> Use editable name-and-value rows with Add and Delete beside the row.</p><p><strong>Alternative and trade-off:</strong> A fixed field set is more consistent but may not fit every category. Configurable rows adapt better, but need rules for field names and value types.</p></div></article>
+            <article><span>3</span><div><h3>Keep customs data with the product</h3><p><strong>Need:</strong> The prototype includes an HS code and country of origin.</p><p><strong>Decision:</strong> Store these values on the product record, where teams can reuse them if the business needs them for cross-border orders.</p><p><strong>Trade-off:</strong> Reuse avoids re-entry, but customs requirements depend on the product and destination. Required-field rules need confirmation from the client.</p></div></article>
+            <article><span>4</span><div><h3>Make each packaging level easy to compare</h3><p><strong>Need:</strong> The form shows consumer unit, inner pack, outer carton and pallet.</p><p><strong>Decision:</strong> Give each level its own group for its packaging details.</p><p><strong>Alternative and trade-off:</strong> One text field is faster to fill in, but cannot clearly express quantities at different levels. Separate groups are clearer to compare, but require correct conversion and barcode rules.</p></div></article>
+          </div>
+        </article>
+
+        <article class="interface-case interface-case--sales">
+          <div class="interface-heading"><span>02 · Sales creates an order</span><h3>Sales Draft</h3><p>A salesperson turns a retailer’s request into a draft, checks the addresses and product quantities, then chooses whether to save, quote or confirm.</p></div>
+          <figure class="selected-screen"><img src="./assets/erp-system/order-create.png" alt="Sales draft interface showing customer and address fields, product rows, pricing, and separate save, quotation and confirmation actions" loading="lazy" draggable="false"><span class="screen-marker sales-marker--1">1</span><span class="screen-marker sales-marker--2">2</span><span class="screen-marker sales-marker--3">3</span><span class="screen-marker sales-marker--4">4</span><figcaption>Sales Draft prototype</figcaption></figure>
+          <div class="decision-grid">
+            <article><span>1</span><div><h4>Save work without confirming it</h4><p><strong>Need:</strong> The prototype has a Draft state and a Save as Draft action.</p><p><strong>Decision:</strong> Keep saving separate from confirming an order.</p><p><strong>Impact to verify:</strong> Can a salesperson return to unfinished work without accidentally triggering the next step?</p></div></article>
+            <article><span>2</span><div><h4>Separate billing from delivery</h4><p><strong>Need:</strong> The form shows customer, invoice address and shipping address as separate fields.</p><p><strong>Decision:</strong> Keep each address selectable in the order.</p><p><strong>Trade-off:</strong> More choice supports different destinations, but increases selection risk. Test with a customer whose billing and delivery addresses differ.</p></div></article>
+            <article><span>3</span><div><h4>Review all order lines together</h4><p><strong>Need:</strong> The prototype supports multiple products, quantities, units, prices and discounts.</p><p><strong>Decision:</strong> Use an editable line-item table and show order totals in the same screen.</p><p><strong>Alternative and trade-off:</strong> One product per page would simplify each entry but make it harder to review a whole order. A dense table may speed up scanning for familiar users, but must stay readable at realistic order sizes.</p></div></article>
+            <article><span>4</span><div><h4>Make quote and confirmation different actions</h4><p><strong>Need:</strong> The prototype offers both Convert to Quotation and Confirm Order.</p><p><strong>Decision:</strong> Keep these actions separate so the user can choose the correct next step.</p><p><strong>Impact to verify:</strong> Ask users to explain what each action will cause before they click. Track mistaken confirmations and order rework if product data is available.</p></div></article>
+          </div>
+        </article>
+
+        <article class="interface-case interface-case--detail">
+          <div class="interface-heading"><span>03 · Other teams reuse the record</span><h3>Product Detail</h3><p>After setup, a colleague can check the product without reopening the original form or asking the catalog team to repeat its details.</p></div>
+          <figure class="selected-screen"><img src="./assets/erp-system/product-detail.png" alt="Product detail interface showing general information, media, categories, four packaging levels, logistics, attachments and notes" loading="lazy" draggable="false"><span class="screen-marker detail-marker--1">1</span><span class="screen-marker detail-marker--2">2</span><span class="screen-marker detail-marker--3">3</span><figcaption>Product Detail prototype</figcaption></figure>
+          <div class="decision-grid decision-grid--three">
+            <article><span>1</span><div><h4>Separate viewing from editing</h4><p><strong>Need:</strong> Teams need to check a record without accidentally changing it. <strong>Decision:</strong> Present saved values as a readable detail page, with “Edit” actions beside the sections they change.</p></div></article>
+            <article><span>2</span><div><h4>Keep related product facts together</h4><p><strong>Need:</strong> A product is more than its name and SKU. <strong>Decision:</strong> Group identity, media, categories, packaging and logistics on one record so each team can find the information it uses.</p></div></article>
+            <article><span>3</span><div><h4>Make packaging levels comparable</h4><p><strong>Need:</strong> A warehouse worker needs to tell a single item from an inner pack, carton or pallet. <strong>Decision:</strong> Show four levels side by side with their own barcode, quantity and dimensions.</p></div></article>
+          </div>
+        </article>
+      </section>
+
+      <section id="shared-system" class="case-section shared-section">
+        <div class="shared-copy"><h2>I reused the same page patterns so each team could focus on its own work.</h2><p>The Catalog board shows repeated list, form and detail layouts. Across the screens, the team can filter a list, open a record, review its details and edit a specific section. The information changes by task; the basic way to find and update it stays familiar.</p></div>
+        <figure class="board-evidence">
+          <div class="board-window"><img src="./assets/erp-system/catalog-board.png" alt="Reduced excerpt of the Catalog Figma board showing repeated list, form and detail patterns" loading="lazy" draggable="false"></div>
+          <figcaption><strong>What this image shows</strong><p>The screens use the same navigation, filters, list structure and detail pattern. The image is intentionally too small to reveal the full product.</p></figcaption>
+        </figure>
+        <div class="pattern-sequence" aria-label="Repeated page patterns evidenced in the Catalog board"><span>List: find a record</span><span>Form: add or change details</span><span>Detail: review the saved record</span><span>Tabs: move between related information</span></div>
+        <div class="pattern-notes" aria-label="Reusable interface patterns visible in the prototype">
+          <article><strong>Same frame</strong><p>Navigation and record tabs keep the user oriented inside a business area.</p></article>
+          <article><strong>Same way to edit</strong><p>Forms group related fields, then keep add, edit and save actions near the information they affect.</p></article>
+          <article><strong>Same way to review</strong><p>Lists support scanning; detail pages group the saved information and related records.</p></article>
+        </div>
+      </section>
+
+      <section id="landscape" class="case-section landscape-section">
+        <h2>I checked the design against established ERP patterns.</h2>
+        <p class="section-lead">This is a retrospective reference check completed while documenting the case, not research conducted during the original project.</p>
+        <div class="landscape-list">
+          <article><h3><a href="https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/product_management/configure/packaging.html" target="_blank" rel="noreferrer">Odoo</a></h3><p>Its product packaging documentation makes unit quantities and packaging barcodes concrete. Useful comparison for the product setup and warehouse hand-off.</p></article>
+          <article><h3><a href="https://learn.microsoft.com/en-us/dynamics365/business-central/inventory-setup-inventory" target="_blank" rel="noreferrer">Business Central</a></h3><p>Shows how item records, alternate units, locations and sales documents connect in a small and mid-sized business ERP.</p></article>
+          <article><h3><a href="https://www.netsuite.com/portal/products/erp/financial-management.shtml" target="_blank" rel="noreferrer">NetSuite</a></h3><p>Emphasises links between finance, order management and inventory, which is a useful lens for the order-to-invoice flow.</p></article>
+          <article><h3><a href="https://www.sap.com/products/erp/supply-chain.html" target="_blank" rel="noreferrer">SAP Cloud ERP</a></h3><p>Provides a reference for connecting receiving, inventory movement, fulfilment and finance across a broader enterprise operation.</p></article>
+        </div>
+        <p class="evidence-note">These examples are not a popularity ranking. Vendor documentation describes each vendor’s own product and does not verify the features or outcomes of this project. <a href="https://stripe.com/products" target="_blank" rel="noreferrer">Stripe</a> focuses on payments and financial infrastructure rather than general ERP.</p>
+      </section>
+
+      <section id="impact" class="case-section impact-section">
+        <h2>What should improve, and how I would check it.</h2>
+        <p class="section-lead">The prototype shows design intent. The measures below are ways to test that intent, not results reported from this project.</p>
+        <div class="impact-table" role="table" aria-label="Expected user impact and how to measure it">
+          <div class="impact-row impact-row--head" role="row"><span role="columnheader">Design choice</span><span role="columnheader">Expected user impact</span><span role="columnheader">Evidence to collect</span></div>
+          <div class="impact-row" role="row"><span role="cell"><strong>Reuse one product record</strong><small>Catalog details feed sales and fulfilment.</small></span><span role="cell">Less repeated entry and fewer mismatched product details.</span><span role="cell">Duplicate-entry frequency, correction rate and missing required fields.</span></div>
+          <div class="impact-row" role="row"><span role="cell"><strong>Separate draft, quotation and order</strong><small>Each action has a different business consequence.</small></span><span role="cell">Fewer accidental confirmations and clearer next steps.</span><span role="cell">Mis-confirmations, abandoned drafts, rework and time to resume a draft.</span></div>
+          <div class="impact-row" role="row"><span role="cell"><strong>Show status and exceptions in work lists</strong><small>Users can scan records before opening them.</small></span><span role="cell">Less time searching for shortages, overdue work or payment issues.</span><span role="cell">Time to find an exception, unresolved exception age and task completion rate.</span></div>
+          <div class="impact-row" role="row"><span role="cell"><strong>Record packaging levels</strong><small>Unit, inner pack, carton and pallet stay distinguishable.</small></span><span role="cell">Fewer quantity and packaging misunderstandings between sales and warehouse.</span><span role="cell">Order-to-shipment quantity differences, packing corrections and stock discrepancies.</span></div>
+        </div>
+        <div class="validation-note">
+          <div><strong>What was confirmed</strong><p>Client reviews and requirement checks happened module by module. Chloé recalls that the system was developed and launched.</p></div>
+          <div><strong>What is not evidenced</strong><p>No frontline usability-test records or verified post-launch usage, efficiency, revenue or satisfaction metrics are available in the materials reviewed.</p></div>
+          <div><strong>Next validation step</strong><p>Ask sales and warehouse users to complete a realistic order, partial shipment and invoice task. Observe errors and recovery, then compare the same measures before and after release if baseline data exists.</p></div>
+        </div>
+      </section>
+
+      <section id="reflection" class="case-section reflection-section">
+        <div class="delivery-copy"><h2>The system launched. Its business impact still needs evidence.</h2><p>I can show how the client’s requests became connected product, sales, inventory, customer and finance workflows. I cannot yet claim that the design increased efficiency or revenue because no verified outcome data is available.</p></div>
+        <div class="closing"><span>What I take forward</span><h2>Start with the work people need to finish. Make every screen earn its place in that flow.</h2></div>
+      </section>
+
+      <div class="next-project">
+        <a href="./work.html"><span>Back</span>All work</a>
+        <a href="./wms-design-system.html"><span>Next case</span>WMS Design System →</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer"><span>© Chloé Chen</span><div><a href="./about.html">About</a><a href="./contact.html">Contact</a></div></footer>
+</body>
+</html>

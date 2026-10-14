@@ -2185,6 +2185,37 @@ body.ftl-dark-header .brand span {
     linear-gradient(145deg, #2f184d, #482266 54%, #6c4e7c);
 }
 
+.work-card__visual--erp {
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 4vw, 54px);
+  background: #d9eee6;
+}
+
+.work-erp-frame {
+  width: 96%;
+  overflow: hidden;
+  border: 7px solid rgba(255, 255, 255, 0.96);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 30px 70px rgba(31, 57, 48, 0.22);
+  transform: perspective(1800px) rotateX(1deg) rotateY(-2deg) rotateZ(-1deg);
+  transition: width 700ms var(--ease), transform 700ms var(--ease);
+}
+
+.work-erp-frame img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.work-card:hover .work-erp-frame,
+.work-card:focus-visible .work-erp-frame {
+  width: 98%;
+  transform: perspective(1800px) rotateX(0) rotateY(0) rotateZ(0);
+}
+
 .work-sheet {
   position: absolute;
   width: 78%;
@@ -9749,6 +9780,222 @@ button.evidence-card {
   }
 }
 
+/* Work index: keep the project directory visible and easy to scan. */
+.work-page {
+  width: min(1240px, calc(100% - 160px));
+  margin: 0 auto;
+  padding: 102px 0 100px;
+}
+
+.work-hero {
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+  gap: clamp(28px, 5vw, 72px);
+  padding-bottom: 38px;
+}
+
+.work-hero__copy h1 {
+  max-width: 720px;
+  margin-top: 10px;
+  font-size: clamp(40px, 3.2vw, 56px);
+  line-height: 1.02;
+}
+
+.work-hero__note > p {
+  max-width: 360px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.work-feature,
+.work-group {
+  padding: 42px 0 58px;
+}
+
+.work-feature {
+  padding-top: 26px;
+}
+
+.work-feature--editorial {
+  padding-bottom: 58px;
+}
+
+.work-section-head {
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.65fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.work-section-head > div {
+  gap: 12px;
+}
+
+.work-section-head h2 {
+  font-size: clamp(28px, 2.8vw, 38px);
+  line-height: 1.05;
+}
+
+.work-section-head > p {
+  max-width: 380px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.work-editorial-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.work-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.work-card--spotlight,
+.work-group .work-card {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+}
+
+.work-card--spotlight .work-card__visual,
+.work-group .work-card__visual {
+  min-height: 0;
+  aspect-ratio: 1.55 / 1;
+}
+
+.work-card--spotlight .work-card__content,
+.work-group .work-card__content {
+  gap: 10px;
+  padding: 18px 19px 20px;
+}
+
+.work-card--spotlight .work-card__title h3,
+.work-group .work-card__title h3,
+.work-group .work-card:not(.work-card--feature) .work-card__title h3 {
+  font-size: clamp(23px, 2vw, 30px);
+  line-height: 1;
+}
+
+.work-card--spotlight .work-card__summary,
+.work-group .work-card__summary {
+  max-width: 48ch;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.work-card--spotlight .work-card__footer,
+.work-group .work-card__footer {
+  gap: 7px 10px;
+  padding-top: 6px;
+}
+
+.work-card__index {
+  top: 17px;
+  right: 18px;
+  font-size: 16px;
+}
+
+.work-card__visual--erp {
+  background: linear-gradient(145deg, #f2f0ff 0%, #e7e3ff 100%);
+}
+
+.work-erp-frame {
+  width: 88%;
+  border-width: 5px;
+  box-shadow: 0 18px 40px rgba(73, 57, 186, 0.15);
+}
+
+@media (max-width: 1240px) {
+  .work-page {
+    width: min(1160px, calc(100% - 72px));
+    margin: 0 auto;
+    padding-top: 96px;
+  }
+
+  .work-editorial-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-card--spotlight,
+  .work-group .work-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+
+  .work-card--spotlight .work-card__visual,
+  .work-group .work-card__visual {
+    aspect-ratio: 1.55 / 1;
+  }
+}
+
+@media (max-width: 820px) {
+  .work-page {
+    width: min(100% - 48px, 720px);
+    padding-top: 92px;
+  }
+
+  .work-hero {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-bottom: 30px;
+  }
+
+  .work-hero__copy h1 {
+    max-width: 600px;
+    font-size: clamp(38px, 7vw, 52px);
+  }
+
+  .work-editorial-grid,
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-section-head {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  .work-page {
+    width: calc(100% - 32px);
+    padding-top: 132px;
+  }
+
+  .work-hero__copy h1 {
+    font-size: clamp(36px, 10vw, 46px);
+  }
+
+  .work-editorial-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .work-feature,
+  .work-group {
+    padding: 34px 0 42px;
+  }
+
+  .work-section-head > div {
+    align-items: baseline;
+  }
+
+  .work-section-head h2 {
+    font-size: 30px;
+  }
+
+  .work-card--spotlight .work-card__visual,
+  .work-group .work-card__visual {
+    aspect-ratio: 1.55 / 1;
+  }
+}
+
 /* Esendeo v49 final cascade lock */
 .es3 .es3-foundation__canvas {
   grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
@@ -11453,6 +11700,20 @@ button.evidence-card {
     width: var(--es3-content);
     margin-right: auto;
     margin-left: clamp(32px, 5vw, 72px);
+  }
+}
+
+@media (max-width: 1240px) and (min-width: 821px) {
+  .work-page {
+    width: min(1000px, calc(100% - 250px));
+    margin-left: 36px;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 940px) and (min-width: 821px) {
+  .work-editorial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
