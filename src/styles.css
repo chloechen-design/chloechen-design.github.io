@@ -2186,34 +2186,87 @@ body.ftl-dark-header .brand span {
 }
 
 .work-card__visual--erp {
-  display: grid;
-  place-items: center;
-  padding: clamp(24px, 4vw, 54px);
-  background: #d9eee6;
+  display: block;
+  padding: 0;
+  background: #f4f2f8;
 }
 
-.work-erp-frame {
-  width: 96%;
+.work-erp-cover {
+  position: absolute;
+  inset: 0;
   overflow: hidden;
-  border: 7px solid rgba(255, 255, 255, 0.96);
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 30px 70px rgba(31, 57, 48, 0.22);
-  transform: perspective(1800px) rotateX(1deg) rotateY(-2deg) rotateZ(-1deg);
-  transition: width 700ms var(--ease), transform 700ms var(--ease);
 }
 
-.work-erp-frame img {
+.work-erp-cover::before {
+  position: absolute;
+  top: 13%;
+  right: 6%;
+  width: 32%;
+  height: 74%;
+  border-radius: 9px;
+  background: rgba(92, 67, 207, 0.16);
+  content: "";
+  transform: rotate(5deg);
+}
+
+.work-erp-cover__panel {
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 20px 46px rgba(46, 36, 83, 0.17);
+}
+
+.work-erp-cover__sales {
+  z-index: 1;
+  top: 15%;
+  left: 4%;
+  width: 87%;
+  height: 72%;
+  transform: rotate(-1deg);
+}
+
+.work-erp-cover__catalog {
+  z-index: 2;
+  top: 13%;
+  right: 4%;
+  width: 32%;
+  height: 76%;
+  border: 4px solid rgba(255, 255, 255, 0.96);
+  box-shadow: 0 22px 50px rgba(46, 36, 83, 0.22);
+  transform: rotate(2.5deg);
+}
+
+.work-erp-cover__panel img {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 100%;
   object-fit: cover;
+}
+
+.work-erp-cover__sales img {
   object-position: top left;
 }
 
-.work-card:hover .work-erp-frame,
-.work-card:focus-visible .work-erp-frame {
-  width: 98%;
-  transform: perspective(1800px) rotateX(0) rotateY(0) rotateZ(0);
+.work-erp-cover__catalog img {
+  object-position: top center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .work-erp-cover__panel {
+    transition: transform 520ms var(--ease), box-shadow 520ms var(--ease);
+  }
+
+  .work-card:hover .work-erp-cover__sales,
+  .work-card:focus-visible .work-erp-cover__sales {
+    transform: translate(-2px, -3px) rotate(-0.4deg);
+  }
+
+  .work-card:hover .work-erp-cover__catalog,
+  .work-card:focus-visible .work-erp-cover__catalog {
+    transform: translate(1px, -5px) rotate(1.2deg);
+  }
 }
 
 .work-sheet {
@@ -9894,16 +9947,6 @@ button.evidence-card {
   top: 17px;
   right: 18px;
   font-size: 16px;
-}
-
-.work-card__visual--erp {
-  background: linear-gradient(145deg, #f2f0ff 0%, #e7e3ff 100%);
-}
-
-.work-erp-frame {
-  width: 88%;
-  border-width: 5px;
-  box-shadow: 0 18px 40px rgba(73, 57, 186, 0.15);
 }
 
 @media (max-width: 1240px) {
